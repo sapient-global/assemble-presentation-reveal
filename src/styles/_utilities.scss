@@ -1,0 +1,58 @@
+/**
+ * Find here all the utility classes
+ *
+ * Extract from: https://gist.github.com/fat/a47b882eb5f84293c4ed
+ *
+ *  Definition of utility clases:
+ *
+ * Medium's utility classes are low-level structural and positional traits.
+ * Utilities can be applied directly to any element; multiple utilities can be
+ * used together; and utilities can be used alongside component classes.
+ *
+ * Utilities exist because certain CSS properties and patterns are used frequently.
+ * For example: floats, containing floats, vertical alignment, text truncation.
+ * Relying on utilities can help to reduce repetition and provide consistent implementations.
+ * They also act as a philosophical alternative to functional (i.e. non-polyfill) mixins.
+ *
+ */
+/*------------------------------------*\
+    General utility classes
+\*------------------------------------*/
+
+.u-hidden {
+    display: none !important;
+    visibility: hidden;
+}
+.u-sans {
+    font-family: $fontFamily-sapientSans;
+}
+.u-serif {
+    font-family: $fontFamily-sapientSerif;
+}
+.u-clear-block, .u-clearfix {
+   // @extend %clearfix;
+}
+.u-float-right {
+    float: right;
+}
+.u-float-left {
+    float: left;
+}
+.u-center-text {
+    text-align: center;
+}
+//Using it as an extend.. Redefined in extends... maybe is more flexible that way
+.u-padding-content {
+    padding: 0 em(20px);
+}
+.u-center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.u-negative-link {
+    color: $negative-color;
+    &:hover {
+        color: darken($negative-color, 10%);
+    }
+}

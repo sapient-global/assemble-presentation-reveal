@@ -1,0 +1,1357 @@
+/**
+* Styles for the footer of the site
+*
+* @project Inspire
+* @date 3.2015
+* @author Daniela Valero, Sapient GmbH
+* @licensor  Publicis Sapient
+* @site Inspire
+*/
+/**
+* Config settings file. Imports all the variables, mixins, and
+* general settings used in the project
+*
+* @project Inspire
+* @date 3.2015
+* @author  Daniela Valero, Sapient GmbH
+* @licensor  Publicis Sapient
+* @site Inspire
+*/
+/*------------------------------------*\
+   Colors
+\*------------------------------------*/
+/*------------------------------------*\
+   Fonts
+\*------------------------------------*/
+/* scss-lint ignore:start */
+/* scss-lint ignore:end */
+/*------------------------------------*\
+   PATHS
+\*------------------------------------*/
+/*------------------------------------*\
+   General settings
+\*------------------------------------*/
+/*------------------------------------*\
+   Default fonts
+\*------------------------------------*/
+/*------------------------------------*\
+   Link colours
+\*------------------------------------*/
+/**********************************************************
+* FUNCTIONS
+* *********************************************************/
+/*
+  Useful to make calculations
+ */
+/**********************************************************
+* EXTENDS
+* *********************************************************/
+/*
+  Benefits of extend over mixin: https://css-tricks.com/the-extend-concept/
+ */
+/**********************************************************
+* MIXINS
+* *********************************************************/
+/* -------------------------------------------------------------
+  Sass CSS3 Mixins! The Cross-Browser CSS3 Sass Library
+  By: Matthieu Aussaguel, http://www.mynameismatthieu.com, @matthieu_tweets
+
+  List of CSS3 Sass Mixins File to be @imported and @included as you need
+
+  The purpose of this library is to facilitate the use of CSS3 on different browsers avoiding HARD TO READ and NEVER
+  ENDING css files
+
+  note: All CSS3 Properties are being supported by Safari 5
+  more info: http://www.findmebyip.com/litmus/#css3-properties
+
+  Mixins available:
+    -   css3-prefix             - arguments: Property, Value
+    -   background-gradient     - arguments: Start Color: #3C3C3C, End Color: #999999
+    -   background-radial       - arguments: Start Color: #FFFFFF, Start position: 0%, End Color: #000000, End position: 100%
+    -   background-size         - arguments: Width: 100%, Height: 100%
+    -   background-opacity      - arguments: Color: #000, Opacity: .85
+    -   border-radius           - arguments: Radius: 5px
+    -   border-radius-separate  - arguments: Top Left: 5px, Top Left: 5px, Bottom Left: 5px, Bottom Right: 5px
+    -
+    -   box-rgba                - arguments: R: 60, G: 3, B: 12, Opacity: 0.23, Color: #3C3C3C
+    -   box-shadow              - arguments: X: 2px, Y: 2px, Blur: 5px, Color: rgba(0,0,0,.4)
+    -   box-sizing              - arguments: Type: border-box
+    -   columns                 - arguments: Count: 3, Gap: 10
+    -   double-borders          - arguments: Color One: #3C3C3C, Color Two: #999999, Radius: 0
+
+    -   flip                    - arguments: ScaleX: -1
+    -   font-face               - arguments: Font Family: myFont, Eot File Src: myFont.eot, Woff File Src: myFont.woff, Ttf File Src: myFont.ttf
+    -   opacity                 - arguments: Opacity: 0.5
+    -   outline radius          - arguments: Radius: 5px
+    -   resize                  - arguments: Direction: both
+    -   rotate                  - arguments: Degree: 0, M11: 0, M12: 0, M21: 0, M22: 0
+    CSS Matrix Rotation Calculator http://www.boogdesign.com/examples/transforms/matrix-calculator.html
+    -   text-shadow             - arguments: X: 2px, Y: 2px, Blur: 5px, Color: rgba(0,0,0,.4)
+    -   transform               - arguments: Parameters: null
+    -   transform-style         - arguments: Style: preserve-3d
+    -   transition              - arguments: What: all, Length: 1s, Easing: ease-in-out
+    -   triple-borders          - arguments: Color One: #3C3C3C, Color Two: #999999, Color Three: #000000, Radius: 0
+    -   keyframes               - arguments: Animation name
+                                - content:   Animation css
+    -   animation               - arguments: name duration timing-function delay iteration-count direction fill-mode play-state
+                                             (http://www.w3schools.com/cssref/css3_pr_animation.asp)
+
+
+    - placeholder-color $color
+    - text-truncate
+    - background-image $name, $size
+    - absolute (top Npx right Npx left Npx bottom Npx)
+    - fixed
+    - relative
+    - size $width, $height
+------------------------------------------------------------- */
+/* ADDS A BROWSER PREFIX TO THE PROPERTY */
+/* BACKGROUND GRADIENT */
+/* BACKGROUND RADIAL */
+/* BACKGROUND SIZE */
+/* BACKGROUND COLOR OPACITY */
+/* BORDER RADIUS */
+/* BOX SHADOW */
+/* BOX SIZING */
+/* COLUMNS */
+/* FLIP */
+/* FONT FACE */
+/* OPACITY */
+/* OUTLINE RADIUS */
+/* RESIZE */
+/* ROTATE*/
+/* TEXT SHADOW */
+/* TRANSFORM  */
+/* TRANSFORM STYLE */
+/* TRANSITION */
+/* TRIPLE BORDERS */
+/* KEYFRAMES */
+/* ANIMATION */
+/**
+ * Define breakpoints and media queries
+ */
+@-ms-viewport {
+  width: device-width; }
+
+/******************************************
+* Media queries
+/******************************************/
+.Footer {
+  font-size: 12px;
+  width: 100%; }
+  .Footer .NavbarFooter {
+    height: 100%; }
+    .Footer .NavbarFooter li {
+      display: inline-block;
+      padding-right: 0.9375em; }
+  .Footer .Footer-Copyright {
+    text-align: right; }
+
+/*# sourceMappingURL=build/sass.map *//**
+* Style for the App container
+*
+* @project Inspire
+* @date 3.2015
+* @author  Daniela Valero, Sapient GmbH
+* @licensor  Publicis Sapient
+* @site Inspire
+*/
+/**
+* Config settings file. Imports all the variables, mixins, and
+* general settings used in the project
+*
+* @project Inspire
+* @date 3.2015
+* @author  Daniela Valero, Sapient GmbH
+* @licensor  Publicis Sapient
+* @site Inspire
+*/
+/*------------------------------------*\
+   Colors
+\*------------------------------------*/
+/*------------------------------------*\
+   Fonts
+\*------------------------------------*/
+/* scss-lint ignore:start */
+/* scss-lint ignore:end */
+/*------------------------------------*\
+   PATHS
+\*------------------------------------*/
+/*------------------------------------*\
+   General settings
+\*------------------------------------*/
+/*------------------------------------*\
+   Default fonts
+\*------------------------------------*/
+/*------------------------------------*\
+   Link colours
+\*------------------------------------*/
+/**********************************************************
+* FUNCTIONS
+* *********************************************************/
+/*
+  Useful to make calculations
+ */
+/**********************************************************
+* EXTENDS
+* *********************************************************/
+/*
+  Benefits of extend over mixin: https://css-tricks.com/the-extend-concept/
+ */
+/**********************************************************
+* MIXINS
+* *********************************************************/
+/* -------------------------------------------------------------
+  Sass CSS3 Mixins! The Cross-Browser CSS3 Sass Library
+  By: Matthieu Aussaguel, http://www.mynameismatthieu.com, @matthieu_tweets
+
+  List of CSS3 Sass Mixins File to be @imported and @included as you need
+
+  The purpose of this library is to facilitate the use of CSS3 on different browsers avoiding HARD TO READ and NEVER
+  ENDING css files
+
+  note: All CSS3 Properties are being supported by Safari 5
+  more info: http://www.findmebyip.com/litmus/#css3-properties
+
+  Mixins available:
+    -   css3-prefix             - arguments: Property, Value
+    -   background-gradient     - arguments: Start Color: #3C3C3C, End Color: #999999
+    -   background-radial       - arguments: Start Color: #FFFFFF, Start position: 0%, End Color: #000000, End position: 100%
+    -   background-size         - arguments: Width: 100%, Height: 100%
+    -   background-opacity      - arguments: Color: #000, Opacity: .85
+    -   border-radius           - arguments: Radius: 5px
+    -   border-radius-separate  - arguments: Top Left: 5px, Top Left: 5px, Bottom Left: 5px, Bottom Right: 5px
+    -
+    -   box-rgba                - arguments: R: 60, G: 3, B: 12, Opacity: 0.23, Color: #3C3C3C
+    -   box-shadow              - arguments: X: 2px, Y: 2px, Blur: 5px, Color: rgba(0,0,0,.4)
+    -   box-sizing              - arguments: Type: border-box
+    -   columns                 - arguments: Count: 3, Gap: 10
+    -   double-borders          - arguments: Color One: #3C3C3C, Color Two: #999999, Radius: 0
+
+    -   flip                    - arguments: ScaleX: -1
+    -   font-face               - arguments: Font Family: myFont, Eot File Src: myFont.eot, Woff File Src: myFont.woff, Ttf File Src: myFont.ttf
+    -   opacity                 - arguments: Opacity: 0.5
+    -   outline radius          - arguments: Radius: 5px
+    -   resize                  - arguments: Direction: both
+    -   rotate                  - arguments: Degree: 0, M11: 0, M12: 0, M21: 0, M22: 0
+    CSS Matrix Rotation Calculator http://www.boogdesign.com/examples/transforms/matrix-calculator.html
+    -   text-shadow             - arguments: X: 2px, Y: 2px, Blur: 5px, Color: rgba(0,0,0,.4)
+    -   transform               - arguments: Parameters: null
+    -   transform-style         - arguments: Style: preserve-3d
+    -   transition              - arguments: What: all, Length: 1s, Easing: ease-in-out
+    -   triple-borders          - arguments: Color One: #3C3C3C, Color Two: #999999, Color Three: #000000, Radius: 0
+    -   keyframes               - arguments: Animation name
+                                - content:   Animation css
+    -   animation               - arguments: name duration timing-function delay iteration-count direction fill-mode play-state
+                                             (http://www.w3schools.com/cssref/css3_pr_animation.asp)
+
+
+    - placeholder-color $color
+    - text-truncate
+    - background-image $name, $size
+    - absolute (top Npx right Npx left Npx bottom Npx)
+    - fixed
+    - relative
+    - size $width, $height
+------------------------------------------------------------- */
+/* ADDS A BROWSER PREFIX TO THE PROPERTY */
+/* BACKGROUND GRADIENT */
+/* BACKGROUND RADIAL */
+/* BACKGROUND SIZE */
+/* BACKGROUND COLOR OPACITY */
+/* BORDER RADIUS */
+/* BOX SHADOW */
+/* BOX SIZING */
+/* COLUMNS */
+/* FLIP */
+/* FONT FACE */
+/* OPACITY */
+/* OUTLINE RADIUS */
+/* RESIZE */
+/* ROTATE*/
+/* TEXT SHADOW */
+/* TRANSFORM  */
+/* TRANSFORM STYLE */
+/* TRANSITION */
+/* TRIPLE BORDERS */
+/* KEYFRAMES */
+/* ANIMATION */
+/**
+ * Define breakpoints and media queries
+ */
+@-ms-viewport {
+  width: device-width; }
+
+/******************************************
+* Media queries
+/******************************************/
+.App {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column; }
+
+/*# sourceMappingURL=build/sass.map *//**
+* Style for the Content area of pages
+*
+* @project Inspire
+* @date 3.2015
+* @author  Daniela Valero, Sapient GmbH
+* @licensor  Publicis Sapient
+* @site Inspire
+*/
+/**
+* Config settings file. Imports all the variables, mixins, and
+* general settings used in the project
+*
+* @project Inspire
+* @date 3.2015
+* @author  Daniela Valero, Sapient GmbH
+* @licensor  Publicis Sapient
+* @site Inspire
+*/
+/*------------------------------------*\
+   Colors
+\*------------------------------------*/
+/*------------------------------------*\
+   Fonts
+\*------------------------------------*/
+/* scss-lint ignore:start */
+/* scss-lint ignore:end */
+/*------------------------------------*\
+   PATHS
+\*------------------------------------*/
+/*------------------------------------*\
+   General settings
+\*------------------------------------*/
+/*------------------------------------*\
+   Default fonts
+\*------------------------------------*/
+/*------------------------------------*\
+   Link colours
+\*------------------------------------*/
+/**********************************************************
+* FUNCTIONS
+* *********************************************************/
+/*
+  Useful to make calculations
+ */
+/**********************************************************
+* EXTENDS
+* *********************************************************/
+/*
+  Benefits of extend over mixin: https://css-tricks.com/the-extend-concept/
+ */
+.ContentArea {
+  padding: 0 1.25em; }
+
+/**********************************************************
+* MIXINS
+* *********************************************************/
+/* -------------------------------------------------------------
+  Sass CSS3 Mixins! The Cross-Browser CSS3 Sass Library
+  By: Matthieu Aussaguel, http://www.mynameismatthieu.com, @matthieu_tweets
+
+  List of CSS3 Sass Mixins File to be @imported and @included as you need
+
+  The purpose of this library is to facilitate the use of CSS3 on different browsers avoiding HARD TO READ and NEVER
+  ENDING css files
+
+  note: All CSS3 Properties are being supported by Safari 5
+  more info: http://www.findmebyip.com/litmus/#css3-properties
+
+  Mixins available:
+    -   css3-prefix             - arguments: Property, Value
+    -   background-gradient     - arguments: Start Color: #3C3C3C, End Color: #999999
+    -   background-radial       - arguments: Start Color: #FFFFFF, Start position: 0%, End Color: #000000, End position: 100%
+    -   background-size         - arguments: Width: 100%, Height: 100%
+    -   background-opacity      - arguments: Color: #000, Opacity: .85
+    -   border-radius           - arguments: Radius: 5px
+    -   border-radius-separate  - arguments: Top Left: 5px, Top Left: 5px, Bottom Left: 5px, Bottom Right: 5px
+    -
+    -   box-rgba                - arguments: R: 60, G: 3, B: 12, Opacity: 0.23, Color: #3C3C3C
+    -   box-shadow              - arguments: X: 2px, Y: 2px, Blur: 5px, Color: rgba(0,0,0,.4)
+    -   box-sizing              - arguments: Type: border-box
+    -   columns                 - arguments: Count: 3, Gap: 10
+    -   double-borders          - arguments: Color One: #3C3C3C, Color Two: #999999, Radius: 0
+
+    -   flip                    - arguments: ScaleX: -1
+    -   font-face               - arguments: Font Family: myFont, Eot File Src: myFont.eot, Woff File Src: myFont.woff, Ttf File Src: myFont.ttf
+    -   opacity                 - arguments: Opacity: 0.5
+    -   outline radius          - arguments: Radius: 5px
+    -   resize                  - arguments: Direction: both
+    -   rotate                  - arguments: Degree: 0, M11: 0, M12: 0, M21: 0, M22: 0
+    CSS Matrix Rotation Calculator http://www.boogdesign.com/examples/transforms/matrix-calculator.html
+    -   text-shadow             - arguments: X: 2px, Y: 2px, Blur: 5px, Color: rgba(0,0,0,.4)
+    -   transform               - arguments: Parameters: null
+    -   transform-style         - arguments: Style: preserve-3d
+    -   transition              - arguments: What: all, Length: 1s, Easing: ease-in-out
+    -   triple-borders          - arguments: Color One: #3C3C3C, Color Two: #999999, Color Three: #000000, Radius: 0
+    -   keyframes               - arguments: Animation name
+                                - content:   Animation css
+    -   animation               - arguments: name duration timing-function delay iteration-count direction fill-mode play-state
+                                             (http://www.w3schools.com/cssref/css3_pr_animation.asp)
+
+
+    - placeholder-color $color
+    - text-truncate
+    - background-image $name, $size
+    - absolute (top Npx right Npx left Npx bottom Npx)
+    - fixed
+    - relative
+    - size $width, $height
+------------------------------------------------------------- */
+/* ADDS A BROWSER PREFIX TO THE PROPERTY */
+/* BACKGROUND GRADIENT */
+/* BACKGROUND RADIAL */
+/* BACKGROUND SIZE */
+/* BACKGROUND COLOR OPACITY */
+/* BORDER RADIUS */
+/* BOX SHADOW */
+/* BOX SIZING */
+/* COLUMNS */
+/* FLIP */
+/* FONT FACE */
+/* OPACITY */
+/* OUTLINE RADIUS */
+/* RESIZE */
+/* ROTATE*/
+/* TEXT SHADOW */
+/* TRANSFORM  */
+/* TRANSFORM STYLE */
+/* TRANSITION */
+/* TRIPLE BORDERS */
+/* KEYFRAMES */
+/* ANIMATION */
+/**
+ * Define breakpoints and media queries
+ */
+@-ms-viewport {
+  width: device-width; }
+
+/******************************************
+* Media queries
+/******************************************/
+.ContentArea {
+  flex: 1; }
+
+/*# sourceMappingURL=build/sass.map *//**
+*
+* @project Inspire
+* @date 3.2015
+* @author  Daniela Valero, Sapient GmbH
+* @licensor  Publicis Sapient
+* @site Inspire
+*/
+/**
+* Config settings file. Imports all the variables, mixins, and
+* general settings used in the project
+*
+* @project Inspire
+* @date 3.2015
+* @author  Daniela Valero, Sapient GmbH
+* @licensor  Publicis Sapient
+* @site Inspire
+*/
+/*------------------------------------*\
+   Colors
+\*------------------------------------*/
+/*------------------------------------*\
+   Fonts
+\*------------------------------------*/
+/* scss-lint ignore:start */
+/* scss-lint ignore:end */
+/*------------------------------------*\
+   PATHS
+\*------------------------------------*/
+/*------------------------------------*\
+   General settings
+\*------------------------------------*/
+/*------------------------------------*\
+   Default fonts
+\*------------------------------------*/
+/*------------------------------------*\
+   Link colours
+\*------------------------------------*/
+/**********************************************************
+* FUNCTIONS
+* *********************************************************/
+/*
+  Useful to make calculations
+ */
+/**********************************************************
+* EXTENDS
+* *********************************************************/
+/*
+  Benefits of extend over mixin: https://css-tricks.com/the-extend-concept/
+ */
+/**********************************************************
+* MIXINS
+* *********************************************************/
+/* -------------------------------------------------------------
+  Sass CSS3 Mixins! The Cross-Browser CSS3 Sass Library
+  By: Matthieu Aussaguel, http://www.mynameismatthieu.com, @matthieu_tweets
+
+  List of CSS3 Sass Mixins File to be @imported and @included as you need
+
+  The purpose of this library is to facilitate the use of CSS3 on different browsers avoiding HARD TO READ and NEVER
+  ENDING css files
+
+  note: All CSS3 Properties are being supported by Safari 5
+  more info: http://www.findmebyip.com/litmus/#css3-properties
+
+  Mixins available:
+    -   css3-prefix             - arguments: Property, Value
+    -   background-gradient     - arguments: Start Color: #3C3C3C, End Color: #999999
+    -   background-radial       - arguments: Start Color: #FFFFFF, Start position: 0%, End Color: #000000, End position: 100%
+    -   background-size         - arguments: Width: 100%, Height: 100%
+    -   background-opacity      - arguments: Color: #000, Opacity: .85
+    -   border-radius           - arguments: Radius: 5px
+    -   border-radius-separate  - arguments: Top Left: 5px, Top Left: 5px, Bottom Left: 5px, Bottom Right: 5px
+    -
+    -   box-rgba                - arguments: R: 60, G: 3, B: 12, Opacity: 0.23, Color: #3C3C3C
+    -   box-shadow              - arguments: X: 2px, Y: 2px, Blur: 5px, Color: rgba(0,0,0,.4)
+    -   box-sizing              - arguments: Type: border-box
+    -   columns                 - arguments: Count: 3, Gap: 10
+    -   double-borders          - arguments: Color One: #3C3C3C, Color Two: #999999, Radius: 0
+
+    -   flip                    - arguments: ScaleX: -1
+    -   font-face               - arguments: Font Family: myFont, Eot File Src: myFont.eot, Woff File Src: myFont.woff, Ttf File Src: myFont.ttf
+    -   opacity                 - arguments: Opacity: 0.5
+    -   outline radius          - arguments: Radius: 5px
+    -   resize                  - arguments: Direction: both
+    -   rotate                  - arguments: Degree: 0, M11: 0, M12: 0, M21: 0, M22: 0
+    CSS Matrix Rotation Calculator http://www.boogdesign.com/examples/transforms/matrix-calculator.html
+    -   text-shadow             - arguments: X: 2px, Y: 2px, Blur: 5px, Color: rgba(0,0,0,.4)
+    -   transform               - arguments: Parameters: null
+    -   transform-style         - arguments: Style: preserve-3d
+    -   transition              - arguments: What: all, Length: 1s, Easing: ease-in-out
+    -   triple-borders          - arguments: Color One: #3C3C3C, Color Two: #999999, Color Three: #000000, Radius: 0
+    -   keyframes               - arguments: Animation name
+                                - content:   Animation css
+    -   animation               - arguments: name duration timing-function delay iteration-count direction fill-mode play-state
+                                             (http://www.w3schools.com/cssref/css3_pr_animation.asp)
+
+
+    - placeholder-color $color
+    - text-truncate
+    - background-image $name, $size
+    - absolute (top Npx right Npx left Npx bottom Npx)
+    - fixed
+    - relative
+    - size $width, $height
+------------------------------------------------------------- */
+/* ADDS A BROWSER PREFIX TO THE PROPERTY */
+/* BACKGROUND GRADIENT */
+/* BACKGROUND RADIAL */
+/* BACKGROUND SIZE */
+/* BACKGROUND COLOR OPACITY */
+/* BORDER RADIUS */
+/* BOX SHADOW */
+/* BOX SIZING */
+/* COLUMNS */
+/* FLIP */
+/* FONT FACE */
+/* OPACITY */
+/* OUTLINE RADIUS */
+/* RESIZE */
+/* ROTATE*/
+/* TEXT SHADOW */
+/* TRANSFORM  */
+/* TRANSFORM STYLE */
+/* TRANSITION */
+/* TRIPLE BORDERS */
+/* KEYFRAMES */
+/* ANIMATION */
+/**
+ * Define breakpoints and media queries
+ */
+@-ms-viewport {
+  width: device-width; }
+
+/******************************************
+* Media queries
+/******************************************/
+.InspireEditor {
+  height: 100%;
+  flex-flow: row wrap;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex; }
+  .InspireEditor > * {
+    /* We tell all items to be 100% width */
+    flex: 1 100%; }
+
+.Footer {
+  align-self: flex-end; }
+
+.LeftToolbar, .CenterArea {
+  padding: 0.625em; }
+
+.RightToolbar {
+  flex-direction: column;
+  border-left: 1px solid #BDBDBD;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex; }
+
+.LeftToolbar {
+  background: gold; }
+
+.CenterArea {
+  background: deepskyblue; }
+
+@media screen and (min-width: 30.0625em) {
+  .RightToolbar-TopElement, .RightToolbar-BottomElement {
+    flex: 1 auto; } }
+
+@media screen and (min-width: 48.0625em) {
+  .LeftToolbar, .RightToolbar {
+    flex: 1 auto; }
+  .LeftToolbar {
+    order: 1; }
+  .CenterArea {
+    order: 2;
+    flex: 3 0; }
+  .RightToolbar {
+    order: 3; }
+  .Footer {
+    order: 4; }
+  .RightToolbar, .LeftToolbar, .CenterArea {
+    height: 100%; } }
+
+/*# sourceMappingURL=build/sass.map *//**
+*
+* @project Inspire
+* @date 3.2015
+* @author  Daniela Valero, Sapient GmbH
+* @licensor  Publicis Sapient
+* @site Inspire
+*/
+/**
+* Config settings file. Imports all the variables, mixins, and
+* general settings used in the project
+*
+* @project Inspire
+* @date 3.2015
+* @author  Daniela Valero, Sapient GmbH
+* @licensor  Publicis Sapient
+* @site Inspire
+*/
+/*------------------------------------*\
+   Colors
+\*------------------------------------*/
+/*------------------------------------*\
+   Fonts
+\*------------------------------------*/
+/* scss-lint ignore:start */
+/* scss-lint ignore:end */
+/*------------------------------------*\
+   PATHS
+\*------------------------------------*/
+/*------------------------------------*\
+   General settings
+\*------------------------------------*/
+/*------------------------------------*\
+   Default fonts
+\*------------------------------------*/
+/*------------------------------------*\
+   Link colours
+\*------------------------------------*/
+/**********************************************************
+* FUNCTIONS
+* *********************************************************/
+/*
+  Useful to make calculations
+ */
+/**********************************************************
+* EXTENDS
+* *********************************************************/
+/*
+  Benefits of extend over mixin: https://css-tricks.com/the-extend-concept/
+ */
+/**********************************************************
+* MIXINS
+* *********************************************************/
+/* -------------------------------------------------------------
+  Sass CSS3 Mixins! The Cross-Browser CSS3 Sass Library
+  By: Matthieu Aussaguel, http://www.mynameismatthieu.com, @matthieu_tweets
+
+  List of CSS3 Sass Mixins File to be @imported and @included as you need
+
+  The purpose of this library is to facilitate the use of CSS3 on different browsers avoiding HARD TO READ and NEVER
+  ENDING css files
+
+  note: All CSS3 Properties are being supported by Safari 5
+  more info: http://www.findmebyip.com/litmus/#css3-properties
+
+  Mixins available:
+    -   css3-prefix             - arguments: Property, Value
+    -   background-gradient     - arguments: Start Color: #3C3C3C, End Color: #999999
+    -   background-radial       - arguments: Start Color: #FFFFFF, Start position: 0%, End Color: #000000, End position: 100%
+    -   background-size         - arguments: Width: 100%, Height: 100%
+    -   background-opacity      - arguments: Color: #000, Opacity: .85
+    -   border-radius           - arguments: Radius: 5px
+    -   border-radius-separate  - arguments: Top Left: 5px, Top Left: 5px, Bottom Left: 5px, Bottom Right: 5px
+    -
+    -   box-rgba                - arguments: R: 60, G: 3, B: 12, Opacity: 0.23, Color: #3C3C3C
+    -   box-shadow              - arguments: X: 2px, Y: 2px, Blur: 5px, Color: rgba(0,0,0,.4)
+    -   box-sizing              - arguments: Type: border-box
+    -   columns                 - arguments: Count: 3, Gap: 10
+    -   double-borders          - arguments: Color One: #3C3C3C, Color Two: #999999, Radius: 0
+
+    -   flip                    - arguments: ScaleX: -1
+    -   font-face               - arguments: Font Family: myFont, Eot File Src: myFont.eot, Woff File Src: myFont.woff, Ttf File Src: myFont.ttf
+    -   opacity                 - arguments: Opacity: 0.5
+    -   outline radius          - arguments: Radius: 5px
+    -   resize                  - arguments: Direction: both
+    -   rotate                  - arguments: Degree: 0, M11: 0, M12: 0, M21: 0, M22: 0
+    CSS Matrix Rotation Calculator http://www.boogdesign.com/examples/transforms/matrix-calculator.html
+    -   text-shadow             - arguments: X: 2px, Y: 2px, Blur: 5px, Color: rgba(0,0,0,.4)
+    -   transform               - arguments: Parameters: null
+    -   transform-style         - arguments: Style: preserve-3d
+    -   transition              - arguments: What: all, Length: 1s, Easing: ease-in-out
+    -   triple-borders          - arguments: Color One: #3C3C3C, Color Two: #999999, Color Three: #000000, Radius: 0
+    -   keyframes               - arguments: Animation name
+                                - content:   Animation css
+    -   animation               - arguments: name duration timing-function delay iteration-count direction fill-mode play-state
+                                             (http://www.w3schools.com/cssref/css3_pr_animation.asp)
+
+
+    - placeholder-color $color
+    - text-truncate
+    - background-image $name, $size
+    - absolute (top Npx right Npx left Npx bottom Npx)
+    - fixed
+    - relative
+    - size $width, $height
+------------------------------------------------------------- */
+/* ADDS A BROWSER PREFIX TO THE PROPERTY */
+/* BACKGROUND GRADIENT */
+/* BACKGROUND RADIAL */
+/* BACKGROUND SIZE */
+/* BACKGROUND COLOR OPACITY */
+/* BORDER RADIUS */
+/* BOX SHADOW */
+/* BOX SIZING */
+/* COLUMNS */
+/* FLIP */
+/* FONT FACE */
+/* OPACITY */
+/* OUTLINE RADIUS */
+/* RESIZE */
+/* ROTATE*/
+/* TEXT SHADOW */
+/* TRANSFORM  */
+/* TRANSFORM STYLE */
+/* TRANSITION */
+/* TRIPLE BORDERS */
+/* KEYFRAMES */
+/* ANIMATION */
+/**
+ * Define breakpoints and media queries
+ */
+@-ms-viewport {
+  width: device-width; }
+
+/******************************************
+* Media queries
+/******************************************/
+.TemplateDeck {
+  background-color: #A11313;
+  order: 2;
+  height: 100%; }
+
+/*# sourceMappingURL=build/sass.map *//**
+*
+* @project Inspire
+* @date 3.2015
+* @author  Daniela Valero, Sapient GmbH
+* @licensor  Publicis Sapient
+* @site Inspire
+*/
+/**
+* Config settings file. Imports all the variables, mixins, and
+* general settings used in the project
+*
+* @project Inspire
+* @date 3.2015
+* @author  Daniela Valero, Sapient GmbH
+* @licensor  Publicis Sapient
+* @site Inspire
+*/
+/*------------------------------------*\
+   Colors
+\*------------------------------------*/
+/*------------------------------------*\
+   Fonts
+\*------------------------------------*/
+/* scss-lint ignore:start */
+/* scss-lint ignore:end */
+/*------------------------------------*\
+   PATHS
+\*------------------------------------*/
+/*------------------------------------*\
+   General settings
+\*------------------------------------*/
+/*------------------------------------*\
+   Default fonts
+\*------------------------------------*/
+/*------------------------------------*\
+   Link colours
+\*------------------------------------*/
+/**********************************************************
+* FUNCTIONS
+* *********************************************************/
+/*
+  Useful to make calculations
+ */
+/**********************************************************
+* EXTENDS
+* *********************************************************/
+/*
+  Benefits of extend over mixin: https://css-tricks.com/the-extend-concept/
+ */
+/**********************************************************
+* MIXINS
+* *********************************************************/
+/* -------------------------------------------------------------
+  Sass CSS3 Mixins! The Cross-Browser CSS3 Sass Library
+  By: Matthieu Aussaguel, http://www.mynameismatthieu.com, @matthieu_tweets
+
+  List of CSS3 Sass Mixins File to be @imported and @included as you need
+
+  The purpose of this library is to facilitate the use of CSS3 on different browsers avoiding HARD TO READ and NEVER
+  ENDING css files
+
+  note: All CSS3 Properties are being supported by Safari 5
+  more info: http://www.findmebyip.com/litmus/#css3-properties
+
+  Mixins available:
+    -   css3-prefix             - arguments: Property, Value
+    -   background-gradient     - arguments: Start Color: #3C3C3C, End Color: #999999
+    -   background-radial       - arguments: Start Color: #FFFFFF, Start position: 0%, End Color: #000000, End position: 100%
+    -   background-size         - arguments: Width: 100%, Height: 100%
+    -   background-opacity      - arguments: Color: #000, Opacity: .85
+    -   border-radius           - arguments: Radius: 5px
+    -   border-radius-separate  - arguments: Top Left: 5px, Top Left: 5px, Bottom Left: 5px, Bottom Right: 5px
+    -
+    -   box-rgba                - arguments: R: 60, G: 3, B: 12, Opacity: 0.23, Color: #3C3C3C
+    -   box-shadow              - arguments: X: 2px, Y: 2px, Blur: 5px, Color: rgba(0,0,0,.4)
+    -   box-sizing              - arguments: Type: border-box
+    -   columns                 - arguments: Count: 3, Gap: 10
+    -   double-borders          - arguments: Color One: #3C3C3C, Color Two: #999999, Radius: 0
+
+    -   flip                    - arguments: ScaleX: -1
+    -   font-face               - arguments: Font Family: myFont, Eot File Src: myFont.eot, Woff File Src: myFont.woff, Ttf File Src: myFont.ttf
+    -   opacity                 - arguments: Opacity: 0.5
+    -   outline radius          - arguments: Radius: 5px
+    -   resize                  - arguments: Direction: both
+    -   rotate                  - arguments: Degree: 0, M11: 0, M12: 0, M21: 0, M22: 0
+    CSS Matrix Rotation Calculator http://www.boogdesign.com/examples/transforms/matrix-calculator.html
+    -   text-shadow             - arguments: X: 2px, Y: 2px, Blur: 5px, Color: rgba(0,0,0,.4)
+    -   transform               - arguments: Parameters: null
+    -   transform-style         - arguments: Style: preserve-3d
+    -   transition              - arguments: What: all, Length: 1s, Easing: ease-in-out
+    -   triple-borders          - arguments: Color One: #3C3C3C, Color Two: #999999, Color Three: #000000, Radius: 0
+    -   keyframes               - arguments: Animation name
+                                - content:   Animation css
+    -   animation               - arguments: name duration timing-function delay iteration-count direction fill-mode play-state
+                                             (http://www.w3schools.com/cssref/css3_pr_animation.asp)
+
+
+    - placeholder-color $color
+    - text-truncate
+    - background-image $name, $size
+    - absolute (top Npx right Npx left Npx bottom Npx)
+    - fixed
+    - relative
+    - size $width, $height
+------------------------------------------------------------- */
+/* ADDS A BROWSER PREFIX TO THE PROPERTY */
+/* BACKGROUND GRADIENT */
+/* BACKGROUND RADIAL */
+/* BACKGROUND SIZE */
+/* BACKGROUND COLOR OPACITY */
+/* BORDER RADIUS */
+/* BOX SHADOW */
+/* BOX SIZING */
+/* COLUMNS */
+/* FLIP */
+/* FONT FACE */
+/* OPACITY */
+/* OUTLINE RADIUS */
+/* RESIZE */
+/* ROTATE*/
+/* TEXT SHADOW */
+/* TRANSFORM  */
+/* TRANSFORM STYLE */
+/* TRANSITION */
+/* TRIPLE BORDERS */
+/* KEYFRAMES */
+/* ANIMATION */
+/**
+ * Define breakpoints and media queries
+ */
+@-ms-viewport {
+  width: device-width; }
+
+/******************************************
+* Media queries
+/******************************************/
+.SlidesView {
+  background-color: #757575; }
+
+/*# sourceMappingURL=build/sass.map *//**
+* Navigation bar styes
+*
+* @project Inspire
+* @date 3.2015
+* @author  Daniela Valero, Sapient GmbH
+* @licensor  Publicis Sapient
+* @site Inspire
+*
+ * Imports with webpack
+ * To be available on: https://github.com/jtangelder/sass-loader/pull/53
+ */
+/**
+* Config settings file. Imports all the variables, mixins, and
+* general settings used in the project
+*
+* @project Inspire
+* @date 3.2015
+* @author  Daniela Valero, Sapient GmbH
+* @licensor  Publicis Sapient
+* @site Inspire
+*/
+/*------------------------------------*\
+   Colors
+\*------------------------------------*/
+/*------------------------------------*\
+   Fonts
+\*------------------------------------*/
+/* scss-lint ignore:start */
+/* scss-lint ignore:end */
+/*------------------------------------*\
+   PATHS
+\*------------------------------------*/
+/*------------------------------------*\
+   General settings
+\*------------------------------------*/
+/*------------------------------------*\
+   Default fonts
+\*------------------------------------*/
+/*------------------------------------*\
+   Link colours
+\*------------------------------------*/
+/**********************************************************
+* FUNCTIONS
+* *********************************************************/
+/*
+  Useful to make calculations
+ */
+/**********************************************************
+* EXTENDS
+* *********************************************************/
+/*
+  Benefits of extend over mixin: https://css-tricks.com/the-extend-concept/
+ */
+.Navbar {
+  padding: 0 1.25em; }
+
+.Navbar-Brand .Navbar-Brand-Name, .Navbar-Brand img {
+  display: table-cell;
+  vertical-align: middle; }
+
+/**********************************************************
+* MIXINS
+* *********************************************************/
+/* -------------------------------------------------------------
+  Sass CSS3 Mixins! The Cross-Browser CSS3 Sass Library
+  By: Matthieu Aussaguel, http://www.mynameismatthieu.com, @matthieu_tweets
+
+  List of CSS3 Sass Mixins File to be @imported and @included as you need
+
+  The purpose of this library is to facilitate the use of CSS3 on different browsers avoiding HARD TO READ and NEVER
+  ENDING css files
+
+  note: All CSS3 Properties are being supported by Safari 5
+  more info: http://www.findmebyip.com/litmus/#css3-properties
+
+  Mixins available:
+    -   css3-prefix             - arguments: Property, Value
+    -   background-gradient     - arguments: Start Color: #3C3C3C, End Color: #999999
+    -   background-radial       - arguments: Start Color: #FFFFFF, Start position: 0%, End Color: #000000, End position: 100%
+    -   background-size         - arguments: Width: 100%, Height: 100%
+    -   background-opacity      - arguments: Color: #000, Opacity: .85
+    -   border-radius           - arguments: Radius: 5px
+    -   border-radius-separate  - arguments: Top Left: 5px, Top Left: 5px, Bottom Left: 5px, Bottom Right: 5px
+    -
+    -   box-rgba                - arguments: R: 60, G: 3, B: 12, Opacity: 0.23, Color: #3C3C3C
+    -   box-shadow              - arguments: X: 2px, Y: 2px, Blur: 5px, Color: rgba(0,0,0,.4)
+    -   box-sizing              - arguments: Type: border-box
+    -   columns                 - arguments: Count: 3, Gap: 10
+    -   double-borders          - arguments: Color One: #3C3C3C, Color Two: #999999, Radius: 0
+
+    -   flip                    - arguments: ScaleX: -1
+    -   font-face               - arguments: Font Family: myFont, Eot File Src: myFont.eot, Woff File Src: myFont.woff, Ttf File Src: myFont.ttf
+    -   opacity                 - arguments: Opacity: 0.5
+    -   outline radius          - arguments: Radius: 5px
+    -   resize                  - arguments: Direction: both
+    -   rotate                  - arguments: Degree: 0, M11: 0, M12: 0, M21: 0, M22: 0
+    CSS Matrix Rotation Calculator http://www.boogdesign.com/examples/transforms/matrix-calculator.html
+    -   text-shadow             - arguments: X: 2px, Y: 2px, Blur: 5px, Color: rgba(0,0,0,.4)
+    -   transform               - arguments: Parameters: null
+    -   transform-style         - arguments: Style: preserve-3d
+    -   transition              - arguments: What: all, Length: 1s, Easing: ease-in-out
+    -   triple-borders          - arguments: Color One: #3C3C3C, Color Two: #999999, Color Three: #000000, Radius: 0
+    -   keyframes               - arguments: Animation name
+                                - content:   Animation css
+    -   animation               - arguments: name duration timing-function delay iteration-count direction fill-mode play-state
+                                             (http://www.w3schools.com/cssref/css3_pr_animation.asp)
+
+
+    - placeholder-color $color
+    - text-truncate
+    - background-image $name, $size
+    - absolute (top Npx right Npx left Npx bottom Npx)
+    - fixed
+    - relative
+    - size $width, $height
+------------------------------------------------------------- */
+/* ADDS A BROWSER PREFIX TO THE PROPERTY */
+/* BACKGROUND GRADIENT */
+/* BACKGROUND RADIAL */
+/* BACKGROUND SIZE */
+/* BACKGROUND COLOR OPACITY */
+/* BORDER RADIUS */
+/* BOX SHADOW */
+/* BOX SIZING */
+/* COLUMNS */
+/* FLIP */
+/* FONT FACE */
+/* OPACITY */
+/* OUTLINE RADIUS */
+/* RESIZE */
+/* ROTATE*/
+/* TEXT SHADOW */
+/* TRANSFORM  */
+/* TRANSFORM STYLE */
+/* TRANSITION */
+/* TRIPLE BORDERS */
+/* KEYFRAMES */
+/* ANIMATION */
+/**
+ * Define breakpoints and media queries
+ */
+@-ms-viewport {
+  width: device-width; }
+
+/******************************************
+* Media queries
+/******************************************/
+.Navbar {
+  color: #BDBDBD;
+  background-color: #212121;
+  padding-top: 0.3125em;
+  padding-bottom: 0.3125em; }
+
+.Navbar-Brand {
+  display: table; }
+  .Navbar-Brand .Navbar-Brand-Name {
+    padding-left: 0.3125em; }
+
+/*# sourceMappingURL=build/sass.map *//**
+*
+* @project Inspire
+* @date 3.2015
+* @author  Daniela Valero, Sapient GmbH
+* @licensor  Publicis Sapient
+* @site Inspire
+*/
+/**
+* Config settings file. Imports all the variables, mixins, and
+* general settings used in the project
+*
+* @project Inspire
+* @date 3.2015
+* @author  Daniela Valero, Sapient GmbH
+* @licensor  Publicis Sapient
+* @site Inspire
+*/
+/*------------------------------------*\
+   Colors
+\*------------------------------------*/
+/*------------------------------------*\
+   Fonts
+\*------------------------------------*/
+/* scss-lint ignore:start */
+/* scss-lint ignore:end */
+/*------------------------------------*\
+   PATHS
+\*------------------------------------*/
+/*------------------------------------*\
+   General settings
+\*------------------------------------*/
+/*------------------------------------*\
+   Default fonts
+\*------------------------------------*/
+/*------------------------------------*\
+   Link colours
+\*------------------------------------*/
+/**********************************************************
+* FUNCTIONS
+* *********************************************************/
+/*
+  Useful to make calculations
+ */
+/**********************************************************
+* EXTENDS
+* *********************************************************/
+/*
+  Benefits of extend over mixin: https://css-tricks.com/the-extend-concept/
+ */
+/**********************************************************
+* MIXINS
+* *********************************************************/
+/* -------------------------------------------------------------
+  Sass CSS3 Mixins! The Cross-Browser CSS3 Sass Library
+  By: Matthieu Aussaguel, http://www.mynameismatthieu.com, @matthieu_tweets
+
+  List of CSS3 Sass Mixins File to be @imported and @included as you need
+
+  The purpose of this library is to facilitate the use of CSS3 on different browsers avoiding HARD TO READ and NEVER
+  ENDING css files
+
+  note: All CSS3 Properties are being supported by Safari 5
+  more info: http://www.findmebyip.com/litmus/#css3-properties
+
+  Mixins available:
+    -   css3-prefix             - arguments: Property, Value
+    -   background-gradient     - arguments: Start Color: #3C3C3C, End Color: #999999
+    -   background-radial       - arguments: Start Color: #FFFFFF, Start position: 0%, End Color: #000000, End position: 100%
+    -   background-size         - arguments: Width: 100%, Height: 100%
+    -   background-opacity      - arguments: Color: #000, Opacity: .85
+    -   border-radius           - arguments: Radius: 5px
+    -   border-radius-separate  - arguments: Top Left: 5px, Top Left: 5px, Bottom Left: 5px, Bottom Right: 5px
+    -
+    -   box-rgba                - arguments: R: 60, G: 3, B: 12, Opacity: 0.23, Color: #3C3C3C
+    -   box-shadow              - arguments: X: 2px, Y: 2px, Blur: 5px, Color: rgba(0,0,0,.4)
+    -   box-sizing              - arguments: Type: border-box
+    -   columns                 - arguments: Count: 3, Gap: 10
+    -   double-borders          - arguments: Color One: #3C3C3C, Color Two: #999999, Radius: 0
+
+    -   flip                    - arguments: ScaleX: -1
+    -   font-face               - arguments: Font Family: myFont, Eot File Src: myFont.eot, Woff File Src: myFont.woff, Ttf File Src: myFont.ttf
+    -   opacity                 - arguments: Opacity: 0.5
+    -   outline radius          - arguments: Radius: 5px
+    -   resize                  - arguments: Direction: both
+    -   rotate                  - arguments: Degree: 0, M11: 0, M12: 0, M21: 0, M22: 0
+    CSS Matrix Rotation Calculator http://www.boogdesign.com/examples/transforms/matrix-calculator.html
+    -   text-shadow             - arguments: X: 2px, Y: 2px, Blur: 5px, Color: rgba(0,0,0,.4)
+    -   transform               - arguments: Parameters: null
+    -   transform-style         - arguments: Style: preserve-3d
+    -   transition              - arguments: What: all, Length: 1s, Easing: ease-in-out
+    -   triple-borders          - arguments: Color One: #3C3C3C, Color Two: #999999, Color Three: #000000, Radius: 0
+    -   keyframes               - arguments: Animation name
+                                - content:   Animation css
+    -   animation               - arguments: name duration timing-function delay iteration-count direction fill-mode play-state
+                                             (http://www.w3schools.com/cssref/css3_pr_animation.asp)
+
+
+    - placeholder-color $color
+    - text-truncate
+    - background-image $name, $size
+    - absolute (top Npx right Npx left Npx bottom Npx)
+    - fixed
+    - relative
+    - size $width, $height
+------------------------------------------------------------- */
+/* ADDS A BROWSER PREFIX TO THE PROPERTY */
+/* BACKGROUND GRADIENT */
+/* BACKGROUND RADIAL */
+/* BACKGROUND SIZE */
+/* BACKGROUND COLOR OPACITY */
+/* BORDER RADIUS */
+/* BOX SHADOW */
+/* BOX SIZING */
+/* COLUMNS */
+/* FLIP */
+/* FONT FACE */
+/* OPACITY */
+/* OUTLINE RADIUS */
+/* RESIZE */
+/* ROTATE*/
+/* TEXT SHADOW */
+/* TRANSFORM  */
+/* TRANSFORM STYLE */
+/* TRANSITION */
+/* TRIPLE BORDERS */
+/* KEYFRAMES */
+/* ANIMATION */
+/**
+ * Define breakpoints and media queries
+ */
+@-ms-viewport {
+  width: device-width; }
+
+/******************************************
+* Media queries
+/******************************************/
+.Toolbar {
+  background: #212121;
+  color: #BDBDBD; }
+
+/*# sourceMappingURL=build/sass.map *//**
+*
+*
+* @project Inspire
+* @date 3.2015
+* @author  Daniela Valero, Sapient GmbH
+* @licensor  Publicis Sapient
+* @site Inspire
+*/
+/**
+* Config settings file. Imports all the variables, mixins, and
+* general settings used in the project
+*
+* @project Inspire
+* @date 3.2015
+* @author  Daniela Valero, Sapient GmbH
+* @licensor  Publicis Sapient
+* @site Inspire
+*/
+/*------------------------------------*\
+   Colors
+\*------------------------------------*/
+/*------------------------------------*\
+   Fonts
+\*------------------------------------*/
+/* scss-lint ignore:start */
+/* scss-lint ignore:end */
+/*------------------------------------*\
+   PATHS
+\*------------------------------------*/
+/*------------------------------------*\
+   General settings
+\*------------------------------------*/
+/*------------------------------------*\
+   Default fonts
+\*------------------------------------*/
+/*------------------------------------*\
+   Link colours
+\*------------------------------------*/
+/**********************************************************
+* FUNCTIONS
+* *********************************************************/
+/*
+  Useful to make calculations
+ */
+/**********************************************************
+* EXTENDS
+* *********************************************************/
+/*
+  Benefits of extend over mixin: https://css-tricks.com/the-extend-concept/
+ */
+/**********************************************************
+* MIXINS
+* *********************************************************/
+/* -------------------------------------------------------------
+  Sass CSS3 Mixins! The Cross-Browser CSS3 Sass Library
+  By: Matthieu Aussaguel, http://www.mynameismatthieu.com, @matthieu_tweets
+
+  List of CSS3 Sass Mixins File to be @imported and @included as you need
+
+  The purpose of this library is to facilitate the use of CSS3 on different browsers avoiding HARD TO READ and NEVER
+  ENDING css files
+
+  note: All CSS3 Properties are being supported by Safari 5
+  more info: http://www.findmebyip.com/litmus/#css3-properties
+
+  Mixins available:
+    -   css3-prefix             - arguments: Property, Value
+    -   background-gradient     - arguments: Start Color: #3C3C3C, End Color: #999999
+    -   background-radial       - arguments: Start Color: #FFFFFF, Start position: 0%, End Color: #000000, End position: 100%
+    -   background-size         - arguments: Width: 100%, Height: 100%
+    -   background-opacity      - arguments: Color: #000, Opacity: .85
+    -   border-radius           - arguments: Radius: 5px
+    -   border-radius-separate  - arguments: Top Left: 5px, Top Left: 5px, Bottom Left: 5px, Bottom Right: 5px
+    -
+    -   box-rgba                - arguments: R: 60, G: 3, B: 12, Opacity: 0.23, Color: #3C3C3C
+    -   box-shadow              - arguments: X: 2px, Y: 2px, Blur: 5px, Color: rgba(0,0,0,.4)
+    -   box-sizing              - arguments: Type: border-box
+    -   columns                 - arguments: Count: 3, Gap: 10
+    -   double-borders          - arguments: Color One: #3C3C3C, Color Two: #999999, Radius: 0
+
+    -   flip                    - arguments: ScaleX: -1
+    -   font-face               - arguments: Font Family: myFont, Eot File Src: myFont.eot, Woff File Src: myFont.woff, Ttf File Src: myFont.ttf
+    -   opacity                 - arguments: Opacity: 0.5
+    -   outline radius          - arguments: Radius: 5px
+    -   resize                  - arguments: Direction: both
+    -   rotate                  - arguments: Degree: 0, M11: 0, M12: 0, M21: 0, M22: 0
+    CSS Matrix Rotation Calculator http://www.boogdesign.com/examples/transforms/matrix-calculator.html
+    -   text-shadow             - arguments: X: 2px, Y: 2px, Blur: 5px, Color: rgba(0,0,0,.4)
+    -   transform               - arguments: Parameters: null
+    -   transform-style         - arguments: Style: preserve-3d
+    -   transition              - arguments: What: all, Length: 1s, Easing: ease-in-out
+    -   triple-borders          - arguments: Color One: #3C3C3C, Color Two: #999999, Color Three: #000000, Radius: 0
+    -   keyframes               - arguments: Animation name
+                                - content:   Animation css
+    -   animation               - arguments: name duration timing-function delay iteration-count direction fill-mode play-state
+                                             (http://www.w3schools.com/cssref/css3_pr_animation.asp)
+
+
+    - placeholder-color $color
+    - text-truncate
+    - background-image $name, $size
+    - absolute (top Npx right Npx left Npx bottom Npx)
+    - fixed
+    - relative
+    - size $width, $height
+------------------------------------------------------------- */
+/* ADDS A BROWSER PREFIX TO THE PROPERTY */
+/* BACKGROUND GRADIENT */
+/* BACKGROUND RADIAL */
+/* BACKGROUND SIZE */
+/* BACKGROUND COLOR OPACITY */
+/* BORDER RADIUS */
+/* BOX SHADOW */
+/* BOX SIZING */
+/* COLUMNS */
+/* FLIP */
+/* FONT FACE */
+/* OPACITY */
+/* OUTLINE RADIUS */
+/* RESIZE */
+/* ROTATE*/
+/* TEXT SHADOW */
+/* TRANSFORM  */
+/* TRANSFORM STYLE */
+/* TRANSITION */
+/* TRIPLE BORDERS */
+/* KEYFRAMES */
+/* ANIMATION */
+/**
+ * Define breakpoints and media queries
+ */
+@-ms-viewport {
+  width: device-width; }
+
+/******************************************
+* Media queries
+/******************************************/
+.ItemEditor {
+  border-bottom: 1px solid #BDBDBD;
+  background-color: #e0e0e0;
+  order: 1;
+  height: 100%; }
+
+/*# sourceMappingURL=build/sass.map */
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi4vc3JjL3N0eWxlcy9fbWVkaWFRdWVyaWVzLnNjc3MiLCJ3ZWJwYWNrOi8vLy4uL3NyYy9jb21wb25lbnRzL0Zvb3Rlci9Gb290ZXIuc2NzcyIsIndlYnBhY2s6Ly8vLi4vc3JjL2NvbXBvbmVudHMvQXBwL0FwcC5zY3NzIiwid2VicGFjazovLy8uLi9zcmMvc3R5bGVzL19taXhpbnMuc2NzcyIsIndlYnBhY2s6Ly8vLi4vc3JjL2NvbXBvbmVudHMvQ29udGVudEFyZWEvQ29udGVudEFyZWEuc2NzcyIsIndlYnBhY2s6Ly8vLi4vc3JjL2NvbXBvbmVudHMvSW5zcGlyZUVkaXRvci9JbnNwaXJlRWRpdG9yLnNjc3MiLCJ3ZWJwYWNrOi8vLy4uL3NyYy9jb21wb25lbnRzL0luc3BpcmVFZGl0b3IvVGVtcGxhdGVEZWNrL1RlbXBsYXRlRGVjay5zY3NzIiwid2VicGFjazovLy8uLi9zcmMvY29tcG9uZW50cy9JbnNwaXJlRWRpdG9yL1NsaWRlc1ZpZXcvU2xpZGVzVmlldy5zY3NzIiwid2VicGFjazovLy8uLi9zcmMvY29tcG9uZW50cy9OYXZiYXIvTmF2YmFyLnNjc3MiLCJ3ZWJwYWNrOi8vLy4uL3NyYy9jb21wb25lbnRzL0luc3BpcmVFZGl0b3IvVG9vbGJhci9Ub29sYmFyLnNjc3MiLCJ3ZWJwYWNrOi8vLy4uL3NyYy9jb21wb25lbnRzL0luc3BpcmVFZGl0b3IvSXRlbUVkaXRvci9JdGVtRWRpdG9yLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztFQWVTOzs7OztBQ0hUO0VBQ2E7RUFDSjtFQUVEO0lBQ0k7SUFFVTtNQUNQO01BQ007RUFJYjtJQUNROzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7RURYUDs7Ozs7QUVKVDtFQ2dEVztFQUNBO0VBQ0E7RUFDQTtFQUNBO0VEbERHO0VBQ0c7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FDMEJDO0VBQ1A7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztFSDFCRjs7Ozs7QUlIVDtFQUVPOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztFSkNFOzs7OztBS0pUO0VBQ1U7RUFFRztFRjZDRjtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VFL0NNOztJQUVQOztBQUlWO0VBQ2E7O0FBR0M7RUFFSDs7QUFHWDtFQUNrQjtFQUNIO0VGMEJKO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FFekJYO0VBQ2M7O0FBR2Q7RUFDYzs7QUxXWjtFS053QjtJQUVmOztBTElUO0VLR1k7SUFFSjtFQUdWO0lBQ1c7RUFFWDtJQUNXO0lBQ0Q7RUFFVjtJQUNXO0VBRVg7SUFDVztFQUlrQjtJQUdqQjs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7RUxqRUg7Ozs7O0FNSlQ7RUFDbUI7RUFDWDtFQUNDOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztFTkNBOzs7OztBT0pUO0VBQ0U7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FKNEJnQjtFQUNQOztBQUdzRDtFQUN2RDtFQUNROzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7RUgvQlQ7Ozs7O0FRQVQ7RUFFRTtFQUNBO0VBQ2E7RUFDRzs7QUFHbEI7RUFDVztFQUVHO0lBRUk7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0VSYlQ7Ozs7O0FTSlQ7RUFHRTtFQUNBOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7RVRBTzs7Ozs7QVVIVDtFQUNpQjtFQUNFO0VBQ1g7RUFDQyIsInNvdXJjZVJvb3QiOiIiLCJmaWxlIjoiY29tcG9uZW50c1NvdXJjZU1hcC5jc3MifQ==*/

@@ -1,0 +1,6 @@
+{
+  "name": "InspireEditor",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./InspireEditor.js"
+}

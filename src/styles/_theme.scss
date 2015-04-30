@@ -1,0 +1,66 @@
+/**
+* Configuration of colours, font families, images. The specific styles
+* which made it lovely
+*
+* @project Inspire
+* @date 3.2015
+* @author  Daniela Valero, Sapient GmbH
+* @licensor  Publicis Sapient
+* @site Inspire
+*/
+/*********************************************
+ * GLOBAL STYLES
+ *********************************************/
+
+body {
+  font-family: $main-font;
+  line-height: $main-line-height;
+  color: $main-font-color;
+  background-color: $background-color;
+  -webkit-font-smoothing: antialiased;
+}
+
+header, .Toolbar-shadow {
+  @include box-shadow(0, 2px, 5px, rgba(0, 0, 0, .26));
+}
+
+/*********************************************
+ * HEADERS
+ *********************************************/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $heading-main-font;
+}
+
+
+/*********************************************
+ * LINKS
+ *********************************************/
+
+a {
+  color: $link-color;
+  @include transition(color .15s ease);
+  &:hover {
+    color: darken( $link-color, 15%);
+    text-decoration: none;
+  }
+}
+/*********************************************
+ * CODE
+ *********************************************/
+
+mark {
+  color: #000;
+  // Addresses styling not present in IE6/7/8/9.
+  background: #ff0;
+}
+pre,
+.codeblock {
+  background-color: #f5f5f5;
+  border: solid 1px #ddd;
+}
