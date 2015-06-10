@@ -1,14 +1,41 @@
+/**
+ * NAMING CONVENTION: BEM-OOCSS http://benfrain.com/modular-css-bem-oocss-naming/
+ *
+ *    Briefly:  .namespace-ComponentName_ModifierName-variant-label {}
+ *
+ *
+ *  File structure: http://smacss.com/
+ *
+ */
+
+//Import reveal base CSS and theme settings
+@import "reveal";
+@import 'theme/template/mixins';
+//Use our own settings instead
 @import "global/settings";
+
+@import "global/normalize";
+@import "global/fonts";
+
 @import "utils/mixins/compassLikeMixins";
 @import "utils/mixins/mixins";
 @import "utils/extends/extends";
-@import "global/normalize";
+
+//Include the reveal theme and ours addind stuff
 @import "global/base";
-@import "global/fonts";
+
+
+/* Utilities: helper classes, which can be used anywhere */
+@import "utils/utilities";
+/* Layout: Styles to position mayor elements on the screen. */
 @import "global/layout";
+/* Modules */
 @import "components/modules";
-@import "theme/revealSpecific";
+/* Slides-components: All the components of the page */
 @import "theme/slides";
-@import "theme/theme";
 @import "pages/d3";
+
+
+//@import 'theme/template/theme';
+@import "theme/theme";
 @import "global/print";

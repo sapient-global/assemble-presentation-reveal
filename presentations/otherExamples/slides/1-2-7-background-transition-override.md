@@ -1,6 +1,6 @@
 ---
 title: Background Transition Override
-data:
+slideDataAttr:
   transition: "linear"
   background: "#dc322f"
   background-transition: "slide"
@@ -10,4 +10,4 @@ published: true
 
 
 You can override background transitions per slide by using
-`data:  background-transition: slide`.
+`slideDataAttr:  background-transition: slide`.

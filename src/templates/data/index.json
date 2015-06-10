@@ -12,7 +12,7 @@
       "assets": ".",
       "ext": ".html",
       "extname": ".html",
-      "page": "\n\n\n<div class=\"ContentAligner\">\n    <div class=\"title__container ContentAligner-CenterLeft\">\n        <h1 class=\"SlideMainTitle u-sans u-bold\">Content</h1>\n        <div class=\"SlideTitleUnderline\"></div>\n    </div>\n\n    <div class=\"ContentAligner-CenterRight\">\n        <ol class=\"u-font-size-25\">\n        {{#each  pages }}\n            <li class=\"u-italic\">\n                <a href=\"{{relative  .. /page.dest this.dest }}\" class=\"u-font-size-25\">{{data.title }}</a>\n            </li>\n        {{/each}}\n        {{#each  slides.pages }}\n          {{#unless data.presentation}}\n            <li class=\"u-italic\">\n                <a href=\"/presentations/{{this.data.menuLink}}/{{this.pageName}}\" class=\"u-font-size-25\">{{data.title }}</a>\n            </li>\n          {{/unless}}\n        {{/each}}\n        </ol>\n    </div>\n</div>\n\n",
+      "page": "\n\n\n<div class=\"ContentAligner\">\n    <div class=\"title__container ContentAligner-CenterLeft\">\n        <h1 class=\"SlideMainTitle u-sans u-bold\">Content</h1>\n        <div class=\"SlideTitleUnderline\"></div>\n    </div>\n\n    <div class=\"ContentAligner-CenterRight\">\n        <ol class=\"u-font-size-25\">\n        {{#each  pages }}\n            <li class=\"u-italic\">\n                <a href=\"{{relative  .. /page.dest this.dest }}\" class=\"u-font-size-25\">{{data.title }}</a>\n            </li>\n        {{/each}}\n        {{#each  slides.pages }}\n          {{#unless data.presentation}}\n            <li class=\"u-italic\">\n                <a href=\"/presentations/{{data.presentation}}/{{this.pageName}}\" class=\"u-font-size-25\">{{data.title }}</a>\n            </li>\n          {{/unless}}\n        {{/each}}\n        </ol>\n    </div>\n</div>\n\n",
       "data": {
         "title": "Presentation Index",
         "menuLink": "Home",
@@ -24,13 +24,19 @@
           "src/templates/pages/index.hbs"
         ],
         "orig": {
-          "cwd": "src/templates/pages/",
-          "dest": "_output/",
-          "expand": true,
-          "flatten": true,
+          "dest": "_output/index.hbs",
           "src": [
-            "index.hbs"
-          ]
+            "src/templates/pages/index.hbs"
+          ],
+          "orig": {
+            "cwd": "src/templates/pages/",
+            "dest": "_output/",
+            "expand": true,
+            "flatten": true,
+            "src": [
+              "index.hbs"
+            ]
+          }
         }
       },
       "index": 0,
@@ -43,5 +49,8 @@
     }
   ],
   "tags": [],
-  "categories": []
+  "categories": [],
+  "presentation": [],
+  "slideDataAttr": [],
+  "classes": []
 }

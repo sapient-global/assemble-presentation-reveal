@@ -24,30 +24,9 @@ module.exports = {
 			],
         tasks: 'sync:assets'
     },
-	globbing: {
-		options: {
-		event: ['added', 'deleted']
-		},
-		files: [
-			'<%= paths.helper %>/_grunt/fileindex.js',
-			'<%= paths.src %>/scss/**/*.scss',
-			'!<%= paths.src %>/scss/_all.scss'
-		],
-		tasks: 'fileindex:libsassGlobbing'
-	},
-	fileindex: {
-		files: [
-			'<%= paths.helper %>/_grunt/fileindex.js'
-		],
-		tasks: 'fileindex:libsassGlobbing'
-	},
 	scss: {
 		files: '<%= paths.src %>/scss/**/*',
 		tasks: 'sass:dist'
-	},
-	universal: {
-		files: '<%= paths.src %>/scss/universal.scss',
-		tasks: 'sass:universal'
 	},
 	templates: {
 		files: ['<%= paths.src %>/{templates/data/static*.*,templates/layouts,templates/partials}/**/{,*/}*.{md,hbs,yml,json}'],

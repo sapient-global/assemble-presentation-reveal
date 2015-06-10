@@ -12,7 +12,7 @@ Set `data-background="#cb4b16"` on a slide to change the full page background to
 
 {% highlight markdown %}
 ---
-data:
+slideDataAttr:
   background: '#cb4b16'
 ---
 {% endhighlight %}
@@ -26,7 +26,7 @@ data:
 
 {% highlight markdown %}
 ---
-data:
+slideDataAttr:
   background: image.png
 ---
 {% endhighlight %}
@@ -38,7 +38,7 @@ data:
 
 {% highlight markdown %}
 ---
-data:
+slideDataAttr:
   background: image.png
   background-repeat: repeat
   background-size: 100px

@@ -1,127 +1,367 @@
-/**
- * Theme styles:
- * All the styles which give the Sapient Style
- *
- */
+// Base theme template for reveal.js overwritten
+
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
 
 body {
-    background-color: $backgroundColor;
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
-    overflow-y: auto;
-    font-family: $mainFont;
-    color: $mainFontColor;
-    @include max-screen(640px) {
-        background: $brand-white;
-        font-size: $doubleFontSize;
-    }
+  overflow-x: hidden;
+  overflow-y: auto;
+  font-family: $mainFont;
+  color: $mainColor;
+  background-color: $backgroundColor;
+
+  @include bodyBackground();
+  -webkit-font-smoothing: antialiased;
+  @include max-screen(640px) {
+    font-size: $doubleFontSize;
+    background: $brand-white;
+  }
 }
+
 .reveal {
-    font-family: $mainFont;
-    font-size: $mainFontSize;
-    font-weight: normal;
-    letter-spacing: -0.02em;
-    color: $mainFontColor;
-    overflow: hidden;
+  font-family: $mainFont;
+  font-size: $mainFontSize;
+  font-weight: normal;
+  color: $mainColor;
+  letter-spacing: -.02em;
 }
+
 ::selection {
-    color: $selectionColor;
-    background: $selectionBackgroundColor;
-    text-shadow: none;
+  color: $selectionColor;
+  text-shadow: none;
+  background: $selectionBackgroundColor;
 }
+
+.slides > section,
+.slides > section > section {
+  font-weight: inherit;
+  line-height: 1.3;
+}
+
 /*********************************************
  * HEADERS
  *********************************************/
 
-h1, h2, h3, h4, h5, h6 {
-    margin: $headingMargin;
-    color: $headingColor;
-    font-family: $headingFont;
-    line-height: $headingLineHeight;
-    text-transform: $headingTextTransform;
+/*.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  margin: $headingMargin;
+  color: $headingColor;
+
+  font-family: $headingFont;
+  font-weight: $headingFontWeight;
+  line-height: $headingLineHeight;
+  letter-spacing: $headingLetterSpacing;
+
+  text-transform: $headingTextTransform;
+  text-shadow: $headingTextShadow;
+
+  word-wrap: break-word;
 }
+
+.reveal h1 {font-size: $heading1Size; }
+.reveal h2 {font-size: $heading2Size; }
+.reveal h3 {font-size: $heading3Size; }
+.reveal h4 {font-size: $heading4Size; }
+
+.reveal h1 {
+  text-shadow: $heading1TextShadow;
+}*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: $headingMargin;
+  font-family: $headingFont;
+  font-weight: $headingFontWeight;
+  line-height: $headingLineHeight;
+  color: $headingColor;
+  text-transform: $headingTextTransform;
+  letter-spacing: $headingLetterSpacing;
+  word-wrap: break-word;
+}
+
+h1 {
+  font-size: $heading1Size;
+}
+h2 {
+  font-size: $heading2Size;
+}
+h3 {
+  font-size: $heading3Size;
+}
+h4 {
+  font-size: $heading4Size;
+}
+
+h1 {
+  text-shadow: $heading1TextShadow;
+}
+
+
 /*********************************************
- * TEXTS
+ * OTHER
  *********************************************/
 
 p, span {
-    color: $mainFontColor;
+  margin: $blockMargin 0;
+  line-height: 1.3;
+  color: $secondaryColor;
 }
+
+
+
+blockquote {
+  position: relative;
+  display: block;
+  width: 70%;
+  padding: 5px;
+  margin: $blockMargin auto;
+  font-style: italic;
+  background: rgba(255, 255, 255, .05);
+  box-shadow: 0 0 2px rgba(0,0,0,.2);
+}
+blockquote p:first-child,
+  blockquote p:last-child {
+  display: inline-block;
+}
+
+q {
+  font-style: italic;
+}
+
+pre {
+  position: relative;
+  display: block;
+  width: 90%;
+  margin: $blockMargin auto;
+  font-family: monospace;
+  font-size: .55em;
+  line-height: 1.2em;
+  text-align: left;
+  word-wrap: break-word;
+  box-shadow: 0 0 6px rgba(0,0,0,.3);
+}
+
+code {
+  font-family: monospace;
+}
+
+pre code {
+  display: block;
+  max-height: 400px;
+  padding: 5px;
+  overflow: auto;
+  color: #dcdcdc;
+  word-wrap: normal;
+  background: #3f3f3f;
+}
+
+table {
+  margin: auto;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+table th {
+  font-weight: bold;
+}
+
+table th,
+table td {
+  padding: .2em .5em .2em .5em;
+  text-align: left;
+  border-bottom: 1px solid;
+}
+
+table th[align="center"],
+table td[align="center"] {
+  text-align: center;
+}
+
+table th[align="right"],
+table td[align="right"] {
+  text-align: right;
+}
+
+table tr:last-child td {
+  border-bottom: none;
+}
+
+
 /*********************************************
  * LINKS
  *********************************************/
 
+a {
+  color: $linkColor;
+  text-decoration: none;
+  -webkit-transition: color .15s ease;
+     -moz-transition: color .15s ease;
+          transition: color .15s ease;
+}
+a:hover {
+  color: $linkColorHover;
+  text-shadow: none;
+  border: none;
+}
+
 a:not(.image) {
-    color: $linkColor;
-    @include transition(color .15s ease);
-    &:hover {
-        color: $linkColorHover;
-    }
+  color: $linkColor;
+
+  @include transition(color .15s ease);
+  &:hover {
+    color: $linkColorHover;
+  }
 }
 .roll span:after {
-    color: #fff;
-    background: darken( $linkColor, 15%);
+  color: #fff;
+  background: darken( $linkColor, 15%);
 }
+
+
 /*********************************************
  * IMAGES
  *********************************************/
 
 section img {
-    margin: 15px 0px;
-    background: rgba(255, 255, 255, 0.12);
-    border: 4px solid $mainColor;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-    @include transition(all .2s linear);
+  margin: 15px 0;
+  background: rgba(255,255,255,.12);
+  border: 4px solid $mainColor;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+
+  @include transition(all .2s linear);
 }
+
+a img {
+  -webkit-transition: all .15s linear;
+     -moz-transition: all .15s linear;
+          transition: all .15s linear;
+}
+
 a:hover img {
-    background: rgba(255, 255, 255, 0.2);
-    border-color: $linkColor;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.55);
+  background: rgba(255,255,255,.2);
+  border-color: $linkColor;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .55);
 }
+
+
+
+/*********************************************
+ * NAVIGATION CONTROLS
+ *********************************************/
+
+.reveal .controls div.navigate-left,
+.reveal .controls div.navigate-left.enabled {
+  border-right-color: $controlsColor;
+}
+
+.reveal .controls div.navigate-right,
+.reveal .controls div.navigate-right.enabled {
+  border-left-color: $controlsColor;
+}
+
+.reveal .controls div.navigate-up,
+.reveal .controls div.navigate-up.enabled {
+  border-bottom-color: $controlsColor;
+}
+
+.reveal .controls div.navigate-down,
+.reveal .controls div.navigate-down.enabled {
+  border-top-color: $controlsColor;
+}
+
+.reveal .controls div.navigate-left.enabled:hover {
+  border-right-color: $controlsColorHover;
+}
+
+.reveal .controls div.navigate-right.enabled:hover {
+  border-left-color: $controlsColorHover;
+}
+
+.reveal .controls div.navigate-up.enabled:hover {
+  border-bottom-color: $controlsColorHover;
+}
+
+.reveal .controls div.navigate-down.enabled:hover {
+  border-top-color: $controlsColorHover;
+}
+
+
+
+
+/*********************************************
+ * PROGRESS BAR
+ *********************************************/
+
+.reveal .progress {
+  background: rgba(0,0,0,.2);
+}
+.reveal .progress span {
+  background: $linkColor;
+  -webkit-transition: width 800ms cubic-bezier(.260, .860, .440, .985);
+     -moz-transition: width 800ms cubic-bezier(.260, .860, .440, .985);
+          transition: width 800ms cubic-bezier(.260, .860, .440, .985);
+}
+
+/*********************************************
+ * SLIDE NUMBER
+ *********************************************/
+.reveal .slide-number {
+  color: $linkColor;
+}
+
 /*------------------------------------*\
   Full screen
 \*------------------------------------*/
 
 .FullScreenToggleIcon {
-    display: none;
+  display: none;
 }
 .FullScreenToggleIcon {
-    @include svg-bg("icon/zoom_in_active");
-    pointer-events: auto;
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 1;
-    display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  display: block;
+  width: 40px;
+  height: 40px;
+  pointer-events: auto;
+
+  @include svg-bg("icon/zoom_in_active");
 }
 body {
-    @include fullscreen {
-        background: #fff !important;
-    }
+  @include fullscreen {
+    background: #fff !important;
+  }
 }
 .OuterLogo {
-    display: none;
+  display: none;
 }
 @include fullscreen2 {
-    .slides-step {
-        box-shadow: none !important;
-        border: 0 !important;
-        opacity: 0;
-        &.active {
-            opacity: 1;
-        }
-        .everform {
-            @include transform(scale(3));
-            right: -500px;
-        }
+  .slides-step {
+    border: 0 !important;
+    box-shadow: none !important;
+    opacity: 0;
+    &.active {
+      opacity: 1;
     }
-    .FullScreenToggleIcon {
-        @include svg-bg("icon/zoom_out_active");
-        box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
+    .everform {
+      right: -500px;
+
+      @include transform(scale(3));
     }
+  }
+  .FullScreenToggleIcon {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
+
+    @include svg-bg("icon/zoom_out_active");
+  }
 }

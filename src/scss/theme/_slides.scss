@@ -1,80 +1,94 @@
-.slides {
+
+.reveal .slides {
     text-align: left;
-    @at-root {
-        &-step {
-            background-color: white;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
-            height: 700px;
-            margin: 20px auto;
-            @include box-sizing(border-box);
-            .everform {
-                position: absolute;
-                top: 0px;
-                right: 0;
-                fill: $everformColor;
-                z-index: -1;
-            }
-            &.slides-step-hideEverform {
-                .everform {
-                    display:none;
-                }
-            }
-            @include max-screen(640px) {
-                background: transparent;
-                box-shadow: none;
-                .everform {
-                    @include transform(scale(3));
-                    right: -500px !important;
-                    width: 424px;
+}
 
-                }
-            }
+.reveal .slides > section {
+  padding: 20px;
+}
 
+.slides-step {
+    background-color: white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
+    height: 700px;
 
-            @at-root &_GraphicSlide {
-                .everform {
-                    display: none;
-                }
-            }
-            @at-root &_SecondaryBackgroundColor {
-                background-color: $brand-black;
-                @at-root &-title {
-                    color: #fff;
-                }
-                @at-root &-subtitle {
-                    color: $brand-blue;
-                }
-                @at-root &-topicIndex {
-                    color: $dark-gray;
-                }
-            }
-            @at-root &_TertiaryBackgroundColor {
-                background-color: $brand-blue;
-                .everform {
-                    fill: #fff;
-                }
-                @at-root &-title {
-                    color: $brand-black;
-                }
-                @at-root &-subtitle {
-                    color: #fff;
-                }
-                @at-root &-topicIndex {
-                    color: lighten($brand-blue, 30%);
-                }
-            }
-            @at-root &_InsightBackgroundColor {
-                background-color: $brand-red;
-                height: 100%;
-                .everform {
-                    display: none;
-                }
-                @at-root {
-                    &-title, &-subtitle {
-                        color: #fff;
-                    }
-                }
-            }
+    @include box-sizing(border-box);
+
+    .everform {
+        position: absolute;
+        top: 0px;
+        right: 0;
+        fill: $everformColor;
+        z-index: -1;
+    }
+    &.slides-step-hideEverform {
+        .everform {
+            display: none;
+        }
+    }
+    @include max-screen(640px) {
+        background: transparent;
+        box-shadow: none;
+        .everform {
+            @include transform(scale(3));
+            right: -500px !important;
+            width: 424px;
         }
     }
 }
+
+.slides-step_GraphicSlide {
+    .everform {
+        display: none;
+    }
+}
+
+.slides-step_SecondaryBackgroundColor {
+    background-color: $brand-black;
+}
+
+.slides-step_SecondaryBackgroundColor-title {
+    color: #fff;
+}
+
+.slides-step_SecondaryBackgroundColor-subtitle {
+    color: $brand-blue;
+}
+
+.slides-step_SecondaryBackgroundColor-topicIndex {
+    color: $dark-gray;
+}
+
+.slides-step_TertiaryBackgroundColor {
+    background-color: $brand-blue;
+    .everform {
+        fill: #fff;
+    }
+}
+
+.slides-step_TertiaryBackgroundColor-title {
+    color: $brand-black;
+}
+
+.slides-step_TertiaryBackgroundColor-subtitle {
+    color: #fff;
+}
+
+.slides-step_TertiaryBackgroundColor-topicIndex {
+    color: lighten($brand-blue, 30%);
+}
+
+.slides-step_InsightBackgroundColor {
+    background-color: $brand-red;
+    height: 100%;
+    .everform {
+        display: none;
+    }
+}
+
+.slides-step_InsightBackgroundColor {
+    &-title, &-subtitle {
+        color: #fff;
+    }
+}
+

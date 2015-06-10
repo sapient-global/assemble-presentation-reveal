@@ -27,53 +27,53 @@
 }
 
 .u-bold{
-  font-weight:bold;
+  font-weight:bold !important;
 }
 
 .u-italic {
-  font-style:italic;
+  font-style:italic !important;
 }
 
 .u-sans{
-  font-family: $headingFont;
+  font-family: $headingFont !important;
 }
 
 .u-serif{
-  font-family: $mainFont;
+  font-family: $mainFont !important;
 }
 
 .u-font-size-25{
-  font-size:2.5rem;
+  font-size:2.5rem !important;
 }
 
 .u-dark-gray{
-  color: $dark-gray;
+  color: $dark-gray !important;
 }
 
 .u-blue {
-    color: $brand-blue;
+    color: $brand-blue !important;
 }
 .u-clear-block, .u-clearfix {
     @extend %clearfix;
 }
 .u-float-right {
-    float:right;
+    float:right !important;
 }
 .u-float-left {
-    float:left;
+    float:left !important;
 }
 
 .u-center-text{
-  text-align: center;
+  text-align: center !important;
 }
 .u-ListPadding {
-    padding-left: 6rem;
+    padding-left: 6rem !important;
 }
 
 .u-ShortTitleAlign {
-  padding: 2em 0 0 2em;
+  padding: 2em 0 0 2em !important;
 }
 
 .u-padding-content {
-  padding: 2em;
+  padding: 2em !important;
 }

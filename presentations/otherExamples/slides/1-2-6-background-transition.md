@@ -1,6 +1,6 @@
 ---
 title: Background Transitions
-data:
+slideDataAttr:
   transition: linear
   background: '#d33682'
   background-transition: slide

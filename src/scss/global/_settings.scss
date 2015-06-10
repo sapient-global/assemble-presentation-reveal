@@ -5,11 +5,9 @@
 $imagesPath: "../../assets/img/";
 $fontsPath: "../../assets/fonts";
 
-
 /*------------------------------------*\
    Colors
 \*------------------------------------*/
-
 $everformColor: rgba(220, 221, 222, 0.85);//#DCDDDE;
 $brand-black: #040707;
 $brand-red: #DE2728;
@@ -18,12 +16,10 @@ $brand-gray: #DFE5E6;
 $dark-gray:#999;
 $brand-white:#fff;
 
+/*------------------------------------------*\
+   General settings - Override reveal ones
+\*------------------------------------------*/
 
-
-/*------------------------------------*\
-   General settings
-\*------------------------------------*/
-$mainColor:$brand-black;
 $backgroundColor: $brand-gray;
 
 /*------------------------------------*\
@@ -32,29 +28,40 @@ $backgroundColor: $brand-gray;
 
 $fontFamily-sapientsans: sapientsans, "Helvetica Neue", Helvetica, Arial, sans-serif;
 $fontFamily-sapientSerif: sapientCentroSlab, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
 $fontFamily-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $fontFamily-mono: Monaco, monospace, sans-serif;
+
+$mainFont: $fontFamily-sapientSerif;
+$mainFontSize:16px;
+$doubleFontSize:24px;
+
+$mainColor:$brand-black;
+$secondaryColor:$dark-gray;
+
 
 /*------------------------------------*\
    Headings
 \*------------------------------------*/
-$headingColor: $brand-black;
+
+// Vertical spacing between blocks of text
+$blockMargin: 20px;
+
+// Headings
+$headingMargin: 0 0 $blockMargin 0;
 $headingFont: $fontFamily-sapientsans;
-$headingMargin: 0 0 20px 0;
+$headingColor: $brand-black;
 $headingLineHeight: 0.9em;
 $headingTextTransform: uppercase;
+$headingLetterSpacing: normal;
+$headingTextShadow: none;
+$headingFontWeight: normal;
+$heading1TextShadow: none;
 
-
-/*------------------------------------*\
-   Default fonts
-\*------------------------------------*/
-$mainFont: $fontFamily-sapientSerif; //$fontFamily-sans;
-$mainFontSize:16px;
-$doubleFontSize:24px;
-$mainFontColor:$dark-gray;
-
-
-
+$heading1Size: 4rem;
+$heading2Size: 3rem;
+$heading3Size: 2.5rem;
+$heading4Size: 2rem;
 
 /*------------------------------------*\
    Link colours
@@ -66,6 +73,14 @@ $linkColorHover: lighten( $linkColor, 20% );
 $controlsColor: $dark-gray;
 $controlsColorHover: lighten( $dark-gray, 20% );
 
+
 // Text selection
 $selectionBackgroundColor: #FF5E99;
 $selectionColor: #fff;
+
+
+// Generates the presentation background, can be overridden
+// to return a background image or gradient
+@mixin bodyBackground() {
+  background: $backgroundColor;
+}

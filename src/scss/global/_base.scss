@@ -29,9 +29,10 @@ html {
     overflow-y: scroll;
     // Prevents iOS text size adjust after orientation change, without disabling
     // user zoom. http://www.456bereastreet.com/archive/201012/
-    // -webkit-text-size-adjust: 100%;
-    // -ms-text-size-adjust: 100%;se
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
 }
+
 body {
     font-size: 75%; // 12px
     font-size: 16px;
@@ -182,7 +183,38 @@ sub {
 ul, ol {
     padding: 0;
     display: inline-block;
+
+  text-align: left;
+  margin: 0 0 0 1em;
 }
+
+
+ol {
+  list-style-type: decimal;
+}
+
+ul {
+  list-style-type: disc;
+}
+
+ul ul {
+  list-style-type: square;
+}
+
+ul ul ul {
+  list-style-type: circle;
+}
+
+ ul ul,
+ ul ol,
+ol ol,
+ol ul {
+  display: block;
+  margin-left: 40px;
+}
+
+
+
 dl {
     margin: 1em 0;
     &:first-child {
@@ -199,29 +231,12 @@ dd {
     margin: 0 0 1em 1em;
 }
 
-/*ol {
-        list-style-type: decimal;
+img,
+video,
+iframe {
+  max-width: 95%;
+  max-height: 95%;
 }
-
-ul {
-        list-style-type: disc;
-}
-
-ul ul {
-        list-style-type: square;
-}
-
-ul ul ul {
-        list-style-type: circle;
-}
-
-ul ul,
-ul ol,
-ol ol,
-ol ul {
-        display: block;
-        margin-left: 40px;
-}*/
 
 /*------------------------------------*\
    Images

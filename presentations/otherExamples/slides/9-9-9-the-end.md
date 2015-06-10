@@ -2,7 +2,7 @@
 presentation: otherExamples
 published: true
 title: ""
-data:
+slideDataAttr:
   background: black
 presentation: otherExamples
 published: true

@@ -1,6 +1,6 @@
 ---
 title: Custom Events
-data:
+slideDataAttr:
   state: customevent
 presentation: otherExamples
 published: true

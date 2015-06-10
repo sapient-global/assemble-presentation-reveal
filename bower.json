@@ -1,5 +1,9 @@
 {
-    "version": "0.1.0",
-    "dependencies": {},
-    "name": "assemble-presentation-reveal"
+  "version": "0.1.0",
+  "dependencies": {},
+  "name": "assemble-presentation-reveal",
+  "devDependencies": {
+    "reveal.js": "~3.1.0",
+    "d3": "~3.5.5"
+  }
 }

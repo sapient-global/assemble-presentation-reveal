@@ -2,7 +2,7 @@
 title: "Presentation title"
 presentation: brownbag
 published: true
-
+menuLink: brownbag
 ---
 
 

@@ -9,15 +9,15 @@
 {{> _styles }}
 </head>
 <body class="{{ bodyclass }}">
-  <h1>{{config}} || {{ staticRevealConfig.overview }}</h1>
   {{> body }}
-
  <div class="reveal {{#if staticRevealConfig.parallaxBackgroundImage}}has-parallax-background{{/if}}">
        <div class="slides">
-       {{#iterate presentation}}{{#each pages}}
+       {{#iterate presentation}}{{#is ../menuLink slide}}{{#each pages}}
+       {{#is this.data.menuLink slide}}
           {{> _slide}}
           <div class="page-break"></div>
-        {{/each}}{{/iterate}}
+          {{/is}}
+        {{/each}}{{/is}}{{/iterate}}
       {{#if staticRevealConfig.overview }}
         <section id="overview" class="step"></section>
       {{/if}}

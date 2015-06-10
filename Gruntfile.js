@@ -42,7 +42,7 @@ module.exports = function(grunt) {
 			// dev/working folder
 			dev: '_output',
 			vendor: 'src/vendor',
-      presentations: 'src/presentations',
+      presentations: 'presentations',
       tmp: '.tmp'
 		},
 	// define your ports for grunt-contrib-connect
@@ -65,7 +65,7 @@ module.exports = function(grunt) {
 
 	// SASS Task
 	grunt.registerTask('watchCSS', [
-		'fileindex:libsassGlobbing', // Sass Globbing with Grunt (see: http://www.prototype-generator.com/getting-started/features.html)
+		//'fileindex:libsassGlobbing', // Sass Globbing with Grunt (see: http://www.prototype-generator.com/getting-started/features.html)
 		'sass:dist'
 	]);
 
@@ -112,10 +112,9 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('build', [
 		'clean:dev',
-		'jsbeautifier',
+		//'jsbeautifier',
 		'concurrent:syncing',
 		'watchCSS',
-		'sass',
 		'combine_mq',
 		'cssmin',
     'assemble',

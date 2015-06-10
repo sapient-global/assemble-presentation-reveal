@@ -15,69 +15,70 @@
 .ContentContainer {
     padding: 2em;
 }
-
-
-
 /*doc
 ---
 title: Title Aligner
 name: TitleAligner
-category: layuout
+presentation: layuout
 ---
 */
 
 .TitleAligner {
     display: flex;
-    @at-root {
-        &-CenterCenter {
-            align-items: center;
-            height: 90%;
-        }
-        &-TopLeft {
-            align-items: flex-start;
-        }
-        &-CenterLeft {
-            align-items: center;
-            height: 90%;
-        }
-        &-CenterRight {
-            align-items: center;
-            height: 90%;
-        }
-    }
 }
 
+.TitleAligner-CenterCenter {
+    align-items: center;
+    height: 90%;
+}
+
+.TitleAligner-TopLeft {
+    align-items: flex-start;
+}
+
+.TitleAligner-CenterLeft {
+    align-items: center;
+    height: 90%;
+}
+
+.TitleAligner-CenterRight {
+    align-items: center;
+    height: 90%;
+}
 /*doc
 ---
 title: Content Aligner
 name: ContentAligner
-category: layuout
+presentation: layuout
 ---
 */
 
 .ContentAligner {
     display: flex;
     height: 90%;
-    @at-root {
-        &-CenterLeft {
-            order: 1;
-            width: 50%;
-            align-self: center;
-        }
-        &-CenterRight {
-            order: 2;
-            align-self: center;
-            width: 50%;
-        }
-        &-Vertical {
-            flex-direction: column;
-            justify-content: space-around;
-        }
-        &-LeftTop {
-            order: 1;
-        }
-        &-LeftBottom {
-            order: 2;
-        }
-    }
+}
+
+.ContentAligner-CenterLeft {
+    order: 1;
+    width: 50%;
+    align-self: center;
+}
+
+.ContentAligner-CenterRight {
+    order: 2;
+    align-self: center;
+    width: 50%;
+}
+
+.ContentAligner-Vertical {
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.ContentAligner-LeftTop {
+    order: 1;
+}
+
+.ContentAligner-LeftBottom {
+    order: 2;
 }

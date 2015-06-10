@@ -6,10 +6,9 @@ classes:
  - slides-step_SecondaryBackgroundColor
  - AlternativeBackground
  - slides-step-hideEverform
-
-data:
-  background: "assets/img/desktop.jpg"
-  transition: linear
+slideDataAttr:
+ - background: "assets/img/desktop.jpg"
+ - transition: linear
 ---
 <div class="TitleAligner TitleAligner-CenterCenter">
         <div>

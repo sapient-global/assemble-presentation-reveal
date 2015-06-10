@@ -36,7 +36,7 @@ module.exports = {
           'global/_fonts.scss',
           'global/_layout.scss',
 					'icons/**/*.scss',
-          'utils/utilities.scss',
+          'utils/_utilities.scss',
           'components/*.scss',
           'theme/*.scss',
           'pages/*.scss',

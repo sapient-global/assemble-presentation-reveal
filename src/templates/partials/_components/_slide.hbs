@@ -1,8 +1,4 @@
-<section
-{{#if id }} id="{{id}}"{{/if }}
- class="slides-step step {{#if classes }} {{#each }} {{this}} {{/each }}
-                         {{ else }} slide  {{/if }}"
- {{#eachProperty data }} data-{{this.key}}="{{this.value}}" {{/eachProperty }}>
+<section {{#if data.id }}id="{{data.id}}"{{/if }} class="slides-step step {{#if data.classes }}{{#each data.classes}}{{this}} {{/each }}{{ else }}slide{{/if }}" {{#each data.slideDataAttr }}{{#eachProperty this}} data-{{this.key}}="{{this.value}}"{{/eachProperty}}{{/each}}>
   {{{page}}}
   {{> _logo}}
   {{! > _everform}}

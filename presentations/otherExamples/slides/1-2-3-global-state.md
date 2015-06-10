@@ -13,7 +13,7 @@ In "reveal-jekyll" you can do this by setting it in the Front-matter of the slid
 
 {% highlight markdown %}
 ---
-data:
+slideDataAttr:
   state: something
 ---
 {% endhighlight %}
