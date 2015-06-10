@@ -1,0 +1,79 @@
+/**
+ * Find here all the utility classes
+ *
+ * Extract from: https://gist.github.com/fat/a47b882eb5f84293c4ed
+ *
+ *  Definition of utility clases:
+ *
+ * Medium's utility classes are low-level structural and positional traits.
+ * Utilities can be applied directly to any element; multiple utilities can be
+ * used together; and utilities can be used alongside component classes.
+ *
+ * Utilities exist because certain CSS properties and patterns are used frequently.
+ * For example: floats, containing floats, vertical alignment, text truncation.
+ * Relying on utilities can help to reduce repetition and provide consistent implementations.
+ * They also act as a philosophical alternative to functional (i.e. non-polyfill) mixins.
+ *
+ */
+
+
+/*------------------------------------*\
+    General utility classes
+\*------------------------------------*/
+
+.u-hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+.u-bold{
+  font-weight:bold;
+}
+
+.u-italic {
+  font-style:italic;
+}
+
+.u-sans{
+  font-family: $headingFont;
+}
+
+.u-serif{
+  font-family: $mainFont;
+}
+
+.u-font-size-25{
+  font-size:2.5rem;
+}
+
+.u-dark-gray{
+  color: $dark-gray;
+}
+
+.u-blue {
+    color: $brand-blue;
+}
+.u-clear-block, .u-clearfix {
+    @extend %clearfix;
+}
+.u-float-right {
+    float:right;
+}
+.u-float-left {
+    float:left;
+}
+
+.u-center-text{
+  text-align: center;
+}
+.u-ListPadding {
+    padding-left: 6rem;
+}
+
+.u-ShortTitleAlign {
+  padding: 2em 0 0 2em;
+}
+
+.u-padding-content {
+  padding: 2em;
+}

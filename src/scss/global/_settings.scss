@@ -1,0 +1,71 @@
+/*------------------------------------*\
+   PATHS
+\*------------------------------------*/
+
+$imagesPath: "../../assets/img/";
+$fontsPath: "../../assets/fonts";
+
+
+/*------------------------------------*\
+   Colors
+\*------------------------------------*/
+
+$everformColor: rgba(220, 221, 222, 0.85);//#DCDDDE;
+$brand-black: #040707;
+$brand-red: #DE2728;
+$brand-blue: #21ADDD;
+$brand-gray: #DFE5E6;
+$dark-gray:#999;
+$brand-white:#fff;
+
+
+
+/*------------------------------------*\
+   General settings
+\*------------------------------------*/
+$mainColor:$brand-black;
+$backgroundColor: $brand-gray;
+
+/*------------------------------------*\
+   Fonts
+\*------------------------------------*/
+
+$fontFamily-sapientsans: sapientsans, "Helvetica Neue", Helvetica, Arial, sans-serif;
+$fontFamily-sapientSerif: sapientCentroSlab, "Helvetica Neue", Helvetica, Arial, sans-serif;
+$fontFamily-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$fontFamily-mono: Monaco, monospace, sans-serif;
+
+/*------------------------------------*\
+   Headings
+\*------------------------------------*/
+$headingColor: $brand-black;
+$headingFont: $fontFamily-sapientsans;
+$headingMargin: 0 0 20px 0;
+$headingLineHeight: 0.9em;
+$headingTextTransform: uppercase;
+
+
+/*------------------------------------*\
+   Default fonts
+\*------------------------------------*/
+$mainFont: $fontFamily-sapientSerif; //$fontFamily-sans;
+$mainFontSize:16px;
+$doubleFontSize:24px;
+$mainFontColor:$dark-gray;
+
+
+
+
+/*------------------------------------*\
+   Link colours
+\*------------------------------------*/
+$color--link: $brand-blue;
+$linkColor: $color--link;
+$linkColorHover: lighten( $linkColor, 20% );
+
+$controlsColor: $dark-gray;
+$controlsColorHover: lighten( $dark-gray, 20% );
+
+// Text selection
+$selectionBackgroundColor: #FF5E99;
+$selectionColor: #fff;

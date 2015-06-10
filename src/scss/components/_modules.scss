@@ -1,0 +1,118 @@
+/*------------------------------------*\
+   Titles
+\*------------------------------------*/
+
+.SlideMainTitle {
+    font-size: 4em;
+}
+
+.SlideContentTitle {
+    font-size: 3em;
+}
+.SlideSubtitle {
+    color: #fff;
+    text-shadow: 1px 1px 0 $mainColor, -2px 1px 0 $mainColor, 1px -1px 0 $mainColor, -1px 1px 0 $mainColor, 1px 1px 0 $mainColor;
+    font-size: 6rem;
+}
+.SlideTitleUnderline {
+    background: $brand-red;
+    height: 8px;
+    width: 100px;
+}
+.SlideContentSubtitle {
+    margin-bottom: 0.4em;
+    font-size: 2.8rem;
+}
+.slides>section>section {
+    &.AlternativeBackground {
+    @at-root &-transparent {
+        background:transparent;
+    }
+    .everform {
+        display:none;
+    }
+  }
+}
+.AlternativeBackground {
+    @at-root &-transparent {
+        background:transparent !important;
+        .everform {
+            display:none;
+        }
+    }
+    @at-root &-title {
+        font-weight: bold;
+        line-height: 1;
+        margin-bottom: 0;
+    }
+    @at-root &-subtitle {
+        font-style: italic;
+        font-weight: 300;
+        font-size: $doubleFontSize;
+    }
+    @at-root &-topicIndex {
+        font-size: 17rem;
+        z-index: -100;
+        position: absolute;
+        top: 295px;
+        left: 100px;
+        font-family: $mainFont;
+    }
+}
+
+
+/*------------------------------------*\
+   Logo
+\*------------------------------------*/
+
+.slides-step_InsightBackgroundColor .sn-Logo {
+    display: none;
+}
+.sn-Logo {
+    position: absolute;
+    bottom: 35px;
+    width: 95%;
+    &_img, &_mark {
+        display: inline-block;
+    }
+    &_img {
+        background: url($imagesPath + 'SN_Logotype.png') no-repeat center center transparent;
+        background-size: 160px 100%;
+        width: 200px;
+        height: 30px;
+        margin-top: 30px;
+        float: left;
+    }
+    &_mark {
+        background: url($imagesPath + 'SN_Logomark.png') no-repeat center center transparent;
+        background-size: 30px 100%;
+        height: 60px;
+        width: 30px;
+        float: right;
+    }
+}
+.slides-step_SecondaryBackgroundColor {
+    .sn-Logo_img {
+        background-image: url($imagesPath + 'SN_Logotype_Negative.png');
+    }
+    .sn-Logo_mark {
+        background-image: url($imagesPath + 'SN_Logomark_Negative.png');
+    }
+}
+.slides-step_Last {
+    .sn-Logo_img {
+        background-image: url($imagesPath + 'SN_Logomark.png');
+        background-size: 20px 100%;
+        height: 50px;
+        width: 20px;
+        &:after {
+            position: absolute;
+            content: "© 2013 Sapient Corporation | Confidential";
+            top: 45px;
+            left: 33px;
+        }
+    }
+    .sn-Logo_mark {
+        background-image: none;
+    }
+}

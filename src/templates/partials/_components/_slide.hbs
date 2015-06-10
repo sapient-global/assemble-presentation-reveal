@@ -1,0 +1,9 @@
+<section
+{{#if id }} id="{{id}}"{{/if }}
+ class="slides-step step {{#if classes }} {{#each }} {{this}} {{/each }}
+                         {{ else }} slide  {{/if }}"
+ {{#eachProperty data }} data-{{this.key}}="{{this.value}}" {{/eachProperty }}>
+  {{{page}}}
+  {{> _logo}}
+  {{! > _everform}}
+</section>

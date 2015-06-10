@@ -1,0 +1,17 @@
+.d3 {
+    position: absolute;
+    top: 91px;
+    left:140px;
+    text {
+        font: 24px $mainFont;
+        text-anchor: middle;
+        pointer-events: none;
+        fill:$brand-white;
+    }
+    circle {
+        fill: $brand-blue;
+    }
+    .node:hover circle {
+        fill: $brand-red;
+    }
+}

@@ -1,0 +1,83 @@
+/**
+ * Define here the default styles for HTML tags
+ *
+ * Source: http://smacss.com/book/type-layout
+ *
+ * Definition:
+ *
+ * Layout styles are the ones to position mayor elements on the screen.
+ * Rules:
+ * * Use ID for elements which are only once in the screen
+ * * For the rest, preceed them with an: .l-
+ *
+ */
+
+.ContentContainer {
+    padding: 2em;
+}
+
+
+
+/*doc
+---
+title: Title Aligner
+name: TitleAligner
+category: layuout
+---
+*/
+
+.TitleAligner {
+    display: flex;
+    @at-root {
+        &-CenterCenter {
+            align-items: center;
+            height: 90%;
+        }
+        &-TopLeft {
+            align-items: flex-start;
+        }
+        &-CenterLeft {
+            align-items: center;
+            height: 90%;
+        }
+        &-CenterRight {
+            align-items: center;
+            height: 90%;
+        }
+    }
+}
+
+/*doc
+---
+title: Content Aligner
+name: ContentAligner
+category: layuout
+---
+*/
+
+.ContentAligner {
+    display: flex;
+    height: 90%;
+    @at-root {
+        &-CenterLeft {
+            order: 1;
+            width: 50%;
+            align-self: center;
+        }
+        &-CenterRight {
+            order: 2;
+            align-self: center;
+            width: 50%;
+        }
+        &-Vertical {
+            flex-direction: column;
+            justify-content: space-around;
+        }
+        &-LeftTop {
+            order: 1;
+        }
+        &-LeftBottom {
+            order: 2;
+        }
+    }
+}

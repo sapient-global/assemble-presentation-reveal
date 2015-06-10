@@ -1,0 +1,59 @@
+/*********************************************
+ * NAVIGATION CONTROLS
+ *********************************************/
+
+.reveal .controls div.navigate-left,
+.reveal .controls div.navigate-left.enabled {
+        border-right-color: $controlsColor;
+}
+
+.reveal .controls div.navigate-right,
+.reveal .controls div.navigate-right.enabled {
+        border-left-color: $controlsColor;
+}
+
+.reveal .controls div.navigate-up,
+.reveal .controls div.navigate-up.enabled {
+        border-bottom-color: $controlsColor;
+}
+
+.reveal .controls div.navigate-down,
+.reveal .controls div.navigate-down.enabled {
+        border-top-color: $controlsColor;
+}
+
+.reveal .controls div.navigate-left.enabled:hover {
+        border-right-color: $controlsColorHover;
+}
+
+.reveal .controls div.navigate-right.enabled:hover {
+        border-left-color: $controlsColorHover;
+}
+
+.reveal .controls div.navigate-up.enabled:hover {
+        border-bottom-color: $controlsColorHover;
+}
+
+.reveal .controls div.navigate-down.enabled:hover {
+        border-top-color: $controlsColorHover;
+}
+
+
+/*********************************************
+ * PROGRESS BAR
+ *********************************************/
+
+.reveal .progress {
+        background: rgba(0,0,0,0.2);
+}
+        .reveal .progress span {
+                background: $linkColor;
+                @include transition(width 800ms cubic-bezier(0.260, 0.860, 0.440, 0.985));
+        }
+
+/*********************************************
+ * SLIDE NUMBER
+ *********************************************/
+.reveal .slide-number {
+  color: $linkColor;
+}

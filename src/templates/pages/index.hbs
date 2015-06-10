@@ -1,0 +1,31 @@
+---
+title: Presentation Index
+menuLink: Home
+sortOrder: 01
+---
+
+
+<div class="ContentAligner">
+    <div class="title__container ContentAligner-CenterLeft">
+        <h1 class="SlideMainTitle u-sans u-bold">Content</h1>
+        <div class="SlideTitleUnderline"></div>
+    </div>
+
+    <div class="ContentAligner-CenterRight">
+        <ol class="u-font-size-25">
+        {{#each  pages }}
+            <li class="u-italic">
+                <a href="{{relative  .. /page.dest this.dest }}" class="u-font-size-25">{{data.title }}</a>
+            </li>
+        {{/each}}
+        {{#each  slides.pages }}
+          {{#unless data.presentation}}
+            <li class="u-italic">
+                <a href="/presentations/{{this.data.menuLink}}/{{this.pageName}}" class="u-font-size-25">{{data.title }}</a>
+            </li>
+          {{/unless}}
+        {{/each}}
+        </ol>
+    </div>
+</div>
+
