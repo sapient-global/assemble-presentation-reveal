@@ -55,7 +55,8 @@ gulp.task('assets', function() {
   src.assets = [
     'src/assets/**',
     'src/content*/**/*.*',
-    'src/templates*/**/*.*'
+    'src/templates*/**/*.*',
+    'src/server.js'
   ];
   return gulp.src(src.assets)
     .pipe($.changed('build'))

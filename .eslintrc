@@ -1,8 +1,17 @@
 {
   "parser": "babel-eslint",
+  "ecmaFeatures": {
+        "blockBindings": true,
+        "forOf": true,
+        "jsx": true,
+        "classes": true,
+        "modules": true
+  },
   "env": {
     "browser": true,
-    "node": true
+    "node": true,
+    "amd": true,
+    "es6": true
   },
   "globals": {
     "__DEV__": true,
@@ -11,7 +20,6 @@
     "process": true
   },
   "rules": {
-    // Code style
     "indent": [2, 2],
     "quotes": [2, "single"]
   }
