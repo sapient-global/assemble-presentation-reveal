@@ -1,58 +1,93 @@
-## README:  | version="0.1.0"
+# About this template
 
----------------------------------------------------
-## Requirements for FE
+In this master branch you will find a template to create web presentations using the standard Sapient corporate theme.
 
-* NodeJS (<= 0.10.26)
-* Grunt
+# Dependencies
 
-### Libsass
-When using Libsass you should know the compatibility versions:
-- Version >= grunt-sass@0.18.0 (Node ~0.12.xx)
-- Version < grunt-sass@0.18.0 (Node ~0.10.xx)
+You will need to have pre-installed in your computer:
 
----------------------------------------------------
-## Frontend Methodology
+* npm
+* bower
 
----------------------------------------------------
-## Setup
+# Frontend architecture details
 
-This project builds on following setup (please read requirements and getting started):
+* libsass
+* BEM-OOCSS naming convention
+* Assemble to build the pages 
+* grunt connect as server
 
-* PG Website: http://prototype-generator.com/
-* PG Github: https://github.com/Prototype-Group/generator-prototype
+# Folder architecture
 
-- We use [Grunt](http://gruntjs.com/) as our task runner and [Assemble](http://assemble.io/) as our static site generator.
-- We use [Git](#).
-- The folder __node_modules__ won't be comitted into GIT. Use ```.gitignore``` to ignore folders or files.
-- Git-commit-messages in english please.
-- All issues are recorded in [Jira](#).
-- Jira-Issues are commented in german/english.
+|
+|- _output // Contains the built files for the server
+|- configs
+|- presentations // Folder with the presentations
+|- src // Source code
 
----------------------------------------------------
-## Browser-Support
 
-- all modern desktop browsers: Firefox, Chrome, IE and Safari/Mac latest version
-- also: IE 10, 9 and 8
-- all modern mobile browsers: iOS and Android latest two versions
+# Creating new presentations
 
----------------------------------------------------
-## Responsive-Webdesign-Support
+To create a new presentation, you will need to:
+1. Create a subFolder with the name of your presentation under: "presentations"
+2. Add a folder there called: slides
+3. Next to the slides folder, create an index.hbs file
 
-- Desktop
-- Tablet
-- Phone
 
-### Breakpoints
-- $small-range: (0, 640px); // smartphone portrait and smartphone landscape
-- $medium-range: (641px, 768px); // between smartphone landscape and tablet portrait
-- $large-range: (769px, 1022px); // only desktop
-- $xlarge-range: (1023px, 1279px); // desktop and tablet landscape
-- $xxlarge-range: (1280px); // desktop
+## Index of presentation
 
----------------------------------------------------
-## Team
+Your index file, needs to contain the next data:
 
-- TPM/PM:
-- Frontend:
-- Backend:
+```md
+---
+title: Title of your presentation.. Will be used for the title of the HTML
+menuLink: shortLinkNameForTheURL
+---
+```
+
+
+## Creating slides
+When you need to create a new slide, you will need to add the next data to them:
+(Note: you can use either hbs or md for the slides)
+
+```md
+---
+title: Title of the slide
+presentation: shortLinkNameForTheURL //Note that this is the same name you used for menuLink
+classes:
+ - CssClass1
+ - CssClass1
+slideDataAttr:
+ - revealConfigDataAttr1: value
+---
+```
+
+You can add as many classes or data attributes as you want. I owe you a list of possible options of data attributes supported by reveal. 
+
+## Running and building the presentation
+
+To create the dist, run:
+```js
+grunt build
+```
+
+To run the server and watch your changes run:
+```js
+grunt serve
+```
+
+
+The default tasks builds everything and then runs the serve task
+```js
+grunt
+```
+
+
+## Next ideas
+- Add a generator for new presentations and slides
+- Maybe transform this in a generator?
+- Clean up CSS
+- Add plugins
+- Use SVN icons for logos
+- Add multiplexing
+- Make a decent index page
+

@@ -7,7 +7,7 @@ classes:
  - slides-step_TertiaryBackgroundColor
  - AlternativeBackground
 slideDataAttr:
- - background: #21ADDD
+ - background: "#21ADDD"
 ---
 
 <div class="TitleAligner TitleAligner-CenterCenter">

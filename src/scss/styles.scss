@@ -8,34 +8,39 @@
  *
  */
 
-//Import reveal base CSS and theme settings
+/*
+   Reveal Settings
+   ========================================================================== */
+
 @import "reveal";
 @import 'theme/template/mixins';
-//Use our own settings instead
-@import "global/settings";
 
-@import "global/normalize";
-@import "global/fonts";
+/*
+   Own Settings
+   ========================================================================== */
+
+
+
+@import "base/settings";
+@import "base/normalize";
+@import "base/fonts";
 
 @import "utils/mixins/compassLikeMixins";
 @import "utils/mixins/mixins";
 @import "utils/extends/extends";
 
 //Include the reveal theme and ours addind stuff
-@import "global/base";
-
+@import "base/base";
 
 /* Utilities: helper classes, which can be used anywhere */
 @import "utils/utilities";
+
 /* Layout: Styles to position mayor elements on the screen. */
-@import "global/layout";
+@import "layout/layout";
+
 /* Modules */
-@import "components/modules";
-/* Slides-components: All the components of the page */
-@import "theme/slides";
-@import "pages/d3";
-
-
-//@import 'theme/template/theme';
+@import "modules/modules";
+@import "modules/slides";
 @import "theme/theme";
-@import "global/print";
+@import "base/print";
+@import "pages/d3";

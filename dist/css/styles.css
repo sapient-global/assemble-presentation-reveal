@@ -1,0 +1,2508 @@
+@charset "UTF-8";
+/**
+ * NAMING CONVENTION: BEM-OOCSS http://benfrain.com/modular-css-bem-oocss-naming/
+ *
+ *    Briefly:  .namespace-ComponentName_ModifierName-variant-label {}
+ *
+ *
+ *  File structure: http://smacss.com/
+ *
+ */
+/*
+   Reveal Settings
+   ========================================================================== */
+/*!
+ * reveal.js
+ * http://lab.hakim.se/reveal-js
+ * MIT licensed
+ *
+ * Copyright (C) 2015 Hakim El Hattab, http://hakim.se
+ */
+/*********************************************
+ * RESET STYLES
+ *********************************************/
+/*
+html, body, .reveal div, .reveal span, .reveal applet, .reveal object, .reveal iframe,
+.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6, .reveal p, .reveal blockquote, .reveal pre,
+.reveal a, .reveal abbr, .reveal acronym, .reveal address, .reveal big, .reveal cite, .reveal code,
+.reveal del, .reveal dfn, .reveal em, .reveal img, .reveal ins, .reveal kbd, .reveal q, .reveal s, .reveal samp,
+.reveal small, .reveal strike, .reveal strong, .reveal sub, .reveal sup, .reveal tt, .reveal var,
+.reveal b, .reveal u, .reveal center,
+.reveal dl, .reveal dt, .reveal dd, .reveal ol, .reveal ul, .reveal li,
+.reveal fieldset, .reveal form, .reveal label, .reveal legend,
+.reveal table, .reveal caption, .reveal tbody, .reveal tfoot, .reveal thead, .reveal tr, .reveal th, .reveal td,
+.reveal article, .reveal aside, .reveal canvas, .reveal details, .reveal embed,
+.reveal figure, .reveal figcaption, .reveal footer, .reveal header, .reveal hgroup,
+.reveal menu, .reveal nav, .reveal output, .reveal ruby, .reveal section, .reveal summary,
+.reveal time, .reveal mark, .reveal audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+.reveal article, .reveal aside, .reveal details, .reveal figcaption, .reveal figure,
+.reveal footer, .reveal header, .reveal hgroup, .reveal menu, .reveal nav, .reveal section {
+	display: block;
+}*/
+/*********************************************
+ * GLOBAL STYLES
+ *********************************************/
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden; }
+
+body {
+  position: relative;
+  line-height: 1;
+  background-color: #fff;
+  color: #000; }
+
+/*********************************************
+ * VIEW FRAGMENTS
+ *********************************************/
+.reveal .slides section .fragment {
+  opacity: 0;
+  visibility: hidden;
+  transition: all .2s ease; }
+  .reveal .slides section .fragment.visible {
+    opacity: 1;
+    visibility: visible; }
+
+.reveal .slides section .fragment.grow {
+  opacity: 1;
+  visibility: visible; }
+  .reveal .slides section .fragment.grow.visible {
+    transform: scale(1.3); }
+
+.reveal .slides section .fragment.shrink {
+  opacity: 1;
+  visibility: visible; }
+  .reveal .slides section .fragment.shrink.visible {
+    transform: scale(0.7); }
+
+.reveal .slides section .fragment.zoom-in {
+  transform: scale(0.1); }
+  .reveal .slides section .fragment.zoom-in.visible {
+    transform: none; }
+
+.reveal .slides section .fragment.fade-out {
+  opacity: 1;
+  visibility: visible; }
+  .reveal .slides section .fragment.fade-out.visible {
+    opacity: 0;
+    visibility: hidden; }
+
+.reveal .slides section .fragment.semi-fade-out {
+  opacity: 1;
+  visibility: visible; }
+  .reveal .slides section .fragment.semi-fade-out.visible {
+    opacity: 0.5;
+    visibility: visible; }
+
+.reveal .slides section .fragment.strike {
+  opacity: 1; }
+  .reveal .slides section .fragment.strike.visible {
+    text-decoration: line-through; }
+
+.reveal .slides section .fragment.current-visible {
+  opacity: 0;
+  visibility: hidden; }
+  .reveal .slides section .fragment.current-visible.current-fragment {
+    opacity: 1;
+    visibility: visible; }
+
+.reveal .slides section .fragment.highlight-red, .reveal .slides section .fragment.highlight-current-red, .reveal .slides section .fragment.highlight-green, .reveal .slides section .fragment.highlight-current-green, .reveal .slides section .fragment.highlight-blue, .reveal .slides section .fragment.highlight-current-blue {
+  opacity: 1;
+  visibility: visible; }
+
+.reveal .slides section .fragment.highlight-red.visible {
+  color: #ff2c2d; }
+
+.reveal .slides section .fragment.highlight-green.visible {
+  color: #17ff2e; }
+
+.reveal .slides section .fragment.highlight-blue.visible {
+  color: #1b91ff; }
+
+.reveal .slides section .fragment.highlight-current-red.current-fragment {
+  color: #ff2c2d; }
+
+.reveal .slides section .fragment.highlight-current-green.current-fragment {
+  color: #17ff2e; }
+
+.reveal .slides section .fragment.highlight-current-blue.current-fragment {
+  color: #1b91ff; }
+
+/*********************************************
+ * DEFAULT ELEMENT STYLES
+ *********************************************/
+/* Fixes issue in Chrome where italic fonts did not appear when printing to PDF */
+.reveal:after {
+  content: '';
+  font-style: italic; }
+
+.reveal iframe {
+  z-index: 1; }
+
+/** Prevents layering issues in certain browser/transition combinations */
+.reveal a {
+  position: relative; }
+
+.reveal .stretch {
+  max-width: none;
+  max-height: none; }
+
+.reveal pre.stretch code {
+  height: 100%;
+  max-height: 100%;
+  box-sizing: border-box; }
+
+/*********************************************
+ * CONTROLS
+ *********************************************/
+.reveal .controls {
+  display: none;
+  position: fixed;
+  width: 110px;
+  height: 110px;
+  z-index: 30;
+  right: 10px;
+  bottom: 10px;
+  -webkit-user-select: none; }
+
+.reveal .controls div {
+  position: absolute;
+  opacity: 0.05;
+  width: 0;
+  height: 0;
+  border: 12px solid transparent;
+  transform: scale(.9999);
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent; }
+
+.reveal .controls div.enabled {
+  opacity: 0.7;
+  cursor: pointer; }
+
+.reveal .controls div.enabled:active {
+  margin-top: 1px; }
+
+.reveal .controls div.navigate-left {
+  top: 42px;
+  border-right-width: 22px;
+  border-right-color: #000; }
+
+.reveal .controls div.navigate-left.fragmented {
+  opacity: 0.3; }
+
+.reveal .controls div.navigate-right {
+  left: 74px;
+  top: 42px;
+  border-left-width: 22px;
+  border-left-color: #000; }
+
+.reveal .controls div.navigate-right.fragmented {
+  opacity: 0.3; }
+
+.reveal .controls div.navigate-up {
+  left: 42px;
+  border-bottom-width: 22px;
+  border-bottom-color: #000; }
+
+.reveal .controls div.navigate-up.fragmented {
+  opacity: 0.3; }
+
+.reveal .controls div.navigate-down {
+  left: 42px;
+  top: 74px;
+  border-top-width: 22px;
+  border-top-color: #000; }
+
+.reveal .controls div.navigate-down.fragmented {
+  opacity: 0.3; }
+
+/*********************************************
+ * PROGRESS BAR
+ *********************************************/
+.reveal .progress {
+  position: fixed;
+  display: none;
+  height: 3px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.2); }
+
+.reveal .progress:after {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 20px;
+  width: 100%;
+  top: -20px; }
+
+.reveal .progress span {
+  display: block;
+  height: 100%;
+  width: 0px;
+  background-color: #000;
+  transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
+
+/*********************************************
+ * SLIDE NUMBER
+ *********************************************/
+.reveal .slide-number {
+  position: fixed;
+  display: block;
+  right: 15px;
+  bottom: 15px;
+  opacity: 0.5;
+  z-index: 31;
+  font-size: 12px; }
+
+/*********************************************
+ * SLIDES
+ *********************************************/
+.reveal {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  touch-action: none; }
+
+.reveal .slides {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  overflow: visible;
+  z-index: 1;
+  text-align: center;
+  perspective: 600px;
+  perspective-origin: 50% 40%; }
+
+.reveal .slides > section {
+  -ms-perspective: 600px; }
+
+.reveal .slides > section, .reveal .slides > section > section {
+  display: none;
+  position: absolute;
+  width: 100%;
+  padding: 20px 0px;
+  z-index: 10;
+  transform-style: preserve-3d;
+  transition: transform-origin 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985), transform 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985), visibility 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985), opacity 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
+
+/* Global transition speed settings */
+.reveal[data-transition-speed="fast"] .slides section {
+  transition-duration: 400ms; }
+
+.reveal[data-transition-speed="slow"] .slides section {
+  transition-duration: 1200ms; }
+
+/* Slide-specific transition speed overrides */
+.reveal .slides section[data-transition-speed="fast"] {
+  transition-duration: 400ms; }
+
+.reveal .slides section[data-transition-speed="slow"] {
+  transition-duration: 1200ms; }
+
+.reveal .slides > section.stack {
+  padding-top: 0;
+  padding-bottom: 0; }
+
+.reveal .slides > section.present, .reveal .slides > section > section.present {
+  display: block;
+  z-index: 11;
+  opacity: 1; }
+
+.reveal.center, .reveal.center .slides, .reveal.center .slides section {
+  min-height: 0 !important; }
+
+/* Don't allow interaction with invisible slides */
+.reveal .slides > section.future, .reveal .slides > section > section.future, .reveal .slides > section.past, .reveal .slides > section > section.past {
+  pointer-events: none; }
+
+.reveal.overview .slides > section, .reveal.overview .slides > section > section {
+  pointer-events: auto; }
+
+.reveal .slides > section.past, .reveal .slides > section.future, .reveal .slides > section > section.past, .reveal .slides > section > section.future {
+  opacity: 0; }
+
+/*********************************************
+ * Mixins for readability of transitions
+ *********************************************/
+/*********************************************
+ * SLIDE TRANSITION
+ * Aliased 'linear' for backwards compatibility
+ *********************************************/
+.reveal.slide section {
+  backface-visibility: hidden; }
+
+.reveal .slides > section[data-transition=slide].past, .reveal .slides > section[data-transition~=slide-out].past, .reveal.slide .slides > section:not([data-transition]).past {
+  transform: translate(-150%, 0); }
+
+.reveal .slides > section[data-transition=slide].future, .reveal .slides > section[data-transition~=slide-in].future, .reveal.slide .slides > section:not([data-transition]).future {
+  transform: translate(150%, 0); }
+
+.reveal .slides > section > section[data-transition=slide].past, .reveal .slides > section > section[data-transition~=slide-out].past, .reveal.slide .slides > section > section:not([data-transition]).past {
+  transform: translate(0, -150%); }
+
+.reveal .slides > section > section[data-transition=slide].future, .reveal .slides > section > section[data-transition~=slide-in].future, .reveal.slide .slides > section > section:not([data-transition]).future {
+  transform: translate(0, 150%); }
+
+.reveal.linear section {
+  backface-visibility: hidden; }
+
+.reveal .slides > section[data-transition=linear].past, .reveal .slides > section[data-transition~=linear-out].past, .reveal.linear .slides > section:not([data-transition]).past {
+  transform: translate(-150%, 0); }
+
+.reveal .slides > section[data-transition=linear].future, .reveal .slides > section[data-transition~=linear-in].future, .reveal.linear .slides > section:not([data-transition]).future {
+  transform: translate(150%, 0); }
+
+.reveal .slides > section > section[data-transition=linear].past, .reveal .slides > section > section[data-transition~=linear-out].past, .reveal.linear .slides > section > section:not([data-transition]).past {
+  transform: translate(0, -150%); }
+
+.reveal .slides > section > section[data-transition=linear].future, .reveal .slides > section > section[data-transition~=linear-in].future, .reveal.linear .slides > section > section:not([data-transition]).future {
+  transform: translate(0, 150%); }
+
+/*********************************************
+ * CONVEX TRANSITION
+ * Aliased 'default' for backwards compatibility
+ *********************************************/
+.reveal .slides > section[data-transition=default].past, .reveal .slides > section[data-transition~=default-out].past, .reveal.default .slides > section:not([data-transition]).past {
+  transform: translate3d(-100%, 0, 0) rotateY(-90deg) translate3d(-100%, 0, 0); }
+
+.reveal .slides > section[data-transition=default].future, .reveal .slides > section[data-transition~=default-in].future, .reveal.default .slides > section:not([data-transition]).future {
+  transform: translate3d(100%, 0, 0) rotateY(90deg) translate3d(100%, 0, 0); }
+
+.reveal .slides > section > section[data-transition=default].past, .reveal .slides > section > section[data-transition~=default-out].past, .reveal.default .slides > section > section:not([data-transition]).past {
+  transform: translate3d(0, -300px, 0) rotateX(70deg) translate3d(0, -300px, 0); }
+
+.reveal .slides > section > section[data-transition=default].future, .reveal .slides > section > section[data-transition~=default-in].future, .reveal.default .slides > section > section:not([data-transition]).future {
+  transform: translate3d(0, 300px, 0) rotateX(-70deg) translate3d(0, 300px, 0); }
+
+.reveal .slides > section[data-transition=convex].past, .reveal .slides > section[data-transition~=convex-out].past, .reveal.convex .slides > section:not([data-transition]).past {
+  transform: translate3d(-100%, 0, 0) rotateY(-90deg) translate3d(-100%, 0, 0); }
+
+.reveal .slides > section[data-transition=convex].future, .reveal .slides > section[data-transition~=convex-in].future, .reveal.convex .slides > section:not([data-transition]).future {
+  transform: translate3d(100%, 0, 0) rotateY(90deg) translate3d(100%, 0, 0); }
+
+.reveal .slides > section > section[data-transition=convex].past, .reveal .slides > section > section[data-transition~=convex-out].past, .reveal.convex .slides > section > section:not([data-transition]).past {
+  transform: translate3d(0, -300px, 0) rotateX(70deg) translate3d(0, -300px, 0); }
+
+.reveal .slides > section > section[data-transition=convex].future, .reveal .slides > section > section[data-transition~=convex-in].future, .reveal.convex .slides > section > section:not([data-transition]).future {
+  transform: translate3d(0, 300px, 0) rotateX(-70deg) translate3d(0, 300px, 0); }
+
+/*********************************************
+ * CONCAVE TRANSITION
+ *********************************************/
+.reveal .slides > section[data-transition=concave].past, .reveal .slides > section[data-transition~=concave-out].past, .reveal.concave .slides > section:not([data-transition]).past {
+  transform: translate3d(-100%, 0, 0) rotateY(90deg) translate3d(-100%, 0, 0); }
+
+.reveal .slides > section[data-transition=concave].future, .reveal .slides > section[data-transition~=concave-in].future, .reveal.concave .slides > section:not([data-transition]).future {
+  transform: translate3d(100%, 0, 0) rotateY(-90deg) translate3d(100%, 0, 0); }
+
+.reveal .slides > section > section[data-transition=concave].past, .reveal .slides > section > section[data-transition~=concave-out].past, .reveal.concave .slides > section > section:not([data-transition]).past {
+  transform: translate3d(0, -80%, 0) rotateX(-70deg) translate3d(0, -80%, 0); }
+
+.reveal .slides > section > section[data-transition=concave].future, .reveal .slides > section > section[data-transition~=concave-in].future, .reveal.concave .slides > section > section:not([data-transition]).future {
+  transform: translate3d(0, 80%, 0) rotateX(70deg) translate3d(0, 80%, 0); }
+
+/*********************************************
+ * ZOOM TRANSITION
+ *********************************************/
+.reveal .slides > section[data-transition=zoom], .reveal.zoom .slides > section:not([data-transition]) {
+  transition-timing-function: ease; }
+
+.reveal .slides > section[data-transition=zoom].past, .reveal .slides > section[data-transition~=zoom-out].past, .reveal.zoom .slides > section:not([data-transition]).past {
+  visibility: hidden;
+  transform: scale(16); }
+
+.reveal .slides > section[data-transition=zoom].future, .reveal .slides > section[data-transition~=zoom-in].future, .reveal.zoom .slides > section:not([data-transition]).future {
+  visibility: hidden;
+  transform: scale(0.2); }
+
+.reveal .slides > section > section[data-transition=zoom].past, .reveal .slides > section > section[data-transition~=zoom-out].past, .reveal.zoom .slides > section > section:not([data-transition]).past {
+  transform: translate(0, -150%); }
+
+.reveal .slides > section > section[data-transition=zoom].future, .reveal .slides > section > section[data-transition~=zoom-in].future, .reveal.zoom .slides > section > section:not([data-transition]).future {
+  transform: translate(0, 150%); }
+
+/*********************************************
+ * CUBE TRANSITION
+ *********************************************/
+.reveal.cube .slides {
+  perspective: 1300px; }
+
+.reveal.cube .slides section {
+  padding: 30px;
+  min-height: 700px;
+  backface-visibility: hidden;
+  box-sizing: border-box; }
+
+.reveal.center.cube .slides section {
+  min-height: 0; }
+
+.reveal.cube .slides section:not(.stack):before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  transform: translateZ(-20px); }
+
+.reveal.cube .slides section:not(.stack):after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 90%;
+  height: 30px;
+  left: 5%;
+  bottom: 0;
+  background: none;
+  z-index: 1;
+  border-radius: 4px;
+  box-shadow: 0px 95px 25px rgba(0, 0, 0, 0.2);
+  transform: translateZ(-90px) rotateX(65deg); }
+
+.reveal.cube .slides > section.stack {
+  padding: 0;
+  background: none; }
+
+.reveal.cube .slides > section.past {
+  transform-origin: 100% 0%;
+  transform: translate3d(-100%, 0, 0) rotateY(-90deg); }
+
+.reveal.cube .slides > section.future {
+  transform-origin: 0% 0%;
+  transform: translate3d(100%, 0, 0) rotateY(90deg); }
+
+.reveal.cube .slides > section > section.past {
+  transform-origin: 0% 100%;
+  transform: translate3d(0, -100%, 0) rotateX(90deg); }
+
+.reveal.cube .slides > section > section.future {
+  transform-origin: 0% 0%;
+  transform: translate3d(0, 100%, 0) rotateX(-90deg); }
+
+/*********************************************
+ * PAGE TRANSITION
+ *********************************************/
+.reveal.page .slides {
+  perspective-origin: 0% 50%;
+  perspective: 3000px; }
+
+.reveal.page .slides section {
+  padding: 30px;
+  min-height: 700px;
+  box-sizing: border-box; }
+
+.reveal.page .slides section.past {
+  z-index: 12; }
+
+.reveal.page .slides section:not(.stack):before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.1);
+  transform: translateZ(-20px); }
+
+.reveal.page .slides section:not(.stack):after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 90%;
+  height: 30px;
+  left: 5%;
+  bottom: 0;
+  background: none;
+  z-index: 1;
+  border-radius: 4px;
+  box-shadow: 0px 95px 25px rgba(0, 0, 0, 0.2);
+  -webkit-transform: translateZ(-90px) rotateX(65deg); }
+
+.reveal.page .slides > section.stack {
+  padding: 0;
+  background: none; }
+
+.reveal.page .slides > section.past {
+  transform-origin: 0% 0%;
+  transform: translate3d(-40%, 0, 0) rotateY(-80deg); }
+
+.reveal.page .slides > section.future {
+  transform-origin: 100% 0%;
+  transform: translate3d(0, 0, 0); }
+
+.reveal.page .slides > section > section.past {
+  transform-origin: 0% 0%;
+  transform: translate3d(0, -40%, 0) rotateX(80deg); }
+
+.reveal.page .slides > section > section.future {
+  transform-origin: 0% 100%;
+  transform: translate3d(0, 0, 0); }
+
+/*********************************************
+ * FADE TRANSITION
+ *********************************************/
+.reveal .slides section[data-transition=fade], .reveal.fade .slides section:not([data-transition]), .reveal.fade .slides > section > section:not([data-transition]) {
+  transform: none;
+  transition: opacity 0.5s; }
+
+.reveal.fade.overview .slides section, .reveal.fade.overview .slides > section > section {
+  transition: none; }
+
+/*********************************************
+ * NO TRANSITION
+ *********************************************/
+.reveal .slides > section[data-transition=none], .reveal.none .slides > section:not([data-transition]) {
+  transform: none;
+  transition: none; }
+
+/*********************************************
+ * PAUSED MODE
+ *********************************************/
+.reveal .pause-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 100;
+  transition: all 1s ease; }
+
+.reveal.paused .pause-overlay {
+  visibility: visible;
+  opacity: 1; }
+
+/*********************************************
+ * FALLBACK
+ *********************************************/
+.no-transforms {
+  overflow-y: auto; }
+
+.no-transforms .reveal .slides {
+  position: relative;
+  width: 80%;
+  height: auto !important;
+  top: 0;
+  left: 50%;
+  margin: 0;
+  text-align: center; }
+
+.no-transforms .reveal .controls, .no-transforms .reveal .progress {
+  display: none !important; }
+
+.no-transforms .reveal .slides section {
+  display: block !important;
+  opacity: 1 !important;
+  position: relative !important;
+  height: auto;
+  min-height: 0;
+  top: 0;
+  left: -50%;
+  margin: 70px 0;
+  transform: none; }
+
+.no-transforms .reveal .slides section section {
+  left: 0; }
+
+.reveal .no-transition, .reveal .no-transition * {
+  transition: none !important; }
+
+/*********************************************
+ * PER-SLIDE BACKGROUNDS
+ *********************************************/
+.reveal .backgrounds {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  perspective: 600px; }
+
+.reveal .slide-background {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  background-color: transparent;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: all 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
+
+.reveal .slide-background.stack {
+  display: block; }
+
+.reveal .slide-background.present {
+  opacity: 1;
+  visibility: visible; }
+
+.print-pdf .reveal .slide-background {
+  opacity: 1 !important;
+  visibility: visible !important; }
+
+/* Video backgrounds */
+.reveal .slide-background video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  top: 0;
+  left: 0; }
+
+/* Immediate transition style */
+.reveal[data-background-transition=none] > .backgrounds .slide-background, .reveal > .backgrounds .slide-background[data-background-transition=none] {
+  transition: none; }
+
+/* Slide */
+.reveal[data-background-transition=slide] > .backgrounds .slide-background, .reveal > .backgrounds .slide-background[data-background-transition=slide] {
+  opacity: 1;
+  backface-visibility: hidden; }
+
+.reveal[data-background-transition=slide] > .backgrounds .slide-background.past, .reveal > .backgrounds .slide-background.past[data-background-transition=slide] {
+  transform: translate(-100%, 0); }
+
+.reveal[data-background-transition=slide] > .backgrounds .slide-background.future, .reveal > .backgrounds .slide-background.future[data-background-transition=slide] {
+  transform: translate(100%, 0); }
+
+.reveal[data-background-transition=slide] > .backgrounds .slide-background > .slide-background.past, .reveal > .backgrounds .slide-background > .slide-background.past[data-background-transition=slide] {
+  transform: translate(0, -100%); }
+
+.reveal[data-background-transition=slide] > .backgrounds .slide-background > .slide-background.future, .reveal > .backgrounds .slide-background > .slide-background.future[data-background-transition=slide] {
+  transform: translate(0, 100%); }
+
+/* Convex */
+.reveal[data-background-transition=convex] > .backgrounds .slide-background.past, .reveal > .backgrounds .slide-background.past[data-background-transition=convex] {
+  opacity: 0;
+  transform: translate3d(-100%, 0, 0) rotateY(-90deg) translate3d(-100%, 0, 0); }
+
+.reveal[data-background-transition=convex] > .backgrounds .slide-background.future, .reveal > .backgrounds .slide-background.future[data-background-transition=convex] {
+  opacity: 0;
+  transform: translate3d(100%, 0, 0) rotateY(90deg) translate3d(100%, 0, 0); }
+
+.reveal[data-background-transition=convex] > .backgrounds .slide-background > .slide-background.past, .reveal > .backgrounds .slide-background > .slide-background.past[data-background-transition=convex] {
+  opacity: 0;
+  transform: translate3d(0, -100%, 0) rotateX(90deg) translate3d(0, -100%, 0); }
+
+.reveal[data-background-transition=convex] > .backgrounds .slide-background > .slide-background.future, .reveal > .backgrounds .slide-background > .slide-background.future[data-background-transition=convex] {
+  opacity: 0;
+  transform: translate3d(0, 100%, 0) rotateX(-90deg) translate3d(0, 100%, 0); }
+
+/* Concave */
+.reveal[data-background-transition=concave] > .backgrounds .slide-background.past, .reveal > .backgrounds .slide-background.past[data-background-transition=concave] {
+  opacity: 0;
+  transform: translate3d(-100%, 0, 0) rotateY(90deg) translate3d(-100%, 0, 0); }
+
+.reveal[data-background-transition=concave] > .backgrounds .slide-background.future, .reveal > .backgrounds .slide-background.future[data-background-transition=concave] {
+  opacity: 0;
+  transform: translate3d(100%, 0, 0) rotateY(-90deg) translate3d(100%, 0, 0); }
+
+.reveal[data-background-transition=concave] > .backgrounds .slide-background > .slide-background.past, .reveal > .backgrounds .slide-background > .slide-background.past[data-background-transition=concave] {
+  opacity: 0;
+  transform: translate3d(0, -100%, 0) rotateX(-90deg) translate3d(0, -100%, 0); }
+
+.reveal[data-background-transition=concave] > .backgrounds .slide-background > .slide-background.future, .reveal > .backgrounds .slide-background > .slide-background.future[data-background-transition=concave] {
+  opacity: 0;
+  transform: translate3d(0, 100%, 0) rotateX(90deg) translate3d(0, 100%, 0); }
+
+/* Zoom */
+.reveal[data-background-transition=zoom] > .backgrounds .slide-background, .reveal > .backgrounds .slide-background[data-background-transition=zoom] {
+  transition-timing-function: ease; }
+
+.reveal[data-background-transition=zoom] > .backgrounds .slide-background.past, .reveal > .backgrounds .slide-background.past[data-background-transition=zoom] {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(16); }
+
+.reveal[data-background-transition=zoom] > .backgrounds .slide-background.future, .reveal > .backgrounds .slide-background.future[data-background-transition=zoom] {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.2); }
+
+.reveal[data-background-transition=zoom] > .backgrounds .slide-background > .slide-background.past, .reveal > .backgrounds .slide-background > .slide-background.past[data-background-transition=zoom] {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(16); }
+
+.reveal[data-background-transition=zoom] > .backgrounds .slide-background > .slide-background.future, .reveal > .backgrounds .slide-background > .slide-background.future[data-background-transition=zoom] {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.2); }
+
+/* Global transition speed settings */
+.reveal[data-transition-speed="fast"] > .backgrounds .slide-background {
+  transition-duration: 400ms; }
+
+.reveal[data-transition-speed="slow"] > .backgrounds .slide-background {
+  transition-duration: 1200ms; }
+
+/*********************************************
+ * OVERVIEW
+ *********************************************/
+.reveal.overview {
+  perspective-origin: 50% 50%;
+  perspective: 700px; }
+  .reveal.overview .slides section {
+    height: 700px;
+    opacity: 1 !important;
+    overflow: hidden;
+    visibility: visible !important;
+    cursor: pointer;
+    box-sizing: border-box; }
+  .reveal.overview .slides section:hover, .reveal.overview .slides section.present {
+    outline: 10px solid rgba(150, 150, 150, 0.4);
+    outline-offset: 10px; }
+  .reveal.overview .slides section .fragment {
+    opacity: 1;
+    transition: none; }
+  .reveal.overview .slides section:after, .reveal.overview .slides section:before {
+    display: none !important; }
+  .reveal.overview .slides > section.stack {
+    padding: 0;
+    top: 0 !important;
+    background: none;
+    outline: none;
+    overflow: visible; }
+  .reveal.overview .backgrounds {
+    perspective: inherit; }
+  .reveal.overview .backgrounds .slide-background {
+    opacity: 1;
+    visibility: visible;
+    outline: 10px solid rgba(150, 150, 150, 0.1);
+    outline-offset: 10px; }
+
+.reveal.overview .slides section, .reveal.overview-deactivating .slides section {
+  transition: none; }
+
+.reveal.overview .backgrounds .slide-background, .reveal.overview-deactivating .backgrounds .slide-background {
+  transition: none; }
+
+.reveal.overview-animated .slides {
+  transition: transform 0.4s ease; }
+
+/*********************************************
+ * RTL SUPPORT
+ *********************************************/
+.reveal.rtl .slides, .reveal.rtl .slides h1, .reveal.rtl .slides h2, .reveal.rtl .slides h3, .reveal.rtl .slides h4, .reveal.rtl .slides h5, .reveal.rtl .slides h6 {
+  direction: rtl;
+  font-family: sans-serif; }
+
+.reveal.rtl pre, .reveal.rtl code {
+  direction: ltr; }
+
+.reveal.rtl ol, .reveal.rtl ul {
+  text-align: right; }
+
+.reveal.rtl .progress span {
+  float: right; }
+
+/*********************************************
+ * PARALLAX BACKGROUND
+ *********************************************/
+.reveal.has-parallax-background .backgrounds {
+  transition: all 0.8s ease; }
+
+/* Global transition speed settings */
+.reveal.has-parallax-background[data-transition-speed="fast"] .backgrounds {
+  transition-duration: 400ms; }
+
+.reveal.has-parallax-background[data-transition-speed="slow"] .backgrounds {
+  transition-duration: 1200ms; }
+
+/*********************************************
+ * LINK PREVIEW OVERLAY
+ *********************************************/
+.reveal .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.9);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease; }
+
+.reveal .overlay.visible {
+  opacity: 1;
+  visibility: visible; }
+
+.reveal .overlay .spinner {
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  width: 32px;
+  height: 32px;
+  margin: -16px 0 0 -16px;
+  z-index: 10;
+  background-image: url(data:image/gif;base64,R0lGODlhIAAgAPMAAJmZmf%2F%2F%2F6%2Bvr8nJybW1tcDAwOjo6Nvb26ioqKOjo7Ozs%2FLy8vz8%2FAAAAAAAAAAAACH%2FC05FVFNDQVBFMi4wAwEAAAAh%2FhpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh%2BQQJCgAAACwAAAAAIAAgAAAE5xDISWlhperN52JLhSSdRgwVo1ICQZRUsiwHpTJT4iowNS8vyW2icCF6k8HMMBkCEDskxTBDAZwuAkkqIfxIQyhBQBFvAQSDITM5VDW6XNE4KagNh6Bgwe60smQUB3d4Rz1ZBApnFASDd0hihh12BkE9kjAJVlycXIg7CQIFA6SlnJ87paqbSKiKoqusnbMdmDC2tXQlkUhziYtyWTxIfy6BE8WJt5YJvpJivxNaGmLHT0VnOgSYf0dZXS7APdpB309RnHOG5gDqXGLDaC457D1zZ%2FV%2FnmOM82XiHRLYKhKP1oZmADdEAAAh%2BQQJCgAAACwAAAAAIAAgAAAE6hDISWlZpOrNp1lGNRSdRpDUolIGw5RUYhhHukqFu8DsrEyqnWThGvAmhVlteBvojpTDDBUEIFwMFBRAmBkSgOrBFZogCASwBDEY%2FCZSg7GSE0gSCjQBMVG023xWBhklAnoEdhQEfyNqMIcKjhRsjEdnezB%2BA4k8gTwJhFuiW4dokXiloUepBAp5qaKpp6%2BHo7aWW54wl7obvEe0kRuoplCGepwSx2jJvqHEmGt6whJpGpfJCHmOoNHKaHx61WiSR92E4lbFoq%2BB6QDtuetcaBPnW6%2BO7wDHpIiK9SaVK5GgV543tzjgGcghAgAh%2BQQJCgAAACwAAAAAIAAgAAAE7hDISSkxpOrN5zFHNWRdhSiVoVLHspRUMoyUakyEe8PTPCATW9A14E0UvuAKMNAZKYUZCiBMuBakSQKG8G2FzUWox2AUtAQFcBKlVQoLgQReZhQlCIJesQXI5B0CBnUMOxMCenoCfTCEWBsJColTMANldx15BGs8B5wlCZ9Po6OJkwmRpnqkqnuSrayqfKmqpLajoiW5HJq7FL1Gr2mMMcKUMIiJgIemy7xZtJsTmsM4xHiKv5KMCXqfyUCJEonXPN2rAOIAmsfB3uPoAK%2B%2BG%2Bw48edZPK%2BM6hLJpQg484enXIdQFSS1u6UhksENEQAAIfkECQoAAAAsAAAAACAAIAAABOcQyEmpGKLqzWcZRVUQnZYg1aBSh2GUVEIQ2aQOE%2BG%2BcD4ntpWkZQj1JIiZIogDFFyHI0UxQwFugMSOFIPJftfVAEoZLBbcLEFhlQiqGp1Vd140AUklUN3eCA51C1EWMzMCezCBBmkxVIVHBWd3HHl9JQOIJSdSnJ0TDKChCwUJjoWMPaGqDKannasMo6WnM562R5YluZRwur0wpgqZE7NKUm%2BFNRPIhjBJxKZteWuIBMN4zRMIVIhffcgojwCF117i4nlLnY5ztRLsnOk%2BaV%2BoJY7V7m76PdkS4trKcdg0Zc0tTcKkRAAAIfkECQoAAAAsAAAAACAAIAAABO4QyEkpKqjqzScpRaVkXZWQEximw1BSCUEIlDohrft6cpKCk5xid5MNJTaAIkekKGQkWyKHkvhKsR7ARmitkAYDYRIbUQRQjWBwJRzChi9CRlBcY1UN4g0%2FVNB0AlcvcAYHRyZPdEQFYV8ccwR5HWxEJ02YmRMLnJ1xCYp0Y5idpQuhopmmC2KgojKasUQDk5BNAwwMOh2RtRq5uQuPZKGIJQIGwAwGf6I0JXMpC8C7kXWDBINFMxS4DKMAWVWAGYsAdNqW5uaRxkSKJOZKaU3tPOBZ4DuK2LATgJhkPJMgTwKCdFjyPHEnKxFCDhEAACH5BAkKAAAALAAAAAAgACAAAATzEMhJaVKp6s2nIkolIJ2WkBShpkVRWqqQrhLSEu9MZJKK9y1ZrqYK9WiClmvoUaF8gIQSNeF1Er4MNFn4SRSDARWroAIETg1iVwuHjYB1kYc1mwruwXKC9gmsJXliGxc%2BXiUCby9ydh1sOSdMkpMTBpaXBzsfhoc5l58Gm5yToAaZhaOUqjkDgCWNHAULCwOLaTmzswadEqggQwgHuQsHIoZCHQMMQgQGubVEcxOPFAcMDAYUA85eWARmfSRQCdcMe0zeP1AAygwLlJtPNAAL19DARdPzBOWSm1brJBi45soRAWQAAkrQIykShQ9wVhHCwCQCACH5BAkKAAAALAAAAAAgACAAAATrEMhJaVKp6s2nIkqFZF2VIBWhUsJaTokqUCoBq%2BE71SRQeyqUToLA7VxF0JDyIQh%2FMVVPMt1ECZlfcjZJ9mIKoaTl1MRIl5o4CUKXOwmyrCInCKqcWtvadL2SYhyASyNDJ0uIiRMDjI0Fd30%2FiI2UA5GSS5UDj2l6NoqgOgN4gksEBgYFf0FDqKgHnyZ9OX8HrgYHdHpcHQULXAS2qKpENRg7eAMLC7kTBaixUYFkKAzWAAnLC7FLVxLWDBLKCwaKTULgEwbLA4hJtOkSBNqITT3xEgfLpBtzE%2FjiuL04RGEBgwWhShRgQExHBAAh%2BQQJCgAAACwAAAAAIAAgAAAE7xDISWlSqerNpyJKhWRdlSAVoVLCWk6JKlAqAavhO9UkUHsqlE6CwO1cRdCQ8iEIfzFVTzLdRAmZX3I2SfZiCqGk5dTESJeaOAlClzsJsqwiJwiqnFrb2nS9kmIcgEsjQydLiIlHehhpejaIjzh9eomSjZR%2BipslWIRLAgMDOR2DOqKogTB9pCUJBagDBXR6XB0EBkIIsaRsGGMMAxoDBgYHTKJiUYEGDAzHC9EACcUGkIgFzgwZ0QsSBcXHiQvOwgDdEwfFs0sDzt4S6BK4xYjkDOzn0unFeBzOBijIm1Dgmg5YFQwsCMjp1oJ8LyIAACH5BAkKAAAALAAAAAAgACAAAATwEMhJaVKp6s2nIkqFZF2VIBWhUsJaTokqUCoBq%2BE71SRQeyqUToLA7VxF0JDyIQh%2FMVVPMt1ECZlfcjZJ9mIKoaTl1MRIl5o4CUKXOwmyrCInCKqcWtvadL2SYhyASyNDJ0uIiUd6GGl6NoiPOH16iZKNlH6KmyWFOggHhEEvAwwMA0N9GBsEC6amhnVcEwavDAazGwIDaH1ipaYLBUTCGgQDA8NdHz0FpqgTBwsLqAbWAAnIA4FWKdMLGdYGEgraigbT0OITBcg5QwPT4xLrROZL6AuQAPUS7bxLpoWidY0JtxLHKhwwMJBTHgPKdEQAACH5BAkKAAAALAAAAAAgACAAAATrEMhJaVKp6s2nIkqFZF2VIBWhUsJaTokqUCoBq%2BE71SRQeyqUToLA7VxF0JDyIQh%2FMVVPMt1ECZlfcjZJ9mIKoaTl1MRIl5o4CUKXOwmyrCInCKqcWtvadL2SYhyASyNDJ0uIiUd6GAULDJCRiXo1CpGXDJOUjY%2BYip9DhToJA4RBLwMLCwVDfRgbBAaqqoZ1XBMHswsHtxtFaH1iqaoGNgAIxRpbFAgfPQSqpbgGBqUD1wBXeCYp1AYZ19JJOYgH1KwA4UBvQwXUBxPqVD9L3sbp2BNk2xvvFPJd%2BMFCN6HAAIKgNggY0KtEBAAh%2BQQJCgAAACwAAAAAIAAgAAAE6BDISWlSqerNpyJKhWRdlSAVoVLCWk6JKlAqAavhO9UkUHsqlE6CwO1cRdCQ8iEIfzFVTzLdRAmZX3I2SfYIDMaAFdTESJeaEDAIMxYFqrOUaNW4E4ObYcCXaiBVEgULe0NJaxxtYksjh2NLkZISgDgJhHthkpU4mW6blRiYmZOlh4JWkDqILwUGBnE6TYEbCgevr0N1gH4At7gHiRpFaLNrrq8HNgAJA70AWxQIH1%2BvsYMDAzZQPC9VCNkDWUhGkuE5PxJNwiUK4UfLzOlD4WvzAHaoG9nxPi5d%2BjYUqfAhhykOFwJWiAAAIfkECQoAAAAsAAAAACAAIAAABPAQyElpUqnqzaciSoVkXVUMFaFSwlpOCcMYlErAavhOMnNLNo8KsZsMZItJEIDIFSkLGQoQTNhIsFehRww2CQLKF0tYGKYSg%2BygsZIuNqJksKgbfgIGepNo2cIUB3V1B3IvNiBYNQaDSTtfhhx0CwVPI0UJe0%2Bbm4g5VgcGoqOcnjmjqDSdnhgEoamcsZuXO1aWQy8KAwOAuTYYGwi7w5h%2BKr0SJ8MFihpNbx%2B4Erq7BYBuzsdiH1jCAzoSfl0rVirNbRXlBBlLX%2BBP0XJLAPGzTkAuAOqb0WT5AH7OcdCm5B8TgRwSRKIHQtaLCwg1RAAAOwAAAAAAAAAAAA%3D%3D);
+  visibility: visible;
+  opacity: 0.6;
+  transition: all 0.3s ease; }
+
+.reveal .overlay header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 40px;
+  z-index: 2;
+  border-bottom: 1px solid #222; }
+
+.reveal .overlay header a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  padding: 0 10px;
+  float: right;
+  opacity: 0.6;
+  box-sizing: border-box; }
+
+.reveal .overlay header a:hover {
+  opacity: 1; }
+
+.reveal .overlay header a .icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-position: 50% 50%;
+  background-size: 100%;
+  background-repeat: no-repeat; }
+
+.reveal .overlay header a.close .icon {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABkklEQVRYR8WX4VHDMAxG6wnoJrABZQPYBCaBTWAD2g1gE5gg6OOsXuxIlr40d81dfrSJ9V4c2VLK7spHuTJ/5wpM07QXuXc5X0opX2tEJcadjHuV80li/FgxTIEK/5QBCICBD6xEhSMGHgQPgBgLiYVAB1dpSqKDawxTohFw4JSEA3clzgIBPCURwE2JucBR7rhPJJv5OpJwDX+SfDjgx1wACQeJG1aChP9K/IMmdZ8DtESV1WyP3Bt4MwM6sj4NMxMYiqUWHQu4KYA/SYkIjOsm3BXYWMKFDwU2khjCQ4ELJUJ4SmClRArOCmSXGuKma0fYD5CbzHxFpCSGAhfAVSSUGDUk2BWZaff2g6GE15BsBQ9nwmpIGDiyHQddwNTMKkbZaf9fajXQca1EX44puJZUsnY0ObGmITE3GVLCbEhQUjGVt146j6oasWN+49Vph2w1pZ5EansNZqKBm1txbU57iRRcZ86RWMDdWtBJUHBHwoQPi1GV+JCbntmvok7iTX4/Up9mgyTc/FJYDTcndgH/AA5A/CHsyEkVAAAAAElFTkSuQmCC); }
+
+.reveal .overlay header a.external .icon {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAcElEQVRYR+2WSQoAIQwEzf8f7XiOMkUQxUPlGkM3hVmiQfQR9GYnH1SsAQlI4DiBqkCMoNb9y2e90IAEJPAcgdznU9+engMaeJ7Azh5Y1U67gAho4DqBqmB1buAf0MB1AlVBek83ZPkmJMGc1wAR+AAqod/B97TRpQAAAABJRU5ErkJggg==); }
+
+.reveal .overlay .viewport {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  bottom: 0;
+  left: 0; }
+
+.reveal .overlay.overlay-preview .viewport iframe {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  border: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease; }
+
+.reveal .overlay.overlay-preview.loaded .viewport iframe {
+  opacity: 1;
+  visibility: visible; }
+
+.reveal .overlay.overlay-preview.loaded .spinner {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.2); }
+
+.reveal .overlay.overlay-help .viewport {
+  overflow: auto;
+  color: #fff; }
+
+.reveal .overlay.overlay-help .viewport .viewport-inner {
+  width: 600px;
+  margin: 0 auto;
+  padding: 60px;
+  text-align: center;
+  letter-spacing: normal; }
+
+.reveal .overlay.overlay-help .viewport .viewport-inner .title {
+  font-size: 20px; }
+
+.reveal .overlay.overlay-help .viewport .viewport-inner table {
+  border: 1px solid #fff;
+  border-collapse: collapse;
+  font-size: 14px; }
+
+.reveal .overlay.overlay-help .viewport .viewport-inner table th, .reveal .overlay.overlay-help .viewport .viewport-inner table td {
+  width: 200px;
+  padding: 10px;
+  border: 1px solid #fff;
+  vertical-align: middle; }
+
+.reveal .overlay.overlay-help .viewport .viewport-inner table th {
+  padding-top: 20px;
+  padding-bottom: 20px; }
+
+/*********************************************
+ * PLAYBACK COMPONENT
+ *********************************************/
+.reveal .playback {
+  position: fixed;
+  left: 15px;
+  bottom: 15px;
+  z-index: 30;
+  cursor: pointer;
+  transition: all 400ms ease; }
+
+.reveal.overview .playback {
+  opacity: 0;
+  visibility: hidden; }
+
+/*********************************************
+ * ROLLING LINKS
+ *********************************************/
+.reveal .roll {
+  display: inline-block;
+  line-height: 1.2;
+  overflow: hidden;
+  vertical-align: top;
+  perspective: 400px;
+  perspective-origin: 50% 50%; }
+
+.reveal .roll:hover {
+  background: none;
+  text-shadow: none; }
+
+.reveal .roll span {
+  display: block;
+  position: relative;
+  padding: 0 2px;
+  pointer-events: none;
+  transition: all 400ms ease;
+  transform-origin: 50% 0%;
+  transform-style: preserve-3d;
+  backface-visibility: hidden; }
+
+.reveal .roll:hover span {
+  background: rgba(0, 0, 0, 0.5);
+  transform: translate3d(0px, 0px, -45px) rotateX(90deg); }
+
+.reveal .roll span:after {
+  content: attr(data-title);
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 0 2px;
+  backface-visibility: hidden;
+  transform-origin: 50% 0%;
+  transform: translate3d(0px, 110%, 0px) rotateX(-90deg); }
+
+/*********************************************
+ * SPEAKER NOTES
+ *********************************************/
+.reveal aside.notes {
+  display: none; }
+
+/*********************************************
+ * ZOOM PLUGIN
+ *********************************************/
+.zoomed .reveal *, .zoomed .reveal *:before, .zoomed .reveal *:after {
+  backface-visibility: visible !important; }
+
+.zoomed .reveal .progress, .zoomed .reveal .controls {
+  opacity: 0; }
+
+.zoomed .reveal .roll span {
+  background: none; }
+
+.zoomed .reveal .roll span:after {
+  visibility: hidden; }
+
+/*
+   Own Settings
+   ========================================================================== */
+/*------------------------------------*\
+   PATHS
+\*------------------------------------*/
+/*------------------------------------*\
+   Colors
+\*------------------------------------*/
+/*------------------------------------------*\
+   General settings - Override reveal ones
+\*------------------------------------------*/
+/*------------------------------------*\
+   Fonts
+\*------------------------------------*/
+/*------------------------------------*\
+   Headings
+\*------------------------------------*/
+/*------------------------------------*\
+   Link colours
+\*------------------------------------*/
+/*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/**
+ * Remove default margin.
+ */
+body {
+  margin: 0; }
+
+/* HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11
+ * and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
+ */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block; }
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+audio, canvas, progress, video {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */ }
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9/10.
+ * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
+ */
+[hidden], template {
+  display: none; }
+
+/* Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+a {
+  background-color: transparent; }
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+a:active, a:hover {
+  outline: 0; }
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+ */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+ */
+b, strong {
+  font-weight: bold; }
+
+/**
+ * Address styling not present in Safari and Chrome.
+ */
+dfn {
+  font-style: italic; }
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari, and Chrome.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+mark {
+  background: #ff0;
+  color: #000; }
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9/10.
+ */
+img {
+  border: 0; }
+
+/**
+ * Correct overflow not hidden in IE 9/10/11.
+ */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari.
+ */
+figure {
+  margin: 1em 40px; }
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0; }
+
+/**
+ * Contain overflow in all browsers.
+ */
+pre {
+  overflow: auto; }
+
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ */
+code, kbd, pre, samp {
+  font-family: monospace, monospace;
+  font-size: 1em; }
+
+/* Forms
+   ========================================================================== */
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+/**
+ * 1. Correct color not being inherited.
+ *    Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+ */
+button, input, optgroup, select, textarea {
+  color: inherit;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+  margin: 0;
+  /* 3 */ }
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10/11.
+ */
+button {
+  overflow: visible; }
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+ * Correct `select` style inheritance in Firefox.
+ */
+button, select {
+  text-transform: none; }
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */ }
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled], html input[disabled] {
+  cursor: default; }
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+input {
+  line-height: normal; }
+
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+input[type="checkbox"], input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari and Chrome
+ *    (include `-moz` to future-proof).
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box; }
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9/10/11.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Remove default vertical scrollbar in IE 8/9/10/11.
+ */
+textarea {
+  overflow: auto; }
+
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+optgroup {
+  font-weight: bold; }
+
+/* Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+td, th {
+  padding: 0; }
+
+/*------------------------------------*\
+   Font faces
+\*------------------------------------*/
+@font-face {
+  font-family: 'sapientsans';
+  src: url("../../assets/fonts/sapient-sans/spntsm-webfont.eot");
+  src: url("../../assets/fonts/sapient-sans/spntsm-webfont.eot?#iefix") format('embedded-opentype'), url("../../assets/fonts/sapient-sans/spntsm-webfont.woff2") format('woff2'), url("../../assets/fonts/sapient-sans/spntsm-webfont.woff") format('woff'), url("../../assets/fonts/sapient-sans/spntsm-webfont.ttf") format('truetype'), url("../../assets/fonts/sapient-sans/spntsm-webfont.svg#sapientsansmediumregular") format('svg');
+  font-weight: 500;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'sapientsans';
+  src: url("../../assets/fonts/sapient-sans/spntsb-webfont.eot");
+  src: url("../../assets/fonts/sapient-sans/spntsb-webfont.eot?#iefix") format('embedded-opentype'), url("../../assets/fonts/sapient-sans/spntsb-webfont.woff2") format('woff2'), url("../../assets/fonts/sapient-sans/spntsb-webfont.woff") format('woff'), url("../../assets/fonts/sapient-sans/spntsb-webfont.ttf") format('truetype'), url("../../assets/fonts/sapient-sans/spntsb-webfont.svg#sapientsansboldregular") format('svg');
+  font-weight: 700;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'sapientsans';
+  src: url("../../assets/fonts/sapient-sans/spntsr-webfont.eot");
+  src: url("../../assets/fonts/sapient-sans/spntsr-webfont.eot?#iefix") format('embedded-opentype'), url("../../assets/fonts/sapient-sans/spntsr-webfont.woff2") format('woff2'), url("../../assets/fonts/sapient-sans/spntsr-webfont.woff") format('woff'), url("../../assets/fonts/sapient-sans/spntsr-webfont.ttf") format('truetype'), url("../../assets/fonts/sapient-sans/spntsr-webfont.svg#sapientsansregularregular") format('svg');
+  font-weight: 400;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'sapientsans';
+  src: url("../../assets/fonts/sapient-sans/spntsmi-webfont.eot");
+  src: url("../../assets/fonts/sapient-sans/spntsmi-webfont.eot?#iefix") format('embedded-opentype'), url("../../assets/fonts/sapient-sans/spntsmi-webfont.woff2") format('woff2'), url("../../assets/fonts/sapient-sans/spntsmi-webfont.woff") format('woff'), url("../../assets/fonts/sapient-sans/spntsmi-webfont.ttf") format('truetype'), url("../../assets/fonts/sapient-sans/spntsmi-webfont.svg#sapientsansmediumitalicRg") format('svg');
+  font-weight: 500;
+  font-style: italic; }
+
+/*------------------------------------*\
+   centro slab sapient
+\*------------------------------------*/
+@font-face {
+  font-family: 'sapientCentroSlab';
+  src: url("../../assets/fonts/centro-slab-sapient/sapientcentroslab-light-webfont.eot");
+  src: url("../../assets/fonts/centro-slab-sapient/sapientcentroslab-light-webfont.eot?#iefix") format('embedded-opentype'), url("../../assets/fonts/centro-slab-sapient/sapientcentroslab-light-webfont.woff2") format('woff2'), url("../../assets/fonts/centro-slab-sapient/sapientcentroslab-light-webfont.woff") format('woff'), url("../../assets/fonts/centro-slab-sapient/sapientcentroslab-light-webfont.ttf") format('truetype');
+  font-weight: 300; }
+
+@font-face {
+  font-family: 'sapientCentroSlab';
+  src: url("../../assets/fonts/centro-slab-sapient/sapientcentroslab-reg-webfont.eot");
+  src: url("../../assets/fonts/centro-slab-sapient/sapientcentroslab-reg-webfont.eot?#iefix") format('embedded-opentype'), url("../../assets/fonts/centro-slab-sapient/sapientcentroslab-reg-webfont.woff2") format('woff2'), url("../../assets/fonts/centro-slab-sapient/sapientcentroslab-reg-webfont.woff") format('woff'), url("../../assets/fonts/centro-slab-sapient/sapientcentroslab-reg-webfont.ttf") format('truetype');
+  font-weight: 400; }
+
+@font-face {
+  font-family: 'sapientCentroSlab';
+  src: url("../../assets/fonts/centro-slab-sapient/sapientcentroslab-italic-webfont.eot");
+  src: url("../../assets/fonts/centro-slab-sapient/sapientcentroslab-italic-webfont.eot?#iefix") format('embedded-opentype'), url("../../assets/fonts/centro-slab-sapient/sapientcentroslab-italic-webfont.woff2") format('woff2'), url("../../assets/fonts/centro-slab-sapient/sapientcentroslab-italic-webfont.woff") format('woff'), url("../../assets/fonts/centro-slab-sapient/sapientcentroslab-italic-webfont.ttf") format('truetype'), url("../../assets/fonts/centro-slab-sapient/sapientcentroslab-italic-webfont.svg#sapient_centro_slabitalic") format('svg');
+  font-weight: 400;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'sapientCentroSlab';
+  src: url("../../assets/fonts/centro-slab-sapient/sapientcentroslab-medium-webfont.eot");
+  src: url("../../assets/fonts/centro-slab-sapient/sapientcentroslab-medium-webfont.eot?#iefix") format('embedded-opentype'), url("../../assets/fonts/centro-slab-sapient/sapientcentroslab-medium-webfont.woff2") format('woff2'), url("../../assets/fonts/centro-slab-sapient/sapientcentroslab-medium-webfont.woff") format('woff'), url("../../assets/fonts/centro-slab-sapient/sapientcentroslab-medium-webfont.ttf") format('truetype');
+  font-weight: 600; }
+
+@font-face {
+  font-family: 'sapientCentroSlab';
+  src: url("../../assets/fonts/centro-slab-sapient/sapientcentroslab-meditalic-webfont.eot");
+  src: url("../../assets/fonts/centro-slab-sapient/sapientcentroslab-meditalic-webfont.eot?#iefix") format('embedded-opentype'), url("../../assets/fonts/centro-slab-sapient/sapientcentroslab-meditalic-webfont.woff2") format('woff2'), url("../../assets/fonts/centro-slab-sapient/sapientcentroslab-meditalic-webfont.woff") format('woff'), url("../../assets/fonts/centro-slab-sapient/sapientcentroslab-meditalic-webfont.ttf") format('truetype');
+  font-weight: 600;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'sapientCentroSlab';
+  src: url("../../assets/fonts/centro-slab-sapient/sapientcentroslab-bold-webfont.eot");
+  src: url("../../assets/fonts/centro-slab-sapient/sapientcentroslab-bold-webfont.eot?#iefix") format('embedded-opentype'), url("../../assets/fonts/centro-slab-sapient/sapientcentroslab-bold-webfont.woff2") format('woff2'), url("../../assets/fonts/centro-slab-sapient/sapientcentroslab-bold-webfont.woff") format('woff'), url("../../assets/fonts/centro-slab-sapient/sapientcentroslab-bold-webfont.ttf") format('truetype');
+  font-weight: 700; }
+
+/* -------------------------------------------------------------
+  Sass CSS3 Mixins! The Cross-Browser CSS3 Sass Library
+  By: Matthieu Aussaguel, http://www.mynameismatthieu.com, @matthieu_tweets
+
+  List of CSS3 Sass Mixins File to be @imported and @included as you need
+
+  The purpose of this library is to facilitate the use of CSS3 on different browsers avoiding HARD TO READ and NEVER
+  ENDING css files
+
+  note: All CSS3 Properties are being supported by Safari 5
+  more info: http://www.findmebyip.com/litmus/#css3-properties
+
+  Mixins available:
+    -   css3-prefix             - arguments: Property, Value
+    -   background-gradient     - arguments: Start Color: #3C3C3C, End Color: #999999
+    -   background-radial       - arguments: Start Color: #FFFFFF, Start position: 0%, End Color: #000000, End position: 100%
+    -   background-size         - arguments: Width: 100%, Height: 100%
+    -   background-opacity      - arguments: Color: #000, Opacity: .85
+    -   border-radius           - arguments: Radius: 5px
+    -   border-radius-separate  - arguments: Top Left: 5px, Top Left: 5px, Bottom Left: 5px, Bottom Right: 5px
+    -   box                     - arguments: Orientation: horizontal, Pack: center, Align: center
+    -   box-rgba                - arguments: R: 60, G: 3, B: 12, Opacity: 0.23, Color: #3C3C3C
+    -   box-shadow              - arguments: X: 2px, Y: 2px, Blur: 5px, Color: rgba(0,0,0,.4)
+    -   box-sizing              - arguments: Type: border-box
+    -   columns                 - arguments: Count: 3, Gap: 10
+    -   double-borders          - arguments: Color One: #3C3C3C, Color Two: #999999, Radius: 0
+    -   flex                    - arguments: Value: 1
+    -   flip                    - arguments: ScaleX: -1
+    -   font-face               - arguments: Font Family: myFont, Eot File Src: myFont.eot, Woff File Src: myFont.woff, Ttf File Src: myFont.ttf
+    -   opacity                 - arguments: Opacity: 0.5
+    -   outline radius          - arguments: Radius: 5px
+    -   resize                  - arguments: Direction: both
+    -   rotate                  - arguments: Degree: 0, M11: 0, M12: 0, M21: 0, M22: 0
+    CSS Matrix Rotation Calculator http://www.boogdesign.com/examples/transforms/matrix-calculator.html
+    -   text-shadow             - arguments: X: 2px, Y: 2px, Blur: 5px, Color: rgba(0,0,0,.4)
+    -   transform               - arguments: Parameters: null
+    -   transform-style         - arguments: Style: preserve-3d
+    -   transition              - arguments: What: all, Length: 1s, Easing: ease-in-out
+    -   triple-borders          - arguments: Color One: #3C3C3C, Color Two: #999999, Color Three: #000000, Radius: 0
+    -   keyframes               - arguments: Animation name
+                                - content:   Animation css
+    -   animation               - arguments: name duration timing-function delay iteration-count direction fill-mode play-state
+                                             (http://www.w3schools.com/cssref/css3_pr_animation.asp)
+
+
+    - placeholder-color $color
+    - text-truncate
+    - background-image $name, $size
+    - absolute (top Npx right Npx left Npx bottom Npx)
+    - fixed
+    - relative
+    - size $width, $height
+------------------------------------------------------------- */
+/* ADDS A BROWSER PREFIX TO THE PROPERTY */
+/* BACKGROUND GRADIENT */
+/* BACKGROUND RADIAL */
+/* BACKGROUND SIZE */
+/* BACKGROUND COLOR OPACITY */
+/* BORDER RADIUS */
+/* BOX */
+/* BOX RGBA */
+/* BOX SHADOW */
+/* BOX SIZING */
+/* COLUMNS */
+/* DOUBLE BORDERS */
+/* FLEX */
+/* FLIP */
+/* FONT FACE */
+/* OPACITY */
+/* OUTLINE RADIUS */
+/* RESIZE */
+/* ROTATE*/
+/* TEXT SHADOW */
+/* TRANSFORM  */
+/* TRANSFORM STYLE */
+/* TRANSITION */
+/* TRIPLE BORDERS */
+/* KEYFRAMES */
+/* ANIMATION */
+/**
+ * SVG mixin
+ */
+/******************************************
+* Media queries
+/******************************************/
+.u-clear-block:after, .u-clearfix:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+/**
+ * Define here the default styles for HTML tags
+ */
+/*------------------------------------*\
+    CONTENTS
+\*------------------------------------*/
+/*
+Base styles
+Lists
+Links
+Tipografy
+Lists
+Images
+Tables
+*/
+/*------------------------------------*\
+    Base styles for HTML, BODY
+\*------------------------------------*/
+html {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  overflow-y: scroll;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; }
+
+body {
+  font-size: 75%;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  padding: 0;
+  margin: 0;
+  line-height: 1; }
+
+/*------------------------------------*\
+    Links
+\*------------------------------------*/
+a {
+  text-decoration: none;
+  outline: none;
+  font-weight: bold; }
+  a:focus {
+    outline: thin dotted; }
+  a:hover, a:active {
+    text-decoration: underline;
+    outline: 0; }
+
+/*------------------------------------*\
+    Typografy
+\*------------------------------------*/
+p {
+  margin: 20px 0; }
+  p:first-child {
+    margin-top: 0; }
+
+a, p, span {
+  font-size: 1.5rem;
+  line-height: 1.5; }
+  @media screen and (max-width: 640px) {
+    a, p, span {
+      font-size: 2rem; } }
+
+h1 {
+  font-size: 4rem;
+  line-height: 1.2; }
+
+h2 {
+  font-size: 3rem;
+  line-height: 1; }
+
+h3 {
+  font-size: 2.5rem;
+  line-height: 1; }
+
+h4 {
+  font-size: 2em;
+  line-height: 1.25; }
+
+h5 {
+  font-size: 1em;
+  font-weight: bold; }
+
+h6 {
+  font-size: 1em;
+  font-weight: bold; }
+
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+b, strong {
+  font-weight: bold; }
+
+i, em, dfn {
+  font-style: italic; }
+
+blockquote {
+  margin: 1em 40px; }
+  blockquote:first-child {
+    margin-top: 0; }
+
+mark {
+  background: #ff0;
+  color: #000; }
+
+pre, code, kbd, samp {
+  font-family: Monaco, monospace, sans-serif;
+  _font-family: Monaco, monospace, sans-serif;
+  font-size: 1em; }
+
+pre, .codeblock {
+  background-color: #f5f5f5;
+  border: solid 1px #ddd;
+  padding: 1em;
+  -webkit-border-radius: 4px;
+  -khtml-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word; }
+
+q {
+  quotes: none; }
+  q:before, q:after {
+    content: '';
+    content: none; }
+
+small {
+  font-size: 75%; }
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+/*------------------------------------*\
+   Lists
+\*------------------------------------*/
+ul, ol {
+  padding: 0;
+  display: inline-block;
+  text-align: left;
+  margin: 0 0 0 1em; }
+
+ol {
+  list-style-type: decimal; }
+
+ul {
+  list-style-type: disc; }
+
+ul ul {
+  list-style-type: square; }
+
+ul ul ul {
+  list-style-type: circle; }
+
+ul ul, ul ol, ol ol, ol ul {
+  display: block;
+  margin-left: 40px; }
+
+dl {
+  margin: 1em 0; }
+  dl:first-child {
+    margin-top: 0; }
+  dl:only-child {
+    margin: 0; }
+
+dt {
+  font-weight: bold; }
+
+dd {
+  margin: 0 0 1em 1em; }
+
+img, video, iframe {
+  max-width: 95%;
+  max-height: 95%; }
+
+/*------------------------------------*\
+   Images
+\*------------------------------------*/
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic; }
+
+svg:not(:root) {
+  overflow: hidden; }
+
+figure {
+  margin: 0; }
+
+/*------------------------------------*\
+    Tables
+\*------------------------------------*/
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%; }
+
+td, th {
+  padding: 6px;
+  vertical-align: middle; }
+
+th {
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: left;
+  border-bottom: #000 solid 2px; }
+  th.field-label {
+    background: #e5e5e5;
+    border-bottom: none; }
+    th.field-label label {
+      padding-left: .5em; }
+
+table.field-multiple-table {
+  border: #e5e5e5 solid 1px; }
+
+tr.even, tr.odd {
+  border-width: 0 1px 0 1px;
+  border-style: solid;
+  border-color: #e5e5e5;
+  background: #f2f2f2; }
+
+tr.odd {
+  background: #fff; }
+
+tr.drag {
+  background: #fe7; }
+
+tr.drag-previous {
+  background: #ffb; }
+
+/* Utilities: helper classes, which can be used anywhere */
+/**
+ * Find here all the utility classes
+ *
+ * Extract from: https://gist.github.com/fat/a47b882eb5f84293c4ed
+ *
+ *  Definition of utility clases:
+ *
+ * Medium's utility classes are low-level structural and positional traits.
+ * Utilities can be applied directly to any element; multiple utilities can be
+ * used together; and utilities can be used alongside component classes.
+ *
+ * Utilities exist because certain CSS properties and patterns are used frequently.
+ * For example: floats, containing floats, vertical alignment, text truncation.
+ * Relying on utilities can help to reduce repetition and provide consistent implementations.
+ * They also act as a philosophical alternative to functional (i.e. non-polyfill) mixins.
+ *
+ */
+/*------------------------------------*\
+    General utility classes
+\*------------------------------------*/
+.u-hidden {
+  display: none !important;
+  visibility: hidden; }
+
+.u-bold {
+  font-weight: bold !important; }
+
+.u-italic {
+  font-style: italic !important; }
+
+.u-sans {
+  font-family: sapientsans, "Helvetica Neue", Helvetica, Arial, sans-serif !important; }
+
+.u-serif {
+  font-family: sapientCentroSlab, "Helvetica Neue", Helvetica, Arial, sans-serif !important; }
+
+.u-font-size-25 {
+  font-size: 2.5rem !important; }
+
+.u-dark-gray {
+  color: #999 !important; }
+
+.u-blue {
+  color: #21ADDD !important; }
+
+.u-float-right {
+  float: right !important; }
+
+.u-float-left {
+  float: left !important; }
+
+.u-center-text {
+  text-align: center !important; }
+
+.u-ListPadding {
+  padding-left: 6rem !important; }
+
+.u-ShortTitleAlign {
+  padding: 2em 0 0 2em !important; }
+
+.u-padding-content {
+  padding: 2em !important; }
+
+/* Layout: Styles to position mayor elements on the screen. */
+/**
+ * Define here the default styles for HTML tags
+ *
+ * Source: http://smacss.com/book/type-layout
+ *
+ * Definition:
+ *
+ * Layout styles are the ones to position mayor elements on the screen.
+ * Rules:
+ * * Use ID for elements which are only once in the screen
+ * * For the rest, preceed them with an: .l-
+ *
+ */
+.ContentContainer {
+  padding: 2em; }
+
+/*doc
+---
+title: Title Aligner
+name: TitleAligner
+presentation: layuout
+---
+*/
+.TitleAligner {
+  display: flex; }
+
+.TitleAligner-CenterCenter {
+  align-items: center;
+  height: 90%; }
+
+.TitleAligner-TopLeft {
+  align-items: flex-start; }
+
+.TitleAligner-CenterLeft {
+  align-items: center;
+  height: 90%; }
+
+.TitleAligner-CenterRight {
+  align-items: center;
+  height: 90%; }
+
+/*doc
+---
+title: Content Aligner
+name: ContentAligner
+presentation: layuout
+---
+*/
+.ContentAligner {
+  display: flex;
+  height: 90%; }
+
+.ContentAligner-CenterLeft {
+  order: 1;
+  width: 50%;
+  align-self: center; }
+
+.ContentAligner-CenterRight {
+  order: 2;
+  align-self: center;
+  width: 50%; }
+
+.ContentAligner-Vertical {
+  flex-direction: column;
+  justify-content: space-around; }
+
+.ContentAligner-LeftTop {
+  order: 1; }
+
+.ContentAligner-LeftBottom {
+  order: 2; }
+
+/* Modules */
+/*------------------------------------*\
+   Titles
+\*------------------------------------*/
+.SlideMainTitle {
+  font-size: 4em; }
+
+.SlideContentTitle {
+  font-size: 3em; }
+
+.SlideSubtitle {
+  color: #fff;
+  text-shadow: 1px 1px 0 #040707, -2px 1px 0 #040707, 1px -1px 0 #040707, -1px 1px 0 #040707, 1px 1px 0 #040707;
+  font-size: 6rem; }
+
+.SlideTitleUnderline {
+  background: #DE2728;
+  height: 8px;
+  width: 100px; }
+
+.SlideContentSubtitle {
+  margin-bottom: 0.4em;
+  font-size: 2.8rem; }
+
+.slides > section > section.AlternativeBackground-transparent {
+  background: transparent; }
+  .slides > section > section.AlternativeBackground-transparent .everform {
+    display: none; }
+
+.AlternativeBackground-transparent {
+  background: transparent !important; }
+  .AlternativeBackground-transparent .everform {
+    display: none; }
+
+.AlternativeBackground-title {
+  font-weight: bold;
+  line-height: 1;
+  margin-bottom: 0; }
+
+.AlternativeBackground-subtitle {
+  font-style: italic;
+  font-weight: 300;
+  font-size: 24px; }
+
+.AlternativeBackground-topicIndex {
+  font-size: 17rem;
+  z-index: -100;
+  position: absolute;
+  top: 150px;
+  left: 100px;
+  font-family: sapientCentroSlab, "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+/*------------------------------------*\
+   Logo
+\*------------------------------------*/
+.slides-step_InsightBackgroundColor .sn-Logo {
+  display: none; }
+
+.sn-Logo {
+  position: absolute;
+  bottom: 35px;
+  width: 95%; }
+  .sn-Logo_img, .sn-Logo_mark {
+    display: inline-block; }
+  .sn-Logo_img {
+    background: url("../../assets/img/SN_Logotype.png") no-repeat center center transparent;
+    background-size: 160px 100%;
+    width: 200px;
+    height: 30px;
+    margin-top: 30px;
+    float: left; }
+  .sn-Logo_mark {
+    background: url("../../assets/img/SN_Logomark.png") no-repeat center center transparent;
+    background-size: 30px 100%;
+    height: 60px;
+    width: 30px;
+    float: right; }
+
+.slides-step_SecondaryBackgroundColor .sn-Logo_img {
+  background-image: url("../../assets/img/SN_Logotype_Negative.png"); }
+.slides-step_SecondaryBackgroundColor .sn-Logo_mark {
+  background-image: url("../../assets/img/SN_Logomark_Negative.png"); }
+
+.slides-step_Last .sn-Logo_img {
+  background-image: url("../../assets/img/SN_Logomark.png");
+  background-size: 20px 100%;
+  height: 50px;
+  width: 20px; }
+  .slides-step_Last .sn-Logo_img:after {
+    position: absolute;
+    content: "© 2015 Sapient Corporation | Confidential";
+    top: 45px;
+    left: 33px; }
+.slides-step_Last .sn-Logo_mark {
+  background-image: none; }
+
+.reveal .slides {
+  text-align: left; }
+
+.reveal .slides > section {
+  padding: 20px; }
+
+.slides-step {
+  background-color: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  height: 700px;
+  -webkit-box-sizing: border-box;
+  -khtml-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box; }
+  .slides-step .everform {
+    position: absolute;
+    top: 0px;
+    right: 0;
+    fill: rgba(220, 221, 222, 0.85);
+    z-index: -1; }
+  .slides-step.slides-step-hideEverform .everform {
+    display: none; }
+  @media screen and (max-width: 640px) {
+    .slides-step {
+      background: transparent;
+      box-shadow: none; }
+      .slides-step .everform {
+        -webkit-transform: scale(3);
+        -khtml-transform: scale(3);
+        -moz-transform: scale(3);
+        -ms-transform: scale(3);
+        -o-transform: scale(3);
+        transform: scale(3);
+        right: -500px !important;
+        width: 424px; } }
+
+.slides-step_GraphicSlide .everform {
+  display: none; }
+
+.slides-step_SecondaryBackgroundColor {
+  background-color: #040707; }
+
+.slides-step_SecondaryBackgroundColor-title {
+  color: #fff; }
+
+.slides-step_SecondaryBackgroundColor-subtitle {
+  color: #21ADDD; }
+
+.slides-step_SecondaryBackgroundColor-topicIndex {
+  color: #999; }
+
+.slides-step_TertiaryBackgroundColor {
+  background-color: #21ADDD; }
+  .slides-step_TertiaryBackgroundColor .everform {
+    fill: #fff; }
+
+.slides-step_TertiaryBackgroundColor-title {
+  color: #040707; }
+
+.slides-step_TertiaryBackgroundColor-subtitle {
+  color: #fff; }
+
+.slides-step_TertiaryBackgroundColor-topicIndex {
+  color: #a5def2; }
+
+.slides-step_InsightBackgroundColor {
+  background-color: #DE2728;
+  height: 100%; }
+  .slides-step_InsightBackgroundColor .everform {
+    display: none; }
+
+.slides-step_InsightBackgroundColor-title, .slides-step_InsightBackgroundColor-subtitle {
+  color: #fff; }
+
+/*********************************************
+ * GLOBAL STYLES
+ *********************************************/
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+  font-family: sapientCentroSlab, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #040707;
+  background-color: #DFE5E6;
+  background: #DFE5E6;
+  -webkit-font-smoothing: antialiased; }
+  @media screen and (max-width: 640px) {
+    body {
+      font-size: 24px;
+      background: #fff; } }
+
+.reveal {
+  font-family: sapientCentroSlab, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  color: #040707;
+  letter-spacing: -.02em; }
+
+::selection {
+  color: #fff;
+  text-shadow: none;
+  background: #FF5E99; }
+
+.slides > section, .slides > section > section {
+  font-weight: inherit;
+  line-height: 1.3; }
+
+/*********************************************
+ * HEADERS
+ *********************************************/
+/*.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  margin: $headingMargin;
+  color: $headingColor;
+
+  font-family: $headingFont;
+  font-weight: $headingFontWeight;
+  line-height: $headingLineHeight;
+  letter-spacing: $headingLetterSpacing;
+
+  text-transform: $headingTextTransform;
+  text-shadow: $headingTextShadow;
+
+  word-wrap: break-word;
+}
+
+.reveal h1 {font-size: $heading1Size; }
+.reveal h2 {font-size: $heading2Size; }
+.reveal h3 {font-size: $heading3Size; }
+.reveal h4 {font-size: $heading4Size; }
+
+.reveal h1 {
+  text-shadow: $heading1TextShadow;
+}*/
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 20px 0;
+  font-family: sapientsans, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  line-height: 0.9em;
+  color: #040707;
+  text-transform: uppercase;
+  letter-spacing: normal;
+  word-wrap: break-word; }
+
+h1 {
+  font-size: 4rem; }
+
+h2 {
+  font-size: 3rem; }
+
+h3 {
+  font-size: 2.5rem; }
+
+h4 {
+  font-size: 2rem; }
+
+h1 {
+  text-shadow: none; }
+
+/*********************************************
+ * OTHER
+ *********************************************/
+p, span {
+  margin: 20px 0;
+  line-height: 1.3;
+  color: #999; }
+
+blockquote {
+  position: relative;
+  display: block;
+  width: 70%;
+  padding: 5px;
+  margin: 20px auto;
+  font-style: italic;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2); }
+
+blockquote p:first-child, blockquote p:last-child {
+  display: inline-block; }
+
+q {
+  font-style: italic; }
+
+pre {
+  position: relative;
+  display: block;
+  width: 90%;
+  margin: 20px auto;
+  font-family: monospace;
+  font-size: .55em;
+  line-height: 1.2em;
+  text-align: left;
+  word-wrap: break-word;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3); }
+
+code {
+  font-family: monospace; }
+
+pre code {
+  display: block;
+  max-height: 400px;
+  padding: 5px;
+  overflow: auto;
+  color: #dcdcdc;
+  word-wrap: normal;
+  background: #3f3f3f; }
+
+table {
+  margin: auto;
+  border-spacing: 0;
+  border-collapse: collapse; }
+
+table th {
+  font-weight: bold; }
+
+table th, table td {
+  padding: .2em .5em .2em .5em;
+  text-align: left;
+  border-bottom: 1px solid; }
+
+table th[align="center"], table td[align="center"] {
+  text-align: center; }
+
+table th[align="right"], table td[align="right"] {
+  text-align: right; }
+
+table tr:last-child td {
+  border-bottom: none; }
+
+/*********************************************
+ * LINKS
+ *********************************************/
+a {
+  color: #21ADDD;
+  text-decoration: none;
+  -webkit-transition: color .15s ease;
+  -moz-transition: color .15s ease;
+  transition: color .15s ease; }
+
+a:hover {
+  color: #79ceeb;
+  text-shadow: none;
+  border: none; }
+
+a:not(.image) {
+  color: #21ADDD;
+  -webkit-transition: color .15s ease 1s ease-in-out;
+  -khtml-transition: color .15s ease 1s ease-in-out;
+  -moz-transition: color .15s ease 1s ease-in-out;
+  -ms-transition: color .15s ease 1s ease-in-out;
+  -o-transition: color .15s ease 1s ease-in-out;
+  transition: color .15s ease 1s ease-in-out; }
+  a:not(.image):hover {
+    color: #79ceeb; }
+
+.roll span:after {
+  color: #fff;
+  background: #17799a; }
+
+/*********************************************
+ * IMAGES
+ *********************************************/
+section img {
+  margin: 15px 0;
+  background: rgba(255, 255, 255, 0.12);
+  border: 4px solid #040707;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  -webkit-transition: all .2s linear 1s ease-in-out;
+  -khtml-transition: all .2s linear 1s ease-in-out;
+  -moz-transition: all .2s linear 1s ease-in-out;
+  -ms-transition: all .2s linear 1s ease-in-out;
+  -o-transition: all .2s linear 1s ease-in-out;
+  transition: all .2s linear 1s ease-in-out; }
+
+a img {
+  -webkit-transition: all .15s linear;
+  -moz-transition: all .15s linear;
+  transition: all .15s linear; }
+
+a:hover img {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #21ADDD;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
+
+/*********************************************
+ * NAVIGATION CONTROLS
+ *********************************************/
+.reveal .controls div.navigate-left, .reveal .controls div.navigate-left.enabled {
+  border-right-color: #999; }
+
+.reveal .controls div.navigate-right, .reveal .controls div.navigate-right.enabled {
+  border-left-color: #999; }
+
+.reveal .controls div.navigate-up, .reveal .controls div.navigate-up.enabled {
+  border-bottom-color: #999; }
+
+.reveal .controls div.navigate-down, .reveal .controls div.navigate-down.enabled {
+  border-top-color: #999; }
+
+.reveal .controls div.navigate-left.enabled:hover {
+  border-right-color: #cccccc; }
+
+.reveal .controls div.navigate-right.enabled:hover {
+  border-left-color: #cccccc; }
+
+.reveal .controls div.navigate-up.enabled:hover {
+  border-bottom-color: #cccccc; }
+
+.reveal .controls div.navigate-down.enabled:hover {
+  border-top-color: #cccccc; }
+
+/*********************************************
+ * PROGRESS BAR
+ *********************************************/
+.reveal .progress {
+  background: rgba(0, 0, 0, 0.2); }
+
+.reveal .progress span {
+  background: #21ADDD;
+  -webkit-transition: width 800ms cubic-bezier(.26, .86, .44, .985);
+  -moz-transition: width 800ms cubic-bezier(.26, .86, .44, .985);
+  transition: width 800ms cubic-bezier(.26, .86, .44, .985); }
+
+/*********************************************
+ * SLIDE NUMBER
+ *********************************************/
+.reveal .slide-number {
+  color: #21ADDD; }
+
+/*------------------------------------*\
+  Full screen
+\*------------------------------------*/
+.FullScreenToggleIcon {
+  display: none; }
+
+.FullScreenToggleIcon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  display: block;
+  width: 40px;
+  height: 40px;
+  pointer-events: auto;
+  background: url(../../assets/img/icon/zoom_in_active.png) transparent 0 0 no-repeat;
+  background: none, url(../../assets/img/icon/zoom_in_active.svg) transparent 0 0 no-repeat; }
+
+body:-webkit-full-screen {
+  background: #fff !important; }
+body:-moz-full-screen {
+  background: #fff !important; }
+body:-ms-fullscreen {
+  background: #fff !important; }
+body:fullscreen {
+  background: #fff !important; }
+
+.OuterLogo {
+  display: none; }
+
+:-webkit-full-screen .slides-step {
+  border: 0 !important;
+  box-shadow: none !important;
+  opacity: 0; }
+  :-webkit-full-screen .slides-step.active {
+    opacity: 1; }
+  :-webkit-full-screen .slides-step .everform {
+    right: -500px;
+    -webkit-transform: scale(3);
+    -khtml-transform: scale(3);
+    -moz-transform: scale(3);
+    -ms-transform: scale(3);
+    -o-transform: scale(3);
+    transform: scale(3); }
+:-webkit-full-screen .FullScreenToggleIcon {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  background: url(../../assets/img/icon/zoom_out_active.png) transparent 0 0 no-repeat;
+  background: none, url(../../assets/img/icon/zoom_out_active.svg) transparent 0 0 no-repeat; }
+
+:-moz-full-screen .slides-step {
+  border: 0 !important;
+  box-shadow: none !important;
+  opacity: 0; }
+  :-moz-full-screen .slides-step.active {
+    opacity: 1; }
+  :-moz-full-screen .slides-step .everform {
+    right: -500px;
+    -webkit-transform: scale(3);
+    -khtml-transform: scale(3);
+    -moz-transform: scale(3);
+    -ms-transform: scale(3);
+    -o-transform: scale(3);
+    transform: scale(3); }
+:-moz-full-screen .FullScreenToggleIcon {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  background: url(../../assets/img/icon/zoom_out_active.png) transparent 0 0 no-repeat;
+  background: none, url(../../assets/img/icon/zoom_out_active.svg) transparent 0 0 no-repeat; }
+
+:-ms-fullscreen .slides-step {
+  border: 0 !important;
+  box-shadow: none !important;
+  opacity: 0; }
+  :-ms-fullscreen .slides-step.active {
+    opacity: 1; }
+  :-ms-fullscreen .slides-step .everform {
+    right: -500px;
+    -webkit-transform: scale(3);
+    -khtml-transform: scale(3);
+    -moz-transform: scale(3);
+    -ms-transform: scale(3);
+    -o-transform: scale(3);
+    transform: scale(3); }
+:-ms-fullscreen .FullScreenToggleIcon {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  background: url(../../assets/img/icon/zoom_out_active.png) transparent 0 0 no-repeat;
+  background: none, url(../../assets/img/icon/zoom_out_active.svg) transparent 0 0 no-repeat; }
+
+:fullscreen .slides-step {
+  border: 0 !important;
+  box-shadow: none !important;
+  opacity: 0; }
+  :fullscreen .slides-step.active {
+    opacity: 1; }
+  :fullscreen .slides-step .everform {
+    right: -500px;
+    -webkit-transform: scale(3);
+    -khtml-transform: scale(3);
+    -moz-transform: scale(3);
+    -ms-transform: scale(3);
+    -o-transform: scale(3);
+    transform: scale(3); }
+:fullscreen .FullScreenToggleIcon {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  background: url(../../assets/img/icon/zoom_out_active.png) transparent 0 0 no-repeat;
+  background: none, url(../../assets/img/icon/zoom_out_active.svg) transparent 0 0 no-repeat; }
+
+@media print {
+  .slides-step {
+    page-break-after: always; }
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster: h5bp.com/s */
+    box-shadow: none !important;
+    text-shadow: none !important; }
+  a, a:visited {
+    text-decoration: underline; }
+  a[href]:after {
+    content: " (" attr(href) ")"; }
+  abbr[title]:after {
+    content: " (" attr(title) ")"; }
+  /*
+	* Don't show links for images, or javascript/internal links
+	*/
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
+    content: ""; }
+  pre, blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid; }
+  thead {
+    display: table-header-group;
+    /* h5bp.com/t */ }
+  tr, img {
+    page-break-inside: avoid; }
+  img {
+    max-width: 100% !important; }
+  @page {
+    margin: 0.5cm; }
+
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3; }
+  h2, h3 {
+    page-break-after: avoid; } }
+
+.d3 {
+  position: absolute;
+  top: 91px;
+  left: 140px; }
+  .d3 text {
+    font: 24px sapientCentroSlab, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-anchor: middle;
+    pointer-events: none;
+    fill: #fff; }
+  .d3 circle {
+    fill: #21ADDD; }
+  .d3 .node:hover circle {
+    fill: #DE2728; }
+
+/*# sourceMappingURL=styles.css.map */

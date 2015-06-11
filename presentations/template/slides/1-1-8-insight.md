@@ -7,7 +7,7 @@ classes:
  - slides-step_InsightBackgroundColor
  - AlternativeBackground
 slideDataAttr:
- - background: " #DE2728"
+ - background: "#DE2728"
 ---
 
 <div class="TitleAligner TitleAligner-CenterCenter u-center-text">
