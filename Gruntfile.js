@@ -77,7 +77,9 @@ module.exports = function( grunt ) {
 
   // Build HTML Task
   grunt.registerTask( 'build-html', [
-    'assemble'
+    'assemble',
+    'htmlmin',
+    'copy'
   ] );
 
   // HTML Hint Task (Check your HTML)
@@ -95,6 +97,7 @@ module.exports = function( grunt ) {
    */
   grunt.registerTask( 'server', [
     'newer:assemble',
+    'copy',
     'concurrent:syncing',
     'watchCSS',
     'connect:livereload',
@@ -108,6 +111,8 @@ module.exports = function( grunt ) {
     'combine_mq',
     'cssmin',
     'assemble',
+    'htmlmin',
+    'copy',
     'concurrent:build'
   ] );
 

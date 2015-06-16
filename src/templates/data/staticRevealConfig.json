@@ -27,6 +27,11 @@
         "height": 920,
         "margin": 0.1,
         "minScale": 0.35,
-        "maxScale": 1.5
+        "maxScale": 1.5,
+        "multiplex": {
+            "secret": "14343814693547276153",
+            "socketId": "e92f884b9ebb4fd2",
+            "url": "http://localhost:1947"
+        }
     }
 }

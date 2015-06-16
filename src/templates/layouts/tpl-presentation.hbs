@@ -26,33 +26,32 @@
   {{> _scripts}}
 <script>
   Reveal.initialize({
-    {{#eachProperty staticRevealConfig.config}}{{#xif "this && this.key !== 'transition'"}} {{this.key}}: {{#xif "this.value == 'false' || this.value == 'true'"}} {{this.value}} {{else}} {{#compare this.value "typeof" 'string'}} '{{this.value}}' {{else}} {{this.value}} {{/compare}}{{/xif}},{{/xif}}
+    {{#eachProperty staticRevealConfig.config}}{{#xif "this && this.key !== 'transition' && this.key !== 'multiplex'"}} {{this.key}}: {{#xif "this.value == 'false' || this.value == 'true'"}} {{this.value}} {{else}} {{#compare this.value "typeof" 'string'}} '{{this.value}}' {{else}} {{this.value}} {{/compare}}{{/xif}},{{/xif}}
     {{/eachProperty}}
-    theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+    theme: Reveal.getQueryHash().theme,
     transition: Reveal.getQueryHash().transition ||  {{#if staticRevealConfig.config.transition}} '{{staticRevealConfig.config.transition}}' {{else}} 'default' {{/if}}, // default/cube/page/concave/zoom/linear/fade/none
-    // Optional libraries used to extend on reveal.js
     dependencies: [
-      // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
       {src: '{{vendor}}/reveal.js/lib/classList.js', condition: function() { return !document.body.classList; }},
-      // Zoom in and out with Alt+click
       {src: '{{vendor}}/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; }},
-       { src: '{{vendor}}/reveal.js/plugin/highlight/highlight.js', async: true },
-      // Speaker notes
-      { src: '{{vendor}}/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; }},
+      { src: '{{vendor}}/reveal.js/plugin/highlight/highlight.js', async: true },
+      {src: '{{vendor}}/reveal.js/plugin/math/math.js', async: true},
       // Remote control your reveal.js presentation using a touch device
-      //{src: '{{vendor}}/reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; }},
-        //{ src: '//cdn.socket.io/socket.io-1.2.0.js', async: true },
-        //{ src: '{{vendor}}/reveal.js/plugin/multiplex/master.js', async: true },
-        //{ src: '{{vendor}}/reveal.js/plugin/notes-server/client.js', async: true },
-      // MathJax
-      {src: '{{vendor}}/reveal.js/plugin/math/math.js', async: true}
-    ]/*,
-      multiplex: {
-        // Example values. To generate your own, see the socket.io server instructions.
-        secret: '13652805320794272084', // Obtained from the socket.io server. Gives this (the master) control of the presentation
-        id: '1ea875674b17ca76', // Obtained from socket.io server
-        url: 'revealjs.jit.su:80' // Location of socket.io server
-    }*/
+      //{ src: '{{vendor}}/reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; }},
+      {{#if staticRevealConfig.config.multiplex}}
+      { src: '//cdn.socket.io/socket.io-1.2.0.js', async: true },{{# if presentatorPage }}
+      { src: '{{vendor}}/reveal.js/plugin/multiplex/master.js', async: true },{{else}}
+      { src: '{{vendor}}/reveal.js/plugin/multiplex/client.js', async: true },{{/if}}{{/if}}
+      {{#if presentatorPage}}{{#if staticRevealConfig.config.multiplex}}
+      { src: '/js/reveal-notes-server/client.js', async: true }{{else}}
+      { src: '{{vendor}}/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; }}{{/if}}{{/if}}
+    ]{{#if staticRevealConfig.config.multiplex}},
+      multiplex: { {{#if presentatorPage}}
+        secret: '{{staticRevealConfig.config.multiplex.secret}}',{{else}}
+        secret: null,{{/if}}
+        id: '{{staticRevealConfig.config.multiplex.socketId}}',
+        url: '{{staticRevealConfig.config.multiplex.url}}'
+    }
+    {{/if}}
   });
 </script>
 </body>
