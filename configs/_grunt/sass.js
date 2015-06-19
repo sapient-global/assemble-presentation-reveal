@@ -5,8 +5,11 @@ module.exports = {
     includePaths: ['<%= paths.vendor %>/reveal.js/css']
     },
     dist: {
-        files: {
+        files: [{
             '<%= paths.dist %>/css/styles.css': '<%= paths.src %>/scss/styles.scss'
-        }
+        },
+        {
+          '<%= paths.dist %>/css/styles-home.css': '<%= paths.src %>/scss/styles-home.scss'
+        }]
     }
 };

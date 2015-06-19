@@ -8,18 +8,6 @@
  *
  */
 
-/*
-   Reveal Settings
-   ========================================================================== */
-
-@import "reveal";
-@import 'theme/template/mixins';
-
-/*
-   Own Settings
-   ========================================================================== */
-
-
 
 @import "base/settings";
 @import "base/normalize";
@@ -38,10 +26,5 @@
 /* Layout: Styles to position mayor elements on the screen. */
 @import "layout/layout";
 
-/* Modules */
-@import "modules/modules";
-@import "modules/slides";
-@import "theme/theme";
 @import "base/print";
-@import "pages/d3";
-
+@import "pages/index";

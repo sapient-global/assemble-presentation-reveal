@@ -1,0 +1,47 @@
+$contentPadding: 20px;
+h1 {
+  @include rem-fallback(font-size, 20px);
+}
+
+a, p, span {
+  @include rem-fallback(font-size, 16px);
+}
+
+a {
+  color: $brand-blue;
+}
+
+.content,
+.header-wrapper {
+
+    max-width: 1024px;
+    margin: 0 auto;
+    padding-left: $contentPadding;
+    padding-right: $contentPadding;
+}
+
+
+header {
+  background-color: $brand-gray;
+  padding: 10px 0;
+
+  .logo,
+  .title {
+    display: inline-block;
+  }
+
+  .logo {
+    background: $brand-red;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+}
+
+
+@include min-screen($desktop) {
+  .content,
+  .header-wrapper {
+    padding: 0;
+  }
+}

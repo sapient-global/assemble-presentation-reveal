@@ -6,12 +6,18 @@
 <html lang="en" class="no-js"> <!--<![endif]-->
 <head>
 {{> _metadata }}
-{{> _styles }}
+{{> _styles-home }}
 </head>
 <body class="{{ bodyclass }}">
-	<section class="slides-step">
+  <header>
+    <div class="header-wrapper">
+    <div class="logo"></div>
+    <div class="title">{{title}}</div>
+    </div>
+  </header>
+  <section class="content">
 	{{> body }}
-	</section>
+  </section>
   {{> _scripts}}
 </body>
 </html>
