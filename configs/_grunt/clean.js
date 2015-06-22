@@ -1,3 +1,3 @@
 module.exports = {
-    all: ['<%= paths.dist %>/']
+    all: ['<%= paths.dist %>']
 };

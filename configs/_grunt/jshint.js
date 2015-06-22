@@ -13,7 +13,12 @@ module.exports = {
     "quotmark": "single",
     "undef": true,
     "unused": true,
-    "strict": true
+    "strict": true,
+    "browser": true,
+    "globals": {
+      "Reveal": true,
+      "io": true
+    }
   },
   all: [
     'Gruntfile.js',

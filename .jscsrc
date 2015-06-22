@@ -51,7 +51,7 @@
         "requireParamTypes": true
     },
     "validateQuoteMarks": "'",
-    "validateIndentation": "\t"
+    "validateIndentation": " "
 
 
     //"requireSpaceAfterLineComment": true

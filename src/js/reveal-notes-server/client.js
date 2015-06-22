@@ -1,4 +1,5 @@
 ( function() {
+  'use strict';
 
   // don't emit events from inside the previews themselves
   if ( window.location.search.match( /receiver/gi ) ) {
@@ -11,7 +12,7 @@
   var notesNotation = window.location.origin + '/notes/' + socketId;
 
   console.log( 'View slide notes at ' + notesNotation );
-  window.open(notesNotation, 'notes-' + socketId );
+  window.open( notesNotation, 'notes-' + socketId );
 
   /**
    * Posts the current slide data to the notes window
@@ -44,7 +45,7 @@
   }
 
   // When a new notes window connects, post our current state
-  socket.on( 'connect', function( data ) {
+  socket.on( 'connect', function() {
     post();
   } );
 
@@ -59,5 +60,4 @@
 
   // Post the initial state
   post();
-
 }() );

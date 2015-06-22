@@ -12,13 +12,11 @@
   {{> body }}
  <div class="reveal {{#if staticRevealConfig.parallaxBackgroundImage}}has-parallax-background{{/if}}">
        <div class="slides">
-       {{#iterate presentation}}{{#is ../menuLink slide}}{{#each pages}}
-       {{#is this.data.menuLink slide}}
+       {{#iterate this.slides}}
           {{> _slide}}
           <div class="page-break"></div>
-          {{/is}}
-        {{/each}}{{/is}}{{/iterate}}
-      {{#if staticRevealConfig.overview }}
+        {{/iterate}}
+      {{#if reveal.overview }}
         <section id="overview" class="step"></section>
       {{/if}}
     </div>
@@ -26,30 +24,30 @@
   {{> _scripts}}
 <script>
   Reveal.initialize({
-    {{#eachProperty staticRevealConfig.config}}{{#xif "this && this.key !== 'transition' && this.key !== 'multiplex'"}} {{this.key}}: {{#xif "this.value == 'false' || this.value == 'true'"}} {{this.value}} {{else}} {{#compare this.value "typeof" 'string'}} '{{this.value}}' {{else}} {{this.value}} {{/compare}}{{/xif}},{{/xif}}
+    {{#eachProperty reveal}}{{#xif "this && this.key !== 'transition' && this.key !== 'multiplex'"}} {{this.key}}: {{#xif "this.value == false || this.value == true"}} {{#is this.value false}} false {{else}}{{this.value}}{{/is}} {{else}} {{#compare this.value "typeof" 'string'}} '{{this.value}}' {{else}} {{this.value}} {{/compare}}{{/xif}},{{/xif}}
     {{/eachProperty}}
     theme: Reveal.getQueryHash().theme,
-    transition: Reveal.getQueryHash().transition ||  {{#if staticRevealConfig.config.transition}} '{{staticRevealConfig.config.transition}}' {{else}} 'default' {{/if}}, // default/cube/page/concave/zoom/linear/fade/none
+    transition: Reveal.getQueryHash().transition ||  {{#if reveal.transition}} '{{reveal.transition}}' {{else}} 'default' {{/if}}, // default/cube/page/concave/zoom/linear/fade/none
     dependencies: [
       {src: '{{vendor}}/reveal.js/lib/classList.js', condition: function() { return !document.body.classList; }},
       {src: '{{vendor}}/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; }},
       { src: '{{vendor}}/reveal.js/plugin/highlight/highlight.js', async: true },
       {src: '{{vendor}}/reveal.js/plugin/math/math.js', async: true},
-      // Remote control your reveal.js presentation using a touch device
-      //{ src: '{{vendor}}/reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; }},
-      {{#if staticRevealConfig.config.multiplex}}
-      { src: '//cdn.socket.io/socket.io-1.2.0.js', async: true },{{# if presentatorPage }}
+      {{#if reveal.remote}}{{# if presentatorPage }}// Remote control your reveal.js presentation using a touch device
+      { src: '{{vendor}}/reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; }},{{/if}}{{/if}}
+      {{#if reveal.multiplex}}
+      { src: '/socket.io/socket.io.js', async: true },{{# if presentatorPage }}
       { src: '{{vendor}}/reveal.js/plugin/multiplex/master.js', async: true },{{else}}
       { src: '{{vendor}}/reveal.js/plugin/multiplex/client.js', async: true },{{/if}}{{/if}}
-      {{#if presentatorPage}}{{#if staticRevealConfig.config.multiplex}}
+      {{#if presentatorPage}}{{#if reveal.multiplex}}
       { src: '/js/reveal-notes-server/client.js', async: true }{{else}}
       { src: '{{vendor}}/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; }}{{/if}}{{/if}}
-    ]{{#if staticRevealConfig.config.multiplex}},
+    ]{{#if reveal.multiplex}},
       multiplex: { {{#if presentatorPage}}
-        secret: '{{staticRevealConfig.config.multiplex.secret}}',{{else}}
+        secret: '{{reveal.multiplex.secret}}',{{else}}
         secret: null,{{/if}}
-        id: '{{staticRevealConfig.config.multiplex.socketId}}',
-        url: '{{staticRevealConfig.config.multiplex.url}}'
+        id: '{{reveal.multiplex.socketId}}',
+        url: '{{reveal.multiplex.url}}'
     }
     {{/if}}
   });

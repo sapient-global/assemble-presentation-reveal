@@ -5,17 +5,14 @@ module.exports = {
         helpers: '<%= paths.src %>/templates/helpers/**/*.js',
         layoutdir: '<%= paths.src %>/templates/layouts/',
         context: {
-        //    dest: '<%= paths.src %>/templates/data/'
+            dest: '<%= paths.src %>/templates/data/'
         },
         data: '<%= paths.src %>/templates/data/**/*.json',
-        plugins: ['assemble-collection-context'],
+        plugins: ['assemble-collection-context', 'assemble-reveal-builder'],
         partials: [
             '<%= paths.src %>/templates/partials/**/*.hbs'
         ],
         collections: [{
-            name: 'presentation',
-            inflection: 'slide'
-        }, {
             name: 'slideDataAttr'
         }, {
             name: 'classes',
@@ -25,6 +22,7 @@ module.exports = {
     index: {
         options: {
             layout: 'tpl-default.hbs',
+            presentatiobnPage: false
         },
         files: [{
             cwd: '<%= paths.src %>/templates/pages/',
@@ -37,6 +35,7 @@ module.exports = {
     slides: {
         options: {
             layout: 'tpl-presentation.hbs',
+            presentationPage: true
         },
         files: [{
             cwd: '<%= paths.presentations %>/',
@@ -44,7 +43,7 @@ module.exports = {
             expand: true,
             filter: 'isFile',
             extDot: ['md', 'hbs'],
-            src: ['**/*']
+            src: ['**/index.hbs', '**/master.hbs']
         }]
     }
 };

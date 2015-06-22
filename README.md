@@ -1,3 +1,8 @@
+#todo
+
+write an assemble plugin to pass the config.yml data of each presentation to the index
+write another plugin not to render the slides as a single html
+
 # About this template
 
 In this master branch you will find a template to create web presentations using the standard Sapient corporate theme.
@@ -80,6 +85,17 @@ The default tasks builds everything and then runs the serve task
 ```js
 grunt
 ```
+
+## Keyboard shortcuts
+
+The default keyboard shortcuts are:
+
+Up, Down, Left, Right: Navigation
+f: Full-screen
+s: Show slide notes
+o: Toggle overview
+. (Period or b: Turn screen black
+Esc: Escape from full-screen, or toggle overview
 
 
 ## Next ideas
