@@ -75,8 +75,10 @@ p {
     }
 }
 a, p, span {
-    font-size: 1.5rem;
+
+    @include rem-fallback(font-size, 24px);
     line-height: 1.5;
+
     @include max-screen(640px) {
         font-size: 2rem;
     }

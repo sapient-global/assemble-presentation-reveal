@@ -5,27 +5,23 @@ sortOrder: 01
 ---
 
 
-<div class="ContentAligner">
-    <div class="title__container ContentAligner-CenterLeft">
-        <h1 class="SlideMainTitle u-sans u-bold">Content</h1>
-        <div class="SlideTitleUnderline"></div>
+<div class="TitleAligner">
+    <div class="TitleAligner-TopLeft">
+        <h1 class="u-sans u-bold">Available presentations</h1>
     </div>
+</div>
 
-    <div class="ContentAligner-CenterRight">
-        <ol class="u-font-size-25">
-        {{#each  pages }}
-            <li class="u-italic">
-                <a href="{{relative  .. /page.dest this.dest }}" class="u-font-size-25">{{data.title }}</a>
-            </li>
-        {{/each}}
+<div class="ContentAligner">
+  <nav>
+        <ol class="">
         {{#each  slides.pages }}
          {{#unless data.presentation}}
-            <li class="u-italic">
-                <a href="/presentations/{{this.data.menuLink}}/{{this.pageName}}" class="u-font-size-25">{{data.title }}</a>
+            <li class="">
+                <a href="/presentations/{{this.data.menuLink}}/{{this.pageName}}" class="">{{data.title }}</a>
             </li>
           {{/unless}}
         {{/each}}
         </ol>
-    </div>
+    </nav>
 </div>
 
