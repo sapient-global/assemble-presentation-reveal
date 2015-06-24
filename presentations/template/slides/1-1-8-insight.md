@@ -1,7 +1,5 @@
 ---
-layout: tpl-presentation.hbs
 title: "Insight Slide"
-published: true
 presentation: template
 classes:
  - slides-step_InsightBackgroundColor

@@ -1,7 +1,6 @@
 ---
 title: "Content and Title"
 presentation: brownbag
-published: true
 ---
 <div class="ContentAligner ContentAligner-Vertical u-padding-content">
     <div class="ContentAligner-LeftTop">

@@ -1,7 +1,5 @@
 ---
-layout: tpl-presentation.hbs
 title: "What is eating clean?"
-published: true
 presentation: eatingClean
 classes:
   - slides-step_GraphicSlide

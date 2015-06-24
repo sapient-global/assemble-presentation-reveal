@@ -1,7 +1,5 @@
 ---
-layout: tpl-presentation.hbs
 title: "Content and Title"
-published: true
 presentation: template
 
 ---

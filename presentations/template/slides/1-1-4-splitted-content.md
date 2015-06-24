@@ -1,7 +1,5 @@
 ---
-layout: tpl-presentation.hbs
 title: "slide with subtitle"
-published: true
 presentation: template
 ---
 

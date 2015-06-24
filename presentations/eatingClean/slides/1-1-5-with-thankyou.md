@@ -1,7 +1,5 @@
 ---
-layout: tpl-presentation.hbs
 title: "Thank you"
-published: true
 presentation: eatingClean
 classes:
  - slides-step_Last

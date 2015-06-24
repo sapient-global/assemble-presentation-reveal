@@ -1,7 +1,5 @@
 ---
-layout: tpl-presentation.hbs
 title: "blue background"
-published: true
 presentation: template
 classes:
  - slides-step_TertiaryBackgroundColor

@@ -1,8 +1,6 @@
 ---
 title: "Agenda"
 presentation: brownbag
-published: true
-
 ---
 
 

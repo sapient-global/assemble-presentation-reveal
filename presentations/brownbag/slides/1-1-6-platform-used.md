@@ -1,8 +1,6 @@
 ---
 title:
 presentation: brownbag
-published: true
-
 ---
  <div class="ContentAligner">
         <div class="title__container ContentAligner-CenterLeft">

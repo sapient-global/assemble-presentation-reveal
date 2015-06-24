@@ -15,11 +15,9 @@ sortOrder: 01
   <nav>
         <ol class="">
         {{#each  slides.pages }}
-         {{#unless data.presentation}}
             <li class="">
                 <a href="/presentations/{{this.data.menuLink}}/{{this.pageName}}" class="">{{data.title }}</a>
             </li>
-          {{/unless}}
         {{/each}}
         </ol>
     </nav>

@@ -1,7 +1,6 @@
 ---
 title:
 presentation: brownbag
-published: true
 classes:
  - slides-step_SecondaryBackgroundColor
  - AlternativeBackground

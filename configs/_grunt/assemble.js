@@ -5,7 +5,7 @@ module.exports = {
         helpers: '<%= paths.src %>/templates/helpers/**/*.js',
         layoutdir: '<%= paths.src %>/templates/layouts/',
         context: {
-            dest: '<%= paths.src %>/templates/data/'
+            dest: '<%= paths.src %>/templates/data/dynamic/'
         },
         data: '<%= paths.src %>/templates/data/**/*.json',
         plugins: ['assemble-collection-context', 'assemble-reveal-builder'],

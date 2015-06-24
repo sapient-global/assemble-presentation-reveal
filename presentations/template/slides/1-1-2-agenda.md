@@ -1,7 +1,5 @@
 ---
-layout: tpl-presentation.hbs
 title: "Agenda"
-published: true
 presentation: template
 
 ---

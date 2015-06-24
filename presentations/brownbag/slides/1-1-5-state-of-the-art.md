@@ -1,7 +1,6 @@
 ---
 title: "slide with subtitle"
 presentation: brownbag
-published: true
 ---
 
  <div class="ContentAligner">

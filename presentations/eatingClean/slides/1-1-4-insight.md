@@ -1,7 +1,5 @@
 ---
-layout: tpl-presentation.hbs
 title: "Insight Slide"
-published: true
 presentation: eatingClean
 classes:
  - slides-step_InsightBackgroundColor

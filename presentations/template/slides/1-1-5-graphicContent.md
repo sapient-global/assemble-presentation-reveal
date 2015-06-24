@@ -1,7 +1,5 @@
 ---
-layout: tpl-presentation.hbs
 title: "Grapic content"
-published: true
 presentation: template
 classes:
   - slides-step_GraphicSlide

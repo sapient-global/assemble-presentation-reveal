@@ -1,7 +1,6 @@
 ---
 title: "Thank you"
 presentation: brownbag
-published: true
 classes:
  - slides-step_Last
 

@@ -1,8 +1,6 @@
 ---
 title: "why a web solution"
 presentation: brownbag
-published: true
-
 ---
 
 <div class="ContentAligner ContentAligner-Vertical">
