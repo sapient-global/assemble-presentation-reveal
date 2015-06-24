@@ -1,8 +1,3 @@
-#todo
-
-write an assemble plugin to pass the config.yml data of each presentation to the index
-write another plugin not to render the slides as a single html
-
 # About this template
 
 In this master branch you will find a template to create web presentations using the standard Sapient corporate theme.
@@ -23,12 +18,12 @@ You will need to have pre-installed in your computer:
 
 # Folder architecture
 
-|
-|- _output // Contains the built files for the server
+```
+|- dist // Contains the built files for the server
 |- configs
 |- presentations // Folder with the presentations
 |- src // Source code
-
+```
 
 # Creating new presentations
 
@@ -36,7 +31,7 @@ To create a new presentation, you will need to:
 1. Create a subFolder with the name of your presentation under: "presentations"
 2. Add a folder there called: slides
 3. Next to the slides folder, create an index.hbs file
-
+4. Add your config.yml with your reveal settings
 
 ## Index of presentation
 
@@ -68,7 +63,7 @@ slideDataAttr:
 
 You can add as many classes or data attributes as you want. I owe you a list of possible options of data attributes supported by reveal. 
 
-## Running and building the presentation
+## Running and building the presentation in development mode
 
 To create the dist, run:
 ```js
@@ -86,6 +81,18 @@ The default tasks builds everything and then runs the serve task
 grunt
 ```
 
+## Running the presentation with sockets
+
+To create the dist, run:
+```js
+grunt build
+```
+
+To create the dist, run:
+```js
+npm start
+```
+
 ## Keyboard shortcuts
 
 The default keyboard shortcuts are:
@@ -98,12 +105,10 @@ o: Toggle overview
 Esc: Escape from full-screen, or toggle overview
 
 
-## Next ideas
+## Roadmap
 - Add a generator for new presentations and slides
-- Maybe transform this in a generator?
 - Clean up CSS
-- Add plugins
 - Use SVN icons for logos
-- Add multiplexing
-- Make a decent index page
+- Find a server in Sapient to deploy a presentation
+- Write proper documentation
 
