@@ -1,53 +1,57 @@
-(function() {
-	// Don't emit events from inside of notes windows
-	if ( window.location.search.match( /receiver/gi ) ) { return; }
+( function() {
+    'use strict';
 
-	var multiplex = Reveal.getConfig().multiplex;
+  // Don't emit events from inside of notes windows
+  if ( window.location.search.match( /receiver/gi ) ) {
+    return;
+  }
 
-	var socket = io.connect(multiplex.url);
+  var multiplex = Reveal.getConfig().multiplex;
 
-	var notify = function( slideElement, indexh, indexv, origin ) {
-		if( typeof origin === 'undefined' && origin !== 'remote' ) {
-			var nextindexh;
-			var nextindexv;
+  var socket = io.connect( multiplex.url );
 
-			var fragmentindex = Reveal.getIndices().f;
-			if (typeof fragmentindex == 'undefined') {
-				fragmentindex = 0;
-			}
+  var notify = function( slideElement, indexh, indexv, origin ) {
+    if ( typeof origin === 'undefined' && origin !== 'remote' ) {
+      var nextindexh;
+      var nextindexv;
 
-			if (slideElement.nextElementSibling && slideElement.parentNode.nodeName == 'SECTION') {
-				nextindexh = indexh;
-				nextindexv = indexv + 1;
-			} else {
-				nextindexh = indexh + 1;
-				nextindexv = 0;
-			}
+      var fragmentindex = Reveal.getIndices().f;
+      if ( typeof fragmentindex === 'undefined' ) {
+        fragmentindex = 0;
+      }
 
-			var slideData = {
-				indexh : indexh,
-				indexv : indexv,
-				indexf : fragmentindex,
-				nextindexh : nextindexh,
-				nextindexv : nextindexv,
-				secret: multiplex.secret,
-				socketId : multiplex.id
-			};
+      if ( slideElement.nextElementSibling && slideElement.parentNode.nodeName === 'SECTION' ) {
+        nextindexh = indexh;
+        nextindexv = indexv + 1;
+      } else {
+        nextindexh = indexh + 1;
+        nextindexv = 0;
+      }
 
-      console.log('slidechanged, emit event');
+      var slideData = {
+        indexh: indexh,
+        indexv: indexv,
+        indexf: fragmentindex,
+        nextindexh: nextindexh,
+        nextindexv: nextindexv,
+        secret: multiplex.secret,
+        socketId: multiplex.id
+      };
 
-			socket.emit('slidechanged', slideData);
-		}
-	}
+      console.log( 'slidechanged, emit event' );
 
-	Reveal.addEventListener( 'slidechanged', function( event ) {
-		notify( event.currentSlide, event.indexh, event.indexv, event.origin );
-	} );
+      socket.emit( 'slidechanged', slideData );
+    }
+  };
 
-	var fragmentNotify = function( event ) {
-		notify( Reveal.getCurrentSlide(), Reveal.getIndices().h, Reveal.getIndices().v, event.origin );
-	};
+  Reveal.addEventListener( 'slidechanged', function( event ) {
+    notify( event.currentSlide, event.indexh, event.indexv, event.origin );
+  } );
 
-	Reveal.addEventListener( 'fragmentshown', fragmentNotify );
-	Reveal.addEventListener( 'fragmenthidden', fragmentNotify );
-}());
+  var fragmentNotify = function( event ) {
+    notify( Reveal.getCurrentSlide(), Reveal.getIndices().h, Reveal.getIndices().v, event.origin );
+  };
+
+  Reveal.addEventListener( 'fragmentshown', fragmentNotify );
+  Reveal.addEventListener( 'fragmenthidden', fragmentNotify );
+}() );
