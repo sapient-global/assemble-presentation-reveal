@@ -1,9 +1,10 @@
-published: false
 reveal:
   ## Display controls in the bottom right corner
   controls: true
   #Set to true if want to use the remote functionality to swipe the presentation with remote.io.It will work only on the presentor page.
   remote: false
+  #presentator notes
+  notes: false
   ## Display a presentation progress bar
   progress: true
   ## Display the page number of the current slide
@@ -63,6 +64,6 @@ reveal:
   maxScale: 1.5
   #Enable multiplexin with socket.io
   multiplex:
-    secret: 14343814693547276153
-    socketId: e92f884b9ebb4fd2
+    socketId: 85e021d4a9784ed3
+    secret: '14351606031163684892'
     url: http://localhost:1947

@@ -37,8 +37,8 @@
       { src: '{{vendor}}/reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; }},{{/if}}{{/if}}
       {{#if reveal.multiplex}}
       { src: '/socket.io/socket.io.js', async: true },{{# if presentatorPage }}
-      { src: '{{vendor}}/reveal.js/plugin/multiplex/master.js', async: true },{{else}}
-      { src: '{{vendor}}/reveal.js/plugin/multiplex/client.js', async: true },{{/if}}{{/if}}
+      { src: '/js/multiplex/master.js', async: true },{{else}}
+      { src: '/js/multiplex/client.js', async: true },{{/if}}{{/if}}
       {{#if presentatorPage}}{{#if reveal.multiplex}}
       { src: '/js/reveal-notes-server/client.js', async: true }{{else}}
       { src: '{{vendor}}/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; }}{{/if}}{{/if}}
