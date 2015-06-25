@@ -1,6 +1,5 @@
-
 .reveal .slides {
-    text-align: left;
+  text-align: left;
 }
 
 .reveal .slides > section {
@@ -8,87 +7,95 @@
 }
 
 .slides-step {
+  @include box-sizing(border-box);
+
+  height: 700px;
+  &.slides-step-hideBackgroundSvg {
+    .backgroundSvg {
+      display: none;
+    }
+  }
+  .backgroundSvg {
+    @include transform(scale(3));
+
+    position: absolute;
+    top: $backgroundSvg-top-s;
+    right: $backgroundSvg-right-s;
+    z-index: -1;
+    width: $backgroundSvg-width;
+
+    fill: $backgroundSvgColor;
+  }
+}
+
+
+@include min-screen(640px) {
+  .slides-step {
     background-color: white;
     box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
-    height: 700px;
+    .backgroundSvg {
+      @include transform(scale(1));
 
-    @include box-sizing(border-box);
-
-    .everform {
-        position: absolute;
-        top: 0px;
-        right: 0;
-        fill: $everformColor;
-        z-index: -1;
+      top: $backgroundSvg-top-m;
+      right: $backgroundSvg-right-m;
     }
-    &.slides-step-hideEverform {
-        .everform {
-            display: none;
-        }
-    }
-    @include max-screen(640px) {
-        background: transparent;
-        box-shadow: none;
-        .everform {
-            @include transform(scale(3));
-            right: -500px !important;
-            width: 424px;
-        }
-    }
+  }
+  .slides-step_SecondaryBackgroundColor {
+    background-color: $brand-black;
+  }
+  .slides-step_TertiaryBackgroundColor {
+    background-color: $brand-blue;
+  }
 }
 
 .slides-step_GraphicSlide {
-    .everform {
-        display: none;
-    }
-}
-
-.slides-step_SecondaryBackgroundColor {
-    background-color: $brand-black;
+  .backgroundSvg {
+    display: none;
+  }
+  .slides-step_InsightBackgroundColor {
+    background-color: $brand-red;
+  }
 }
 
 .slides-step_SecondaryBackgroundColor-title {
-    color: #fff;
+  color: $brand-white;
 }
 
 .slides-step_SecondaryBackgroundColor-subtitle {
-    color: $brand-blue;
+  color: $brand-blue;
 }
 
 .slides-step_SecondaryBackgroundColor-topicIndex {
-    color: $dark-gray;
+  color: $dark-gray;
 }
 
 .slides-step_TertiaryBackgroundColor {
-    background-color: $brand-blue;
-    .everform {
-        fill: #fff;
-    }
+  .backgroundSvg {
+    fill: $brand-white;
+  }
 }
 
 .slides-step_TertiaryBackgroundColor-title {
-    color: $brand-black;
+  color: $brand-black;
 }
 
 .slides-step_TertiaryBackgroundColor-subtitle {
-    color: #fff;
+  color: $brand-white;
 }
 
 .slides-step_TertiaryBackgroundColor-topicIndex {
-    color: lighten($brand-blue, 30%);
+  color: lighten($brand-blue, 30%);
 }
 
 .slides-step_InsightBackgroundColor {
-    background-color: $brand-red;
-    height: 100%;
-    .everform {
-        display: none;
-    }
+  height: 100%;
+  .backgroundSvg {
+    display: none;
+  }
 }
 
 .slides-step_InsightBackgroundColor {
-    &-title, &-subtitle {
-        color: #fff;
-    }
+  &-title, &-subtitle {
+    color: $brand-white;
+  }
 }
-

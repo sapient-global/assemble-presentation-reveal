@@ -15,19 +15,19 @@ classes:
         <div class="ContentContainer ContentAligner-LeftBottom">
             <ul class="SquareList u-list-padding">
                 <li>
-                    <p class="fragment highlight-current-blue">Multiplexing with <a href="http://socket.io/">socket.io</a></p>
+                    <p class="highlight-current-blue">Multiplexing with <a href="http://socket.io/">socket.io</a></p>
                 </li>
                 <li>
-                    <p class="fragment highlight-current-blue">Leap Motion Integration and Internet of things</p>
+                    <p class="highlight-current-blue">Leap Motion Integration and Internet of things</p>
                 </li>
                 <li>
-                    <p class="fragment highlight-current-blue">Amazing charts and <a href="http://fivethirtyeight.com/interactives/pollster-ratings/">interactive data</a></p>
+                    <p class="highlight-current-blue">Amazing charts and <a href="http://fivethirtyeight.com/interactives/pollster-ratings/">interactive data</a></p>
                 </li>
                 <li>
-                    <p class="fragment highlight-current-blue">Embedding code and highlighting</p>
+                    <p class="highlight-current-blue">Embedding code and highlighting</p>
                 </li>
                 <li>
-                    <p class="fragment highlight-current-blue">Dynamix Data with <a href="http://d3js.org/">D3</a></p>
+                    <p class="highlight-current-blue">Dynamix Data with <a href="http://d3js.org/">D3</a></p>
                 </li>
             </ul>
             <p>And the posibilities just grow...</p>

@@ -8,7 +8,7 @@ $fontsPath: "../../assets/fonts";
 /*------------------------------------*\
    Colors
 \*------------------------------------*/
-$everformColor: rgba(220, 221, 222, 0.85);//#DCDDDE;
+$backgroundSvgColor: rgba(220, 221, 222, 0.85);
 $brand-black: #040707;
 $brand-red: #DE2728;
 $brand-blue: #21ADDD;
@@ -26,13 +26,11 @@ $backgroundColor: $brand-gray;
    Fonts
 \*------------------------------------*/
 
-$fontFamily-sapientsans: sapientsans, "Helvetica Neue", Helvetica, Arial, sans-serif;
-$fontFamily-sapientSerif: sapientCentroSlab, "Helvetica Neue", Helvetica, Arial, sans-serif;
-
-$fontFamily-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$fontFamily-sans: sapientsans, "Helvetica Neue", Helvetica, Arial, sans-serif;
+$fontFamily-serif: sapientCentroSlab, "Helvetica Neue", Helvetica, Arial, sans-serif;
 $fontFamily-mono: Monaco, monospace, sans-serif;
 
-$mainFont: $fontFamily-sapientSerif;
+$mainFont: $fontFamily-serif;
 $mainFontSize:16px;
 $doubleFontSize:24px;
 
@@ -49,7 +47,7 @@ $blockMargin: 20px;
 
 // Headings
 $headingMargin: 0 0 $blockMargin 0;
-$headingFont: $fontFamily-sapientsans;
+$headingFont: $fontFamily-sans;
 $headingColor: $brand-black;
 $headingLineHeight: 0.9em;
 $headingTextTransform: uppercase;
@@ -76,7 +74,7 @@ $controlsColorHover: lighten( $dark-gray, 20% );
 
 // Text selection
 $selectionBackgroundColor: #FF5E99;
-$selectionColor: #fff;
+$selectionColor: $brand-white;
 
 
 $tablet: 768px;
@@ -85,5 +83,7 @@ $desktop: 1024px;
 // Generates the presentation background, can be overridden
 // to return a background image or gradient
 @mixin bodyBackground() {
-  background: $backgroundColor;
+  background-color: $backgroundColor;
 }
+
+

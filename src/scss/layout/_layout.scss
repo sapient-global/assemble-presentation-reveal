@@ -12,17 +12,6 @@
  *
  */
 
-.ContentContainer {
-    padding: 2em;
-}
-/*doc
----
-title: Title Aligner
-name: TitleAligner
-presentation: layuout
----
-*/
-
 .TitleAligner {
     display: flex;
 }
@@ -45,17 +34,20 @@ presentation: layuout
     align-items: center;
     height: 90%;
 }
-/*doc
----
-title: Content Aligner
-name: ContentAligner
-presentation: layuout
----
-*/
+
+/*
+   Contentn Aligner: Align items on a slide
+   ========================================================================== */
+
 
 .ContentAligner {
     display: flex;
     height: 90%;
+}
+
+.ContentAligner-CenterCenter {
+   align-items: center;
+   justify-content: center;
 }
 
 .ContentAligner-CenterLeft {
@@ -82,3 +74,17 @@ presentation: layuout
 .ContentAligner-LeftBottom {
     order: 2;
 }
+
+/*
+  ContentContainer: container of content stuff, text,
+   ========================================================================== */
+
+
+.ContentContainer {
+    padding: 2em;
+}
+
+
+
+
+

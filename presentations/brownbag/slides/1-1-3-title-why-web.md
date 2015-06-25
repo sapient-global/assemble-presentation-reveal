@@ -4,7 +4,8 @@ presentation: brownbag
 classes:
  - slides-step_SecondaryBackgroundColor
  - AlternativeBackground
-slideDataAttr: background:#040707
+slideDataAttr: 
+  - background: "#040707"
 ---
 <div class="TitleAligner TitleAligner-CenterCenter">
         <div>

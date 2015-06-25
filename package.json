@@ -14,7 +14,7 @@
   "scripts": {
     "test": "grunt test",
     "start": "node server.js",
-    "postinstall": "./node_modules/bower/bin/bower install || grunt build"
+    "postinstall": "./node_modules/bower/bin/bower install || grunt:replace:revealResets || grunt build"
   },
   "devDependencies": {
     "assemble": "~0.4.42",

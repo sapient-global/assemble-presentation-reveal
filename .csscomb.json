@@ -20,6 +20,9 @@
   "unitless-zero": true,
   "vendor-prefix-align": true,
   "sort-order": [
+    [ "$import" ],
+    [ "$variable" ],
+    [ "$include" ],
     [
       "position",
       "top",
