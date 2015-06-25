@@ -107,7 +107,6 @@ Esc: Escape from full-screen, or toggle overview
 
 ## Roadmap
 - Add a generator for new presentations and slides
-- Clean up CSS
 - Use SVN icons for logos
 - Find a server in Sapient to deploy a presentation
 - Write proper documentation
