@@ -60,6 +60,7 @@ module.exports = function( grunt ) {
 
   // SASS Task
   grunt.registerTask( 'watchCSS', [
+    'replace:revealResets',
     'sass:dist'
   ] );
 

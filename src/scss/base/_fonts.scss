@@ -15,14 +15,6 @@
     src: url($fontsPath +'/sapient-sans/spntsb-webfont.eot');
     src: url($fontsPath +'/sapient-sans/spntsb-webfont.eot?#iefix') format('embedded-opentype'), url($fontsPath +'/sapient-sans/spntsb-webfont.woff2') format('woff2'), url($fontsPath +'/sapient-sans/spntsb-webfont.woff') format('woff'), url($fontsPath +'/sapient-sans/spntsb-webfont.ttf') format('truetype'), url($fontsPath +'/sapient-sans/spntsb-webfont.svg#sapientsansboldregular') format('svg');
     font-weight: 700;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'sapientsans';
-    src: url($fontsPath +'/sapient-sans/spntsr-webfont.eot');
-    src: url($fontsPath +'/sapient-sans/spntsr-webfont.eot?#iefix') format('embedded-opentype'), url($fontsPath +'/sapient-sans/spntsr-webfont.woff2') format('woff2'), url($fontsPath +'/sapient-sans/spntsr-webfont.woff') format('woff'), url($fontsPath +'/sapient-sans/spntsr-webfont.ttf') format('truetype'), url($fontsPath +'/sapient-sans/spntsr-webfont.svg#sapientsansregularregular') format('svg');
-    font-weight: 400;
-    font-style: normal;
 }
 @font-face {
     font-family: 'sapientsans';
@@ -35,16 +27,6 @@
 /*------------------------------------*\
    centro slab sapient
 \*------------------------------------*/
-
-@font-face {
-    font-family: 'sapientCentroSlab';
-    src: url($fontsPath +'/centro-slab-sapient/sapientcentroslab-light-webfont.eot');
-    src: url($fontsPath +'/centro-slab-sapient/sapientcentroslab-light-webfont.eot?#iefix') format('embedded-opentype'),
-         url($fontsPath +'/centro-slab-sapient/sapientcentroslab-light-webfont.woff2') format('woff2'),
-         url($fontsPath +'/centro-slab-sapient/sapientcentroslab-light-webfont.woff') format('woff'),
-         url($fontsPath +'/centro-slab-sapient/sapientcentroslab-light-webfont.ttf') format('truetype');
-    font-weight: 300;
-}
 
 @font-face {
     font-family: 'sapientCentroSlab';
@@ -68,32 +50,6 @@
     font-style:italic;
 
 }
-
-
-@font-face {
-    font-family: 'sapientCentroSlab';
-    src: url($fontsPath +'/centro-slab-sapient/sapientcentroslab-medium-webfont.eot');
-    src: url($fontsPath +'/centro-slab-sapient/sapientcentroslab-medium-webfont.eot?#iefix') format('embedded-opentype'),
-         url($fontsPath +'/centro-slab-sapient/sapientcentroslab-medium-webfont.woff2') format('woff2'),
-         url($fontsPath +'/centro-slab-sapient/sapientcentroslab-medium-webfont.woff') format('woff'),
-         url($fontsPath +'/centro-slab-sapient/sapientcentroslab-medium-webfont.ttf') format('truetype');
-    font-weight: 600;
-}
-
-
-
-@font-face {
-    font-family: 'sapientCentroSlab';
-    src: url($fontsPath +'/centro-slab-sapient/sapientcentroslab-meditalic-webfont.eot');
-    src: url($fontsPath +'/centro-slab-sapient/sapientcentroslab-meditalic-webfont.eot?#iefix') format('embedded-opentype'),
-         url($fontsPath +'/centro-slab-sapient/sapientcentroslab-meditalic-webfont.woff2') format('woff2'),
-         url($fontsPath +'/centro-slab-sapient/sapientcentroslab-meditalic-webfont.woff') format('woff'),
-         url($fontsPath +'/centro-slab-sapient/sapientcentroslab-meditalic-webfont.ttf') format('truetype');
-    font-weight: 600;
-    font-style: italic;
-
-}
-
 
 @font-face {
     font-family: 'sapientCentroSlab';
