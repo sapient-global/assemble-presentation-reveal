@@ -41,6 +41,7 @@ yo reveal-presentation myAwesomePresentation
  3. Update reveal settings in your config.yml, though it is not required
  4. Start adding slides.
 
+
 ## Index and Master files
 
 Within the folder of your presentation, you might have an index and master pages. 
@@ -48,6 +49,12 @@ Within the folder of your presentation, you might have an index and master pages
 The index page is the link you will give the attendees to access the presentation. 
 
 The master page is the page you will use as presenter. If you are using sockets, then this will be required, because in this page the socket key will be added, and when you change a slide, the slide of the attendees will be changed as well.
+
+# List of available presentations
+
+When you run the server, you will have two pages available, /index.html, in which you will find a list of all the available presentation's pages aimed to attendees.
+
+If you decided to have a master page, then it will be listed under /masters.html
 
 
 ## Creating slides (Still no generator)
