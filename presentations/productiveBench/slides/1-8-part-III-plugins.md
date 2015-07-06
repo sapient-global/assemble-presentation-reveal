@@ -1,5 +1,5 @@
 ---
-title: Part III: The plugins
+title: "Part III: The plugins"
 presentation: productiveBench
 classes:
  - slides-step_SecondaryBackgroundColor

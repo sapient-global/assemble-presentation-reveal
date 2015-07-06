@@ -5,7 +5,7 @@ classes:
   - slides-step_VerticalSlides
 ---
 <section>
- <div class="ContentAligner ContentAligner-Vertical">
+ <div class="ContentAligner">
     <div class="title__container ContentAligner-CenterLeft">
         <h1 class="SlideContentTitle u-sans u-bold">Multiplexing</h1>
         <div class="SlideTitleUnderline"></div>
@@ -22,7 +22,7 @@ classes:
             </li>
             <li>
                 <p>Server: The one who served the socket</p>
-            </li>           
+            </li>
         </ul>
     </div>
 </div>

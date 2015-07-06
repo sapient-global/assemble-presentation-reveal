@@ -1,5 +1,5 @@
 ---
-title: Part II: How?
+title: "Part II: How?"
 presentation: productiveBench
 classes:
  - slides-step_SecondaryBackgroundColor
