@@ -13,7 +13,9 @@
   },
   "scripts": {
     "test": "grunt test",
-    "start": "node server.js"
+    "start": "node server.js",
+    "setup": "npm install || bower install || grunt build",
+    "postinstall": "grunt build"
   },
   "devDependencies": {
     "assemble": "~0.4.42",
