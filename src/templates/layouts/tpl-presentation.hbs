@@ -16,15 +16,12 @@
           {{> _slide}}
           <div class="page-break"></div>
         {{/iterate}}
-      {{#if reveal.overview }}
-        <section id="overview" class="step"></section>
-      {{/if}}
     </div>
   </div>
   {{> _scripts}}
 <script>
   Reveal.initialize({
-    {{#eachProperty reveal}}{{#xif "this && this.key !== 'transition' && this.key !== 'multiplex'"}} {{this.key}}: {{#xif "this.value == false || this.value == true"}} {{#is this.value false}} false {{else}}{{this.value}}{{/is}} {{else}} {{#compare this.value "typeof" 'string'}} '{{this.value}}' {{else}} {{this.value}} {{/compare}}{{/xif}},{{/xif}}
+    {{#eachProperty reveal}}{{#xif "this.value != ''"}}{{#xif "this && this.key !== 'transition' && this.key !== 'multiplex'"}} {{this.key}}: {{#xif "this.value == false || this.value == true"}} {{#is this.value false}} false {{else}}{{this.value}}{{/is}} {{else}} {{#compare this.value "typeof" 'string'}} '{{this.value}}' {{else}} {{this.value}} {{/compare}}{{/xif}},{{/xif}}{{/xif}}
     {{/eachProperty}}
     theme: Reveal.getQueryHash().theme,
     transition: Reveal.getQueryHash().transition ||  {{#if reveal.transition}} '{{reveal.transition}}' {{else}} 'default' {{/if}}, // default/cube/page/concave/zoom/linear/fade/none
