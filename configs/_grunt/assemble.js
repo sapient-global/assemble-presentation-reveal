@@ -29,7 +29,7 @@ module.exports = {
             dest: '<%= paths.dist %>/',
             expand: true,
             flatten: true,
-            src: ['index.hbs']
+            src: ['index.hbs', 'masters.hbs']
         }]
     },
     slides: {

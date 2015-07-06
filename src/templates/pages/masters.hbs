@@ -1,6 +1,6 @@
 ---
-title: Presentation Index
-menuLink: Home
+title: Master presentations index
+menuLink: masters
 ---
 
 
@@ -14,7 +14,7 @@ menuLink: Home
   <nav>
         <ol class="">
         {{#each  slides.pages }}
-          {{#is this.basename "index"}}
+          {{#is this.basename "master"}}
             <li class="">
                 <a href="/presentations/{{this.data.menuLink}}/{{this.pageName}}" class="">{{data.title }}</a>
             </li>

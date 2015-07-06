@@ -267,6 +267,7 @@ a:hover img {
 
 .reveal .progress span {
   background: $linkColor;
+  margin: 0;
   -webkit-transition: width 800ms cubic-bezier(.260, .860, .440, .985);
      -moz-transition: width 800ms cubic-bezier(.260, .860, .440, .985);
           transition: width 800ms cubic-bezier(.260, .860, .440, .985);
