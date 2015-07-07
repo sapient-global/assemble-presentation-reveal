@@ -20,6 +20,19 @@ You will need to have pre-installed in your computer:
 * grunt connect as server
 * Yeoman generator to create new presentations, and in the future, new slides.
 
+# Installation
+
+1. Install Yeoman, grunt and bower globally  
+```
+npm install -g grunt grunt-cli bower yeoman
+```
+ 2. Install project dependencies
+```
+npm install
+```
+ 4. Start creating presentations
+ 5. Run the server
+
 # Folder architecture
 
 ```
@@ -42,22 +55,25 @@ yo reveal-presentation myAwesomePresentation
  4. Start adding slides.
 
 
-## Index and Master files
+## List of the available presentations
+
+When you run the server, you will have two pages available:
+
+- **/index.html**, here you will find a list of all the available presentations. 
+
+- **/masters.html**, all the master pages (pages with config only for presenters) will be here
+
+
+## Difference between index.html and master.html
 
 Within the folder of your presentation, you might have an index and master pages. 
 
-The index page is the link you will give the attendees to access the presentation. 
+- **The index page** is the link you will give the attendees to access the presentation. 
 
-The master page is the page you will use as presenter. If you are using sockets, then this will be required, because in this page the socket key will be added, and when you change a slide, the slide of the attendees will be changed as well.
-
-# List of available presentations
-
-When you run the server, you will have two pages available, /index.html, in which you will find a list of all the available presentation's pages aimed to attendees.
-
-If you decided to have a master page, then it will be listed under /masters.html
+- **The master page** is the page you will use as presenter. If you are using sockets or remote.io, then this will be required, because in this page the socket key will be added, and when you change a slide, the slide of the attendees will be changed as well.
 
 
-## Creating slides (Still no generator)
+## Creating slides (Valid until generator is written)
 
 ### Naming
 As long as the slide creation process is manual, in order to ensure the order of your slides in the presentation, you need to prepend to your slides name a number. ie:
@@ -77,7 +93,7 @@ The following data needs to be added in your slide:
 ```md
 ---
 title: "Title of the slide"
-*presentation: shortLinkNameForTheURL //Note that this is the same name you used for menuLink in the index.hbs*
+**presentation: shortLinkNameForTheURL //Note that this is the same name you used for menuLink in the index.hbs**
 classes:
  - CssClass1
  - CssClass1
@@ -123,7 +139,7 @@ npm start
 
 The default keyboard shortcuts are:
 
- - **&#8592;or H:** Navigate left
+ - **&#8592; or H:** Navigate left
  - **&#8594; or L:** Navigate right
  - **&#8593; or K:** Navigate up
  - **&#8595; or J:** Navigate down
