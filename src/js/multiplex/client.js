@@ -3,6 +3,7 @@
 
   var multiplex = Reveal.getConfig().multiplex;
   var socketId = multiplex.id;
+
   var host = window.location.host;
 
   if (window.location.port === '') {
