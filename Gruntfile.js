@@ -38,11 +38,13 @@ module.exports = function( grunt ) {
     // define your ports for grunt-contrib-connect
     ports: {
       app: process.env.PORT || 3000,
-      socket: ( process.env.NODE_ENV === 'production' ) ? process.env.PORT : 1947,
+      socket: process.env.PORT || 1947,
       test: 3001,
       livereload: 35731
     }
   };
+
+  console.log("================== the port is " + options.ports.socket, process.env.PORT);
 
   // Load grunt configurations automatically
   var configs = require( 'load-grunt-configs' )( grunt, options );
