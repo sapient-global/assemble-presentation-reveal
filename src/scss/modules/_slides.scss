@@ -46,14 +46,14 @@
   .slides-step_TertiaryBackgroundColor {
     background-color: $brand-blue;
   }
+  .slides-step_InsightBackgroundColor {
+    background-color: $brand-red;
+  }
 }
 
 .slides-step_GraphicSlide {
   .backgroundSvg {
     display: none;
-  }
-  .slides-step_InsightBackgroundColor {
-    background-color: $brand-red;
   }
 }
 
