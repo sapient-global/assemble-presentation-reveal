@@ -43,7 +43,7 @@
     "bower": "^1.4.1",
     "chalk": "^1.0.0",
     "connect-livereload": "^0.5.3",
-    "generator-reveal-presentation": "^0.0.5",
+    "generator-reveal-presentation": "^0.0.6",
     "gray-matter": "*",
     "grunt": "~0.4.5",
     "grunt-cli": "^0.1.13",

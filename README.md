@@ -12,6 +12,7 @@ You will need to have pre-installed in your computer:
 * bower
 * Yeoman
 
+
 # Frontend architecture details
 
 * libsass
@@ -19,6 +20,19 @@ You will need to have pre-installed in your computer:
 * Assemble to build the pages 
 * grunt connect as server
 * Yeoman generator to create new presentations, and in the future, new slides.
+
+
+
+# Folder structure
+
+```
+|- dist // Contains the built files for the server
+|- configs
+|- presentations // Folder with the presentations
+|- src // Source code
+```
+
+
 
 # Installation
 
@@ -33,14 +47,7 @@ npm install
  4. Start creating presentations
  5. Run the server
 
-# Folder architecture
 
-```
-|- dist // Contains the built files for the server
-|- configs
-|- presentations // Folder with the presentations
-|- src // Source code
-```
 
 # Creating new presentations
 
@@ -64,7 +71,8 @@ When you run the server, you will have two pages available:
 - **/masters.html**, all the master pages (pages with config only for presenters) will be here
 
 
-## Difference between index.html and master.html
+
+## Inside a presentation folder:  index.html and master.html files
 
 Within the folder of your presentation, you might have an index and master pages. 
 
@@ -73,10 +81,12 @@ Within the folder of your presentation, you might have an index and master pages
 - **The master page** is the page you will use as presenter. If you are using sockets or remote.io, then this will be required, because in this page the socket key will be added, and when you change a slide, the slide of the attendees will be changed as well.
 
 
+
 ## Creating slides (Valid until generator is written)
 
 ### Naming
 As long as the slide creation process is manual, in order to ensure the order of your slides in the presentation, you need to prepend to your slides name a number. ie:
+(Note:  use md for the slides)
 
 ```
 |- 0-title.md
@@ -84,7 +94,7 @@ As long as the slide creation process is manual, in order to ensure the order of
 |- 2-awesome-content.md
 |- 3-thank-you.md
 ```
-(Note:  use md for the slides)
+
 
 ### Slide data
 
@@ -109,29 +119,29 @@ You can add as many classes or data attributes as you want. I owe you a list of 
 ###Without sockets
 
 To create the dist, run:
-```js
+```
 grunt build
 ```
 
 To run the server and watch your changes run :
-```js
+```
 grunt serve
 ```
 
 The default tasks builds everything and then runs the serve task
-```js
+```
 grunt
 ```
 
 ### With sockets
 
 To create the dist, run:
-```js
+```
 grunt build
 ```
 
 To create the dist, run:
-```js
+```
 npm start
 ```
 
