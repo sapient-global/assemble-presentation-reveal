@@ -26,6 +26,12 @@
 
     fill: $backgroundSvgColor;
   }
+
+  &_VerticalSlides {
+    .ContentAligner {
+      width: 95%;
+    }
+  }
 }
 
 

@@ -131,6 +131,18 @@ The default keyboard shortcuts are:
  - **Esc:** Escape from full-screen, or toggle overview
 
 
+'N  ,  SPACE':      'Next slide',
+      'P':          'Previous slide',
+      '&#8592;  ,  H':    'Navigate left',
+      '&#8594;  ,  L':    'Navigate right',
+      '&#8593;  ,  K':    'Navigate up',
+      '&#8595;  ,  J':    'Navigate down',
+      'Home':         'First slide',
+      'End':          'Last slide',
+      'B  ,  .':        'Pause',
+      'F':          'Fullscreen',
+      'ESC, O':       'Slide overview'
+
 ## Roadmap
 
 - Add a generator for new slides

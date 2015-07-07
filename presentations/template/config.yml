@@ -16,7 +16,7 @@ reveal:
   ## Enable the slide overview mode
   overview: true
   ## Vertical centering of slides
-  center: true
+  center: false
   ## Enables touch navigation on devices with touch input
   touch: true
   ## Loop the presentation
@@ -49,9 +49,9 @@ reveal:
   ## Number of slides away from the current that are visible
   #viewDistance: 3
   ## Parallax background image (e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'")
-  #parallaxBackgroundImage: ''
+  parallaxBackgroundImage: ''
   ## Parallax background size (CSS syntax, e.g. "2100px 900px")
-  #parallaxBackgroundSize: ''
+  parallaxBackgroundSize: ''
   ## The "normal" size of the presentation, aspect ratio will be preserved
   ## when the presentation is scaled to fit different resolutions. Can be
   ## specified using percentage units.
