@@ -76,7 +76,7 @@ The following data needs to be added in your slide:
 
 ```md
 ---
-title: Title of the slide
+title: "Title of the slide"
 *presentation: shortLinkNameForTheURL //Note that this is the same name you used for menuLink in the index.hbs*
 classes:
  - CssClass1
@@ -123,30 +123,26 @@ npm start
 
 The default keyboard shortcuts are:
 
- - **Up, Down, Left, Right:** Navigation
- - **f:** Full-screen
- - **s:** Show slide notes
- - **o:** Toggle overview
+ - **&#8592;or H:** Navigate left
+ - **&#8594 or L':** Navigate right
+ - **&#8593; or K:** Navigate up
+ - **&#8595; or J:** Navigate down
+ - **N or SPACE:** Next slide
+ - **Home:** First slide
+ - **End:** Last slide
+ - **B:** Pause
+ - **F:** Full-screen
+ - **S:** Show slide notes
+ - **O:** Toggle overview
  - **. (Period or b:** Turn screen black 
  - **Esc:** Escape from full-screen, or toggle overview
 
 
-'N  ,  SPACE':      'Next slide',
-      'P':          'Previous slide',
-      '&#8592;  ,  H':    'Navigate left',
-      '&#8594;  ,  L':    'Navigate right',
-      '&#8593;  ,  K':    'Navigate up',
-      '&#8595;  ,  J':    'Navigate down',
-      'Home':         'First slide',
-      'End':          'Last slide',
-      'B  ,  .':        'Pause',
-      'F':          'Fullscreen',
-      'ESC, O':       'Slide overview'
-
 ## Roadmap
 
 - Add a generator for new slides
-- Use SVN icons for logos
-- Find a server in Sapient to deploy a presentation
+- Add proper code highlighting
+- Add an editor for the slides :)
+- Add generic way to add custom JS to presentations. Maybe directly to the presentation generator
 - Enhance documentation
 
