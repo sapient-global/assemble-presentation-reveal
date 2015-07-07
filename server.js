@@ -86,6 +86,6 @@ io.sockets.on( 'connection', function( socket ) {
   } );
 } );
 
-
-
-opn( slidesLocation );
+if (!isProd){
+  opn( slidesLocation );
+}
