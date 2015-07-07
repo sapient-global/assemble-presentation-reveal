@@ -13,10 +13,9 @@ var express = require( 'express' ),
 
 var environment = process.env.NODE_ENV || 'development';
 var isProd = function () { return environment === 'production'; }
-
 var host;
 
-if (isProd) {
+if (isProd()) {
   host = '0.0.0.0';
 } else {
   host = 'localhost';
@@ -93,6 +92,6 @@ io.sockets.on( 'connection', function( socket ) {
   } );
 } );
 
-if (!isProd){
+if (!isProd()){
   opn( slidesLocation );
 }
