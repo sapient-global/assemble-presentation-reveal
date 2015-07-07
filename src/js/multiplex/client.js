@@ -10,7 +10,7 @@
     if ( data.socketId !== socketId ) {
       return;
     }
-    if ( window.location.host !== 'localhost:1947' ) {
+    if (multiplex.url.indexOf(window.location.host) === -1 ) {
       return;
     }
 

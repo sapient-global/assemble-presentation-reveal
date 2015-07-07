@@ -10,15 +10,20 @@ var express = require( 'express' ),
   livereload = require( 'livereload' ),
   watch = require( 'watch' );
 
+
+var environment = process.env.NODE_ENV || 'development';
+var isProd = function () { return environment === 'production'; }
+
+
 var opts = {
   port: process.env.PORT || 1947,
-  host: 'localhost',
+  host:  process.env.HOST || process.env.HOSTNAME || 'localhost',
   baseDir: __dirname + '/dist',
   revealDir: __dirname + '/dist/vendor/reveal.js/'
 };
 
 
-var slidesLocation = 'http://localhost' + ( opts.port ? ( ':' + opts.port ) : '' );
+var slidesLocation = 'http://' +opts.host + ( opts.port ? ( ':' + opts.port ) : '' );
 
 
 var createHash = function( secret ) {
