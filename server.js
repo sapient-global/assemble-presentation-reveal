@@ -14,10 +14,17 @@ var express = require( 'express' ),
 var environment = process.env.NODE_ENV || 'development';
 var isProd = function () { return environment === 'production'; }
 
+var host;
+
+if (isProd) {
+  host = '0.0.0.0';
+} else {
+  host = 'localhost';
+}
 
 var opts = {
   port: process.env.PORT || 1947,
-  host:  process.env.HOST || process.env.HOSTNAME || 'localhost',
+  host:  process.env.HOST || process.env.HOSTNAME || host,
   baseDir: __dirname + '/dist',
   revealDir: __dirname + '/dist/vendor/reveal.js/'
 };
