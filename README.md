@@ -124,7 +124,7 @@ npm start
 The default keyboard shortcuts are:
 
  - **&#8592;or H:** Navigate left
- - **&#8594 or L':** Navigate right
+ - **&#8594; or L:** Navigate right
  - **&#8593; or K:** Navigate up
  - **&#8595; or J:** Navigate down
  - **N or SPACE:** Next slide
