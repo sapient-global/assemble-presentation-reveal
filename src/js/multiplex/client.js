@@ -10,9 +10,9 @@
     if ( data.socketId !== socketId ) {
       return;
     }
-    if (multiplex.url.indexOf(window.location.host) === -1 ) {
+    /*if (multiplex.url.indexOf(window.location.host) === -1 ) {
       return;
-    }
+    }*/
 
     Reveal.slide( data.indexh, data.indexv, data.indexf, 'remote' );
   } );
