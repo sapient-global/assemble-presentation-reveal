@@ -32,9 +32,13 @@ module.exports = function( grunt ) {
       vendor: 'src/vendor',
       presentations: 'presentations'
     },
+    hosts: {
+      prod: process.env.HOST || process.env.HOSTNAME || ( process.env.NODE_ENV === 'production' ) ? '0.0.0.0' : 'localhost',
+    },
     // define your ports for grunt-contrib-connect
     ports: {
-      app: 3000,
+      app: process.env.PORT || 3000,
+      socket: process.env.PORT || 1945,
       test: 3001,
       livereload: 35731
     }

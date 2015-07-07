@@ -1,7 +1,4 @@
-var port = process.env.PORT || 1947;
-var host = process.env.HOST || process.env.HOSTNAME || ( process.env.NODE_ENV === 'production' ) ? '0.0.0.0' : 'localhost';
-var socketUrl = 'http://' + host + ':' + port;
-
+var socketUrl = 'http://<%= hosts.prod %>:<%= ports.socket %>';
 
 module.exports = {
   spriteUrl: {
