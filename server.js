@@ -72,7 +72,6 @@ app.get( '/notes/:socketId', function( req, res ) {
   } );
 } );
 
-
 io.sockets.on( 'connection', function( socket ) {
 
   socket.on( 'connect', function( data ) {

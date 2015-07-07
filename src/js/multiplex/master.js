@@ -8,7 +8,13 @@
 
   var multiplex = Reveal.getConfig().multiplex;
 
-  var socket = io.connect( multiplex.url );
+  var host = window.location.host;
+
+  if (window.location.port === '') {
+   host += ':80/';
+  }
+
+  var socket = io.connect( host  );
 
   var notify = function( slideElement, indexh, indexv, origin ) {
     if ( typeof origin === 'undefined' && origin !== 'remote' ) {

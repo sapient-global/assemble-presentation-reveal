@@ -44,8 +44,6 @@ module.exports = function( grunt ) {
     }
   };
 
-  console.log("================== the port is " + options.ports.socket, process.env.PORT);
-
   // Load grunt configurations automatically
   var configs = require( 'load-grunt-configs' )( grunt, options );
 
@@ -121,6 +119,18 @@ module.exports = function( grunt ) {
     'htmlmin',
     'copy',
     'concurrent:build'
+  ] );
+
+
+   grunt.registerTask( 'build-prod', [
+    'clean:all',
+    'watchCSS',
+    'combine_mq',
+    'cssmin',
+    'assemble',
+    'htmlmin',
+    'copy',
+    'replace:socketUrl'
   ] );
 
   grunt.registerTask( 'default', [

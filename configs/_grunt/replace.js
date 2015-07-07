@@ -9,17 +9,6 @@ module.exports = {
       to: '../img/'
     } ]
   },
-  socketUrl: {
-    src: [ '<%= paths.presentations %>/**/config.yml' ],
-    overwrite: true,
-    replacements: [ {
-      from: /@socketUrl/g,
-      to: socketUrl
-    }, {
-      from: 'http://localhost:1947',
-      to: socketUrl
-    } ]
-  },
   revealResets: {
     src: [ '<%= paths.vendor %>/reveal.js/css/reveal.scss' ], // source files array (supports minimatch)
     dest: '<%= paths.vendor %>/reveal.js/css/reveal.scss', // destination directory or file

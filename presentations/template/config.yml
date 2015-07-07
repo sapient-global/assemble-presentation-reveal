@@ -66,4 +66,3 @@ reveal:
   multiplex:
     socketId: 85e021d4a9784ed3
     secret: '14351606031163684892'
-    url: @socketUrl
