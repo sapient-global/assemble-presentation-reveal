@@ -38,7 +38,7 @@ module.exports = function( grunt ) {
     // define your ports for grunt-contrib-connect
     ports: {
       app: process.env.PORT || 3000,
-      socket: process.env.PORT || 1945,
+      socket: ( process.env.NODE_ENV === 'production' ) ? process.env.PORT : 1947,
       test: 3001,
       livereload: 35731
     }
