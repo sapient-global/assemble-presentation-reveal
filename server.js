@@ -3,6 +3,7 @@ var express = require( 'express' ),
   app = express(),
   server = require( 'http' ).createServer( app ),
   fs = require( 'fs' ),
+  path = require('path'),
   io = require( 'socket.io' )( server ),
   crypto = require( 'crypto' ),
   Mustache = require( 'mustache' ),
@@ -50,7 +51,7 @@ app.get( "/", function( req, res ) {
   res.writeHead( 200, {
     'Content-Type': 'text/html'
   } );
-  fs.createReadStream( opts.baseDir + '/index.html' ).pipe( res );
+  fs.createReadStream( path.join(opts.baseDir , '/index.html') ).pipe( res );
 } );
 
 app.get( '/token', function( req, res ) {
