@@ -60,13 +60,12 @@ reveal:
   ## Factor of the display size that should remain empty around the content
   margin: 0.1
   ## Bounds for smallest/largest possible scale to apply to content
-  minScale: 0.35
+  minScale: 0.3
   maxScale: 1.5
 
   #Enable multiplexin with socket.io
   multiplex:
     socketId: 42369edf4027553e
     secret: '14361876626719290991'
-    url: http://localhost:1947
 
 
