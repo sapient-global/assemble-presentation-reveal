@@ -15,7 +15,7 @@
     "test": "grunt test",
     "start": "node server.js",
     "setup": "npm install || bower install || grunt build",
-    "postinstall": "bower install || grunt build"
+    "postinstall": "bash ./post_install.sh"
   },
   "licenses": [
     {
