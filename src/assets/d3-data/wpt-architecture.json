@@ -1,0 +1,72 @@
+{
+  "name": "Architecture",
+  "children": [ {
+    "name": "Building",
+    "children": [ {
+      "name": "assemble.io",
+      "size": 15
+    }, {
+      "name": "yeoman",
+      "size": 15
+    }, {
+      "name": "nodejs",
+      "size": 15
+    }, {
+      "name": "grunt",
+      "size": 15
+    }, {
+      "name": "bower",
+      "size": 15
+    } ]
+  }, {
+    "name": "Server",
+    "children": [ {
+      "name": "nodejs",
+      "size": 15
+    }, {
+      "name": "socket.io",
+      "size": 15
+    } ]
+  }, {
+    "name": "CSS",
+    "children": [ {
+      "name": "sass",
+      "size": 15
+    }, {
+      "name": "BEM-OOCSS",
+      "size": 15
+    }, {
+      "name": "SMACSS",
+      "size": 15
+    } ]
+  }, {
+    "name": "Libs",
+    "children": [ {
+      "name": "reveal.js",
+      "size": 15
+    }, {
+      "name": "d3",
+      "size": 15
+    } ]
+  }, {
+    "name": "Config Files",
+    "children": [ {
+      "name": "Beautifyrc",
+      "size": 15
+    }, {
+      "name": "jscsrc",
+      "size": 15
+    }, {
+      "name": "scss-lint",
+      "size": 15
+    }, {
+      "name": "eslint",
+      "size": 15
+    }, {
+      "name": "csslintrc",
+      "size": 15
+    }, {
+      "name": "csscomb",
+      "size": 15    } ]
+  } ]
+}
