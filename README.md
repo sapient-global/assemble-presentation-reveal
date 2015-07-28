@@ -1,6 +1,8 @@
 # About
 
-Normally, web developers are doing brownbags. When they do, the tend to use offline apps, such as Powerpoint, which limits what we can do inside our presentation.
+This is a boilerplate of a web presentation template using reveal, grunt, assemble, libsass and socket.io.
+
+It also has the config to deploy the presentatios to heroku.
 
 Using web presentations should be easy and quick, this tool, aims to making it easier. It uses standard tools, we web developers use in our daily work, such as assemble.io, grunt, yeoman, sass.
 
