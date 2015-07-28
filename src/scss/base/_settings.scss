@@ -6,36 +6,16 @@ $imagesPath: "../../assets/img/";
 $fontsPath: "../../assets/fonts";
 
 /*------------------------------------*\
-   Colors
-\*------------------------------------*/
-$backgroundSvgColor: rgba(220, 221, 222, 0.85);
-$brand-black: #040707;
-$brand-red: #DE2728;
-$brand-blue: #21ADDD;
-$brand-gray: #DFE5E6;
-$dark-gray:#999;
-$brand-white:#fff;
-
-/*------------------------------------------*\
-   General settings - Override reveal ones
-\*------------------------------------------*/
-
-$backgroundColor: $brand-gray;
-
-/*------------------------------------*\
    Fonts
 \*------------------------------------*/
 
-$fontFamily-sans: sapientsans, "Helvetica Neue", Helvetica, Arial, sans-serif;
-$fontFamily-serif: sapientCentroSlab, "Helvetica Neue", Helvetica, Arial, sans-serif;
-$fontFamily-mono: Monaco, monospace, sans-serif;
+$fontFamily-sans:  "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;;
+$fontFamily-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+$fontFamily-mono: Consolas, "Liberation Mono", Courier, monospace;
 
 $mainFont: $fontFamily-serif;
 $mainFontSize:16px;
 $doubleFontSize:24px;
-
-$mainColor:$brand-black;
-$secondaryColor:$dark-gray;
 
 
 /*------------------------------------*\
@@ -48,7 +28,7 @@ $blockMargin: 20px;
 // Headings
 $headingMargin: 0 0 $blockMargin 0;
 $headingFont: $fontFamily-sans;
-$headingColor: $brand-black;
+$headingColor: $mainColor;
 $headingLineHeight: 0.9em;
 $headingTextTransform: uppercase;
 $headingLetterSpacing: normal;
@@ -64,26 +44,36 @@ $heading4Size: 2rem;
 /*------------------------------------*\
    Link colours
 \*------------------------------------*/
-$color--link: $brand-blue;
-$linkColor: $color--link;
+
+$controlsColor: $secondaryColor;
+$controlsColorHover: lighten($secondaryColor, 20% );
+$linkColor: $highlightColor1;
 $linkColorHover: lighten( $linkColor, 20% );
 
-$controlsColor: $dark-gray;
-$controlsColorHover: lighten( $dark-gray, 20% );
-
-
 // Text selection
-$selectionBackgroundColor: #FF5E99;
-$selectionColor: $brand-white;
-
+$selectionBackgroundColor: $highlightColor2;
+$selectionColor: $white;
 
 $tablet: 768px;
 $desktop: 1024px;
+
+
+/* ==========================================================================
+   Texts and images
+   ========================================================================== */
+
+$logoImageName: 'logotype.png';
+$logoMarkImageName: 'logomark.png';
+
+$logoSecondaryBackgroundColorImageName: 'logotype_Negative.png';
+$logoMarkSecondaryBackgroundColorImageName: 'logomark_Negative.png';
+
+$copyRightText: '© 2015 Sapient Corporation';
+
 
 // Generates the presentation background, can be overridden
 // to return a background image or gradient
 @mixin bodyBackground() {
   background-color: $backgroundColor;
 }
-
 

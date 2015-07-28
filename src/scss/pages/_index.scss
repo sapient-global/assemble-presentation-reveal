@@ -8,7 +8,7 @@ a, p, span {
 }
 
 a {
-  color: $brand-blue;
+  color: $highlightColor1;
 }
 
 .content,
@@ -22,8 +22,12 @@ a {
 
 
 header {
-  background-color: $brand-gray;
+  background-color: $secondaryColor;
   padding: 10px 0;
+
+  .title {
+    color: $white;
+  }
 
   .logo,
   .title {
@@ -31,10 +35,7 @@ header {
   }
 
   .logo {
-    background: $brand-red;
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
+   margin-right: 10px;
   }
 }
 

@@ -17,7 +17,7 @@
     #{$property}:$remSize;
 }
 
-@mixin fullscreen {
+@mixin fullscreen-inclusive {
     &:-webkit-full-screen {
         @content;
     }
@@ -32,7 +32,7 @@
     }
 }
 
-@mixin fullscreen2 {
+@mixin fullscreen-exclusive {
     :-webkit-full-screen {
         @content;
     }

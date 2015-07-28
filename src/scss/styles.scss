@@ -18,18 +18,7 @@
 /*
    Own Settings
    ========================================================================== */
-
-
-
-@import "base/settings";
-@import "base/normalize";
-@import "base/fonts";
-
-@import "theme/sapient";
-
-@import "utils/mixins/compassLikeMixins";
-@import "utils/mixins/mixins";
-@import "utils/extends/extends";
+@import "configImports";
 
 //Include the reveal theme and ours addind stuff
 @import "base/base";

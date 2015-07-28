@@ -46,12 +46,12 @@
   font-size:2.5rem !important;
 }
 
-.u-dark-gray{
-  color: $dark-gray !important;
+.u-primary-font-color {
+  color: $primaryColor !important;
 }
 
-.u-blue {
-    color: $brand-blue !important;
+.u-highlight1 {
+    color: $highlightColor1 !important;
 }
 .u-clear-block, .u-clearfix {
     @extend %clearfix;

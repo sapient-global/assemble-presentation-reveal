@@ -1,0 +1,64 @@
+/**
+ * Alternate theme
+ * Colour Palette courtesy of: http://www.colourlovers.com/palette/803258/french_kiss
+ */
+
+
+/*
+   Custom theme example - Colour Palette
+   ========================================================================== */
+
+
+/*------------------------------------*\
+   Color Palette
+\*------------------------------------*/
+
+
+$palette-color-1: #EDF6EE;
+$palette-color-2: #D1C089;
+$palette-color-3: #B3204D;
+$palette-color-4: #412E28;
+$palette-color-5: #151101;
+
+//---- Neutral colors
+$black: $palette-color-5;
+$gray: #999;
+$white:#fff;
+
+/*
+   Semantic colors
+   ========================================================================== */
+
+$mainColor: $palette-color-5; //Color for titles and texts
+$lightherMainColor: lighten( $mainColor, 20%);
+$lightestColor: $palette-color-1;
+
+$primaryColor: $palette-color-4; // Color for texts
+$secondaryColor:  $palette-color-3;
+
+$highlightColor1: $palette-color-2;
+$highlightColor2: $palette-color-3;
+
+/*
+   Color combimations for slides with different backgrounds.
+   ========================================================================== */
+
+$slideBackgroundColor: $palette-color-1;
+$backgroundColor: lighten($slideBackgroundColor, 1%);
+
+//----- Seconday brackground
+$secondarySlideBackgroundColor: $palette-color-4;
+$secondarySlideFontColor: $palette-color-2;
+
+
+//----- Tertiary background
+$tertiarySlideBackgroundColor: $palette-color-3;
+$tertiarySlideFontColor: $palette-color-1;
+
+//----- Insight background
+$InsightBackgroundColor: $palette-color-2;
+$InsightFontColor: $palette-color-5;
+
+$selectionBackgroundColor: $highlightColor2;
+$selectionColor: $white;
+

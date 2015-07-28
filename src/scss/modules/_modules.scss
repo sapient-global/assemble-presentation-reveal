@@ -3,44 +3,37 @@
 \*------------------------------------*/
 
 .SlideMainTitle {
-  font-size: 4em;
+  @include rem-fallback(font-size, 64px);
 }
 
 .SlideContentTitle {
-  font-size: 3em;
+   @include rem-fallback(font-size, 48px);
 }
 
 .SlideSubtitle {
-  color: $brand-white;
-  text-shadow: 1px 1px 0 $mainColor, -2px 1px 0 $mainColor, 1px -1px 0 $mainColor, -1px 1px 0 $mainColor, 1px 1px 0 $mainColor;
-  font-size: 6rem;
+  color: $highlightColor1;
+  @include rem-fallback(font-size, 84px);
 }
 
 .SlideTitleUnderline {
-  background: $brand-red;
+  background: $highlightColor2;
   height: 8px;
   width: 100px;
 }
 
 .SlideContentSubtitle {
   margin-bottom: 0.4em;
-  font-size: 2.8rem;
+  @include rem-fallback(font-size, 52px);
 }
 
 .slides>section>section {
   &.AlternativeBackground-transparent {
     background: transparent;
-    .backgroundSvg {
-      display: none;
-    }
   }
 }
 
 .AlternativeBackground-transparent {
   background: transparent !important;
-  .backgroundSvg {
-    display: none;
-  }
 }
 
 .AlternativeBackground-title {
@@ -56,11 +49,11 @@
 }
 
 .AlternativeBackground-topicIndex {
-  font-size: 17rem;
+  @include rem-fallback(font-size, 142px);
   z-index: -100;
   position: absolute;
-  top: 150px; //295
-  left: 100px;
+  top: 211px;
+  left: 10px;
   font-family: $mainFont;
 }
 /*------------------------------------*\

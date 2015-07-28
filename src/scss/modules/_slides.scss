@@ -13,24 +13,7 @@
 
 .slides-step {
   @include box-sizing(border-box);
-
   height: 700px;
-  &.slides-step-hideBackgroundSvg {
-    .backgroundSvg {
-      display: none;
-    }
-  }
-  .backgroundSvg {
-    @include transform(scale(3));
-
-    position: absolute;
-    top: $backgroundSvg-top-s;
-    right: $backgroundSvg-right-s;
-    z-index: -1;
-    width: $backgroundSvg-width;
-
-    fill: $backgroundSvgColor;
-  }
 
   &_VerticalSlides {
     .ContentAligner {
@@ -42,71 +25,85 @@
 
 @include min-screen(640px) {
   .slides-step {
-    background-color: white;
+    background-color: $slideBackgroundColor;
     box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
-    .backgroundSvg {
-      @include transform(scale(1));
-
-      top: $backgroundSvg-top-m;
-      right: $backgroundSvg-right-m;
-    }
   }
   .slides-step_SecondaryBackgroundColor {
-    background-color: $brand-black;
+    background-color: $secondarySlideBackgroundColor;
   }
   .slides-step_TertiaryBackgroundColor {
-    background-color: $brand-blue;
+    background-color: $tertiarySlideBackgroundColor;
   }
   .slides-step_InsightBackgroundColor {
-    background-color: $brand-red;
+    background-color: $InsightBackgroundColor;
   }
 }
 
-.slides-step_GraphicSlide {
-  .backgroundSvg {
-    display: none;
-  }
+
+.slides-step_SecondaryBackgroundColor-title,
+.slides-step_SecondaryBackgroundColor-subtitle,
+.slides-step_TertiaryBackgroundColor-title,
+.slides-step_TertiaryBackgroundColor-subtitle {
+    margin-left: 136px;
 }
+
 
 .slides-step_SecondaryBackgroundColor-title {
-  color: $brand-white;
+  color: darken($secondarySlideFontColor, 30%);
 }
 
 .slides-step_SecondaryBackgroundColor-subtitle {
-  color: $brand-blue;
+  color: $secondarySlideFontColor;
 }
 
 .slides-step_SecondaryBackgroundColor-topicIndex {
-  color: $dark-gray;
-}
-
-.slides-step_TertiaryBackgroundColor {
-  .backgroundSvg {
-    fill: $brand-white;
-  }
+  color: lighten($secondarySlideFontColor, 30%);
 }
 
 .slides-step_TertiaryBackgroundColor-title {
-  color: $brand-black;
+  color: darken($tertiarySlideFontColor, 30%);
 }
 
 .slides-step_TertiaryBackgroundColor-subtitle {
-  color: $brand-white;
+  color: $tertiarySlideFontColor;
 }
 
 .slides-step_TertiaryBackgroundColor-topicIndex {
-  color: lighten($brand-blue, 30%);
+  color: lighten($tertiarySlideFontColor, 30%);
 }
 
 .slides-step_InsightBackgroundColor {
   height: 100%;
-  .backgroundSvg {
-    display: none;
-  }
 }
 
 .slides-step_InsightBackgroundColor {
   &-title, &-subtitle {
-    color: $brand-white;
+    color: $InsightFontColor;
   }
 }
+
+/* ==========================================================================
+   Full Screen
+   ========================================================================== */
+
+body {
+  @include fullscreen-inclusive {
+    background: $slideBackgroundColor;
+  }
+}
+
+
+
+@include fullscreen-exclusive {
+  .slides-step {
+    border: 0 !important;
+    box-shadow: none !important;
+    opacity: 0;
+    &.active {
+      opacity: 1;
+    }
+  }
+}
+
+
+

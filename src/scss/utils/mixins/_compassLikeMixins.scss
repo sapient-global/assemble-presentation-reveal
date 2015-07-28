@@ -13,7 +13,7 @@
   Mixins available:
     -   css3-prefix             - arguments: Property, Value
     -   background-gradient     - arguments: Start Color: #3C3C3C, End Color: #999999
-    -   background-radial       - arguments: Start Color: $brand-white, Start position: 0%, End Color: #000000, End position: 100%
+    -   background-radial       - arguments: Start Color: $white, Start position: 0%, End Color: #000000, End position: 100%
     -   background-size         - arguments: Width: 100%, Height: 100%
     -   background-opacity      - arguments: Color: #000, Opacity: .85
     -   border-radius           - arguments: Radius: 5px
@@ -76,7 +76,7 @@
 
 /* BACKGROUND RADIAL */
 
-@mixin background-radial($startColor: $brand-white, $startPos: 0%, $endColor: #000000, $endPos:100%) {
+@mixin background-radial($startColor: $white, $startPos: 0%, $endColor: #000000, $endPos:100%) {
     background: -moz-radial-gradient(center, ellipse cover, $startColor $startPos, $endColor $endPos);
     background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop($startPos,$startColor), color-stop($endPos,$endColor));
     background: -webkit-radial-gradient(center, ellipse cover, $startColor $startPos,$endColor $endPos);
