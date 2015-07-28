@@ -5,7 +5,7 @@
 	@include sprites-bg-svg();
 }
 @mixin sprites-bg-size() {
-	background-size: 80px 40px;
+	background-size: 100px 50px;
 }
 %sprites-bg-size {
 	@include sprites-bg-size();
@@ -20,8 +20,8 @@
 @mixin sprites-lab() {
 	@extend %sprites-bg-size;
 	@extend %sprites-bg-svg;
-	width: 32px;
-	height: 32px;
+	width: 42px;
+	height: 42px;
 	background-position: 0 0;
 	.no-svg & {
 		@extend %sprites-bg-png;
@@ -35,9 +35,9 @@
 @mixin sprites-tux() {
 	@extend %sprites-bg-size;
 	@extend %sprites-bg-svg;
-	width: 32px;
-	height: 32px;
-	background-position: -40px 0;
+	width: 42px;
+	height: 42px;
+	background-position: -50px 0;
 	.no-svg & {
 		@extend %sprites-bg-png;
 	}
