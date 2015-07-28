@@ -8,7 +8,7 @@ module.exports = {
 				}
 				return parts.join("-");
 			},
-			template: "<%= paths.config %>/templates/svg-sprites/stylesheet.hbs",
+			template: "<%= paths.configs %>/templates/svg-sprites/stylesheet.hbs",
 			spriteElementPath: '<%= paths.src %>/assets/img/svg/icons',
 			spritePath: "<%= paths.src %>/assets/img/sprites",
 			cssPath: "<%= paths.src %>/scss/icons",

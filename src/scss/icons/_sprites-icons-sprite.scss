@@ -1,0 +1,50 @@
+@mixin sprites-bg-svg() {
+	background-image: url( $imagesPath + "../img/sprites/sprites-icons-sprite.svg");
+}
+%sprites-bg-svg {
+	@include sprites-bg-svg();
+}
+@mixin sprites-bg-size() {
+	background-size: 80px 40px;
+}
+%sprites-bg-size {
+	@include sprites-bg-size();
+}
+
+@mixin sprites-bg-png() {
+	background-image: url("../img/sprites/sprites-icons-sprite-medium.png");
+}
+%sprites-bg-png {
+	@include sprites-bg-png();
+}
+@mixin sprites-lab() {
+	@extend %sprites-bg-size;
+	@extend %sprites-bg-svg;
+	width: 32px;
+	height: 32px;
+	background-position: 0 0;
+	.no-svg & {
+		@extend %sprites-bg-png;
+	}
+}
+
+%sprites-lab {
+	@include sprites-lab();
+}
+
+@mixin sprites-tux() {
+	@extend %sprites-bg-size;
+	@extend %sprites-bg-svg;
+	width: 32px;
+	height: 32px;
+	background-position: -40px 0;
+	.no-svg & {
+		@extend %sprites-bg-png;
+	}
+}
+
+%sprites-tux {
+	@include sprites-tux();
+}
+
+

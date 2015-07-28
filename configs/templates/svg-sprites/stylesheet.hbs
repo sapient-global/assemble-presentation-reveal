@@ -1,6 +1,6 @@
 {{#if config/cssPngPrefix}}
 @mixin sprites-bg-svg() {
-	background-image: url("{{url svgPath cssPath}}");
+	background-image: url( $imagesPath + "{{url svgPath cssPath}}");
 }
 %sprites-bg-svg {
 	@include sprites-bg-svg();
@@ -8,7 +8,7 @@
 {{else}}
 {{#if config/cssSvgPrefix}}
 @mixin sprites-bg-svg() {
-	background-image: url("{{url svgPath ../cssPath}}");
+	background-image: url($imagesPath + " {{url svgPath ../cssPath}}");
 }
 %sprites-bg-svg {
 	@include sprites-bg-svg();
