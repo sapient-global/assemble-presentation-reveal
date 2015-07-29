@@ -14,7 +14,7 @@ presentation: template
     </div>
 
     <div class="ContentContainer ContentAligner-LeftBottom">
-        <p>Pless "s" to open the speaker notes.</p> 
+        <p>Pless "s" in the master presentation to open the speaker notes.</p> 
     </div>
  <aside class="notes">
         Even have speaker notes.

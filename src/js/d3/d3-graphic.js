@@ -8,7 +8,7 @@
   if ( d3 ) {
     createD3Image();
   } else {
-    setTimeout(createD3Image, 300);
+    setTimeout(createD3Image, 500);
   }
 
 } )();

@@ -75,20 +75,10 @@
   }
 
   &_img {
-    /*background: url($imagesPath + $logoImageName) no-repeat center center transparent;
-    background-size: 160px 100%;
-    width: 200px;
-    height: 30px;*/
     @include sprites-tux;
-
-    margin-top: 30px;
     float: left;
   }
   &_mark {
-   /* background: url($imagesPath + $logoMarkImageName) no-repeat center center transparent;
-    background-size: 30px 100%;
-    height: 60px;
-    width: 30px;*/
     @include sprites-lab;
     float: right;
   }

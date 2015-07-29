@@ -4,7 +4,7 @@ reveal:
   #Set to true if want to use the remote functionality to swipe the presentation with remote.io.It will work only on the presentor page.
   remote: false
   #presentator notes
-  notes: false
+  notes: true
   ## Display a presentation progress bar
   progress: true
   ## Display the page number of the current slide
